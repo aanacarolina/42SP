@@ -5,19 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/09/14 02:45:10 by anacaro3         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 01:47:01 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 02:08:33 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/09/14 23:55:07 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +24,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		malloc(max_len);
 		return (substring);
 	}
-	if(s == '\0' || )
+	if(s == '\0')
 		return(NULL);
 }
 

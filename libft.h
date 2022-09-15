@@ -6,15 +6,15 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 01:44:09 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/09/15 01:25:15 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT.H
+#ifndef LIBFT_H
 #define LIBFT_H
 
 int	ft_atoi(const char *nptr);
-void	ft_bzero (void *s, size_t n);
+void ft_bzero (void *s, size_t n);
 int	ft_isalnum (int c);
 int	ft_isalpha(int c);
 int	ft_isascii(int c);
