@@ -6,13 +6,13 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:37:46 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/09/17 03:55:41 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/09/17 16:40:58 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 
