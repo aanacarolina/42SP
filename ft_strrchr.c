@@ -5,18 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 23:32:52 by anacaro3         ###   ########.fr       */
+/*   Created: 2022/09/17 03:38:02 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 04:03:14 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <string.h>
-#include <stdio.h>
-
-int ft_strlen (const char *str);
-
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
@@ -29,18 +25,7 @@ char *ft_strrchr(const char *s, int c)
 	}
 	return ((char *) 0);
 }
-int ft_strlen (const char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
+/*
 int main (void)
 {
 	const char word[] = "wordrs";
@@ -50,3 +35,4 @@ int main (void)
 	printf("%s\n", ft_strrchr(word, null_letter));
 	return(0);
 }
+*/

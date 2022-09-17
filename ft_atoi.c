@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/15 01:24:20 by anacaro3         ###   ########.fr       */
+/*   Created: 2022/09/17 03:34:22 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 09:08:21 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {	
@@ -22,11 +21,15 @@ int	ft_atoi(const char *nptr)
 	result = 0;
 	i = 0;
 	sign = 1;
+	while ((nptr[i] >= 9 && nptr[i] <= 12) || nptr[i] == 32)
+		i++;
 	if (nptr[0] == '-')
 	{
 		sign = -1;
 		i++;
 	}
+	if (nptr[i] == '+')
+	i++;
 	while (nptr[i] != '\0')
 	{
 		if (nptr[i] >= '0' && nptr[i] <= '9')
@@ -34,7 +37,6 @@ int	ft_atoi(const char *nptr)
 			result = result * 10 + nptr[i] - '0';
 			i++;
 		}
-		return (0);
 	}
 	return (result * sign);
 }

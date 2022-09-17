@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/15 02:41:09 by anacaro3         ###   ########.fr       */
+/*   Created: 2022/09/17 03:35:18 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 03:55:10 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

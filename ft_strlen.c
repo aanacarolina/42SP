@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/07 22:36:45 by coder            ###   ########.fr       */
+/*   Created: 2022/09/17 03:37:46 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 03:55:41 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_strlen (const char *str)
+int	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -23,7 +23,7 @@ int ft_strlen (const char *str)
 	}
 	return (i);
 }
-
+/*
 int main (void)
 {
 	char hi[50] = "hi";
@@ -32,3 +32,4 @@ int main (void)
 	printf("%d\n", ft_strlen(hello));
 	return(0);
 }
+*/

@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/15 02:28:51 by anacaro3         ###   ########.fr       */
+/*   Created: 2022/09/17 03:35:10 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 04:08:44 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127) 
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

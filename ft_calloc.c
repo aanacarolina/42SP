@@ -5,12 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/15 02:24:13 by anacaro3         ###   ########.fr       */
+/*   Created: 2022/09/17 03:34:43 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 08:10:27 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
@@ -22,7 +21,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	total_size = nmemb * size;
 	byte = 0;
 	amount = malloc (total_size);
-	if (!amount || (total_size > INT_MAX))
+	if (!amount)
 		return (NULL);
 	ft_memset(amount, byte, total_size);
 	return ((void *)amount);

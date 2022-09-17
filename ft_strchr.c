@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/14 03:07:27 by anacaro3         ###   ########.fr       */
+/*   Created: 2022/09/17 03:37:07 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 04:02:37 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -27,7 +25,7 @@ char *ft_strchr(const char *s, int c)
 	}
 	return ((char *) 0);
 }
-
+/*
 int main (void)
 {
 	const char word[] = "wordr";
@@ -37,3 +35,4 @@ int main (void)
 	printf("%s\n", ft_strchr(word, null_letter));
 	return(0);
 }
+*/

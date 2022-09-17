@@ -3,24 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/07 22:24:13 by coder            ###   ########.fr       */
+/*   Created: 2022/09/17 03:38:19 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 04:09:57 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-	return (c + 32) ;
-	else 
-	return (c);
+		return (c + 32);
+	else
+		return (c);
 }
-
+/*
 int main (void)
 {
 	int lower = 'b';
@@ -28,3 +27,4 @@ int main (void)
 	printf("%d\n", ft_tolower(lower));
 	printf("%d\n", ft_tolower(upper));
 }
+*/

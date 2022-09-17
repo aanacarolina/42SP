@@ -1,7 +1,6 @@
 NAME = libft.a
 
-SRCS =  ft_atoi.c\
-		ft_bzero.c\
+SRCS =  ft_bzero.c\
 		ft_calloc.c\
 		ft_isalnum.c \
         ft_isalpha.c \
@@ -28,12 +27,13 @@ SRCS =  ft_atoi.c\
 		ft_strrchr.c\
 		ft_tolower.c \
         ft_toupper.c \
-		#ft_split.c\
-		#ft_strlcat.c\
-		#ft_strmapi.c\
-		#ft_strncmp.c\
-		#ft_strtrim.c\
-		#ft_substr.c\
+		ft_atoi.c\
+		ft_split.c\
+		ft_strlcat.c\
+		ft_strmapi.c\
+		ft_strncmp.c\
+		ft_strtrim.c\
+		ft_substr.c\
         
 INCLUDE = .
 

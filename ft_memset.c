@@ -5,21 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/15 02:56:59 by anacaro3         ###   ########.fr       */
+/*   Created: 2022/09/17 03:36:26 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 08:30:53 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char	*memory;
+	size_t	i;
 
-	memory = s;
-	while (n--)
-		s++ = c++;
-	return (memory);
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)s)[i] = c;
+		i++;
+	}
+	return (s);
 }
 /*
 int main (void)

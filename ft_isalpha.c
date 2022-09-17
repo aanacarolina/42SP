@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/15 02:27:15 by anacaro3         ###   ########.fr       */
+/*   Created: 2022/09/17 03:34:59 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 03:51:23 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

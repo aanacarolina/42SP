@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/07 22:17:10 by coder            ###   ########.fr       */
+/*   Created: 2022/09/17 03:38:28 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 04:09:08 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (c - 32);
 	else
 		return (c);
 }
-
+/*
 int main (void)
 {
 	int lower = 'c';
@@ -28,3 +28,4 @@ int main (void)
 	printf(":%i:\n", ft_toupper(upper));
 	return(0);
 }
+*/

@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/15 03:03:56 by anacaro3         ###   ########.fr       */
+/*   Created: 2022/09/17 03:36:44 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 06:28:41 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	*ft_putendl_fd(char *s int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);

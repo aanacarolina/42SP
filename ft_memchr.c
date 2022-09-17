@@ -5,23 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 00:51:36 by coder             #+#    #+#             */
-/*   Updated: 2022/09/15 02:47:12 by anacaro3         ###   ########.fr       */
+/*   Created: 2022/09/17 03:35:43 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/09/17 08:19:49 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*str;
+	unsigned const char	*str;
+	unsigned char		cont;
 
+	str = (unsigned const char *)s;
+	cont = (unsigned char) c;
 	while (n-- > 0)
 	{
-		str = (unsigned char *)s;
-		if (*str == (unsigned char *)c)
-			return (str);
-			s++;
+		if (*str == cont)
+			return ((void *)str);
+		str++;
 	}
 	return (NULL);
 }
