@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:37:30 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/10/12 03:29:41 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/12 22:42:33 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const	*s1, char const	*s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	str = (char *)ft_malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * (sizeof(char)));
+	str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * (sizeof(char)));
 	if (!str)
 		return (NULL);
 	pos_init = str;
@@ -27,6 +27,6 @@ char	*ft_strjoin(char const	*s1, char const	*s2)
         *str++ = *s1++;
 	while (*s2)
         *str++ = *s2++;
-	str = '\0';
+	*str = '\0';
 	return (pos_init);
 }

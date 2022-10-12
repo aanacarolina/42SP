@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:37:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/09/17 18:27:14 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/12 23:01:50 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
+	char ch;
 
 	i = 0;
-	while (s[i] || c == '\0')
+	ch = (char)c;
+	if (!ch)
+		return ((char *) s);
+	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == ch)
 			return ((char *) &s[i]);
 		i++;
 	}

@@ -6,12 +6,26 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:35:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/10/12 03:31:34 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/12 22:35:32 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	count_num(int n)
+{
+	int i;
+
+	i = 1; //pq qq numero tem pelo menos 1 char
+	while(n >= 10)
+	{
+		n = n / 10;
+		i++;
+	}
+	if(n < 0)
+		i++;
+	return (i);
+}
 char	*ft_itoa(int	n)
 {
 	int len_n;
@@ -34,22 +48,8 @@ char	*ft_itoa(int	n)
 	if(n < 0)
 	{
 		n =  n * -1;
-		s[0] = "-";
+		s[0]= '-';
 	}
 	return (s);
 }
 
-int	count_num(int n)
-{
-	int i;
-
-	i = 1; //pq qq numero tem pelo menos 1 char
-	while(n >= 10)
-	{
-		n = n / 10;
-		i++;
-	}
-	if(n < 0)
-		i++;
-	return (i);
-}
