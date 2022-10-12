@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:37:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/09/17 04:02:37 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/09/17 18:27:14 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strchr(const char *s, int c)
 /*
 int main (void)
 {
-	const char word[] = "wordr";
+	const char word[] = "wrdro";
 	int letter = 'r'; //returns 3
 	int null_letter = 'z'; //returns null
 	printf("%s\n", ft_strchr(word, letter));

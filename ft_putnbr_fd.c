@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:36:51 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/09/17 04:16:16 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/12 03:01:53 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 			ft_putchar_fd('-', fd);
 			n = n * -1;
 		}
-		if (n >= 9)
+		if (n > 9)
 		{
 			ft_putnbr_fd(n / 10, fd);
 		}

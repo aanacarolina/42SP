@@ -6,61 +6,50 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:35:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/09/17 08:16:29 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/12 03:31:34 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_numlen(long nb)
+char	*ft_itoa(int	n)
 {
-	int	len;
+	int len_n;
+	char *s;
 
-	len = 1;
-	if (nb < 0)
+	len_n = count_num(n);
+	s = (char *)malloc(sizeof(char)*(len_n +1));
+
+	if(!s)
+		return(NULL);
+	s[len_n] = '\0';
+	len_n--;
+
+	while(len_n >= 0)
 	{
-		len++;
-		nb = nb / 10;
+		s[len_n] = n % 10 + 48;
+		n = n / 10;
+		len_n--;
 	}
-	while (nb > 0)
+	if(n < 0)
 	{
-		nb = nb / 10;
-		len++;
+		n =  n * -1;
+		s[0] = "-";
 	}
-	return (len);
+	return (s);
 }
 
-static char	*convert_itoa(	char *str,
-							size_t size,
-							unsigned int num,
-							unsigned int is_negative)
+int	count_num(int n)
 {
-	str[size] = '\0';
-	while (size--)
-	{
-		str[size] = (num % 10) + 48;
-		num /= 10 ;
-	}	
-	if (is_negative)
-		str[0] = '-';
-	return (str);
-}
+	int i;
 
-char	*ft_itoa(int n)
-{
-	size_t			n_digits;
-	unsigned int	is_negative;
-	char			*str;
-
-	n_digits = ft_numlen(n);
-	is_negative = 0;
-	if (n < 0)
+	i = 1; //pq qq numero tem pelo menos 1 char
+	while(n >= 10)
 	{
-		is_negative = 1;
-		n = -n;
+		n = n / 10;
+		i++;
 	}
-	str = malloc(sizeof(char) * (n_digits + 1));
-	if (str == NULL)
-		return (NULL);
-	return (convert_itoa(str, n_digits, (unsigned int)n, is_negative));
+	if(n < 0)
+		i++;
+	return (i);
 }

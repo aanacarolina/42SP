@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:34:43 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/09/17 08:10:27 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/12 03:35:06 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	total_size = nmemb * size;
 	byte = 0;
 	amount = malloc (total_size);
-	if (!amount)
+	if (!amount || (total_size > INT_MAX ))
 		return (NULL);
 	ft_memset(amount, byte, total_size);
 	return ((void *)amount);
