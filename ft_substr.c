@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:38:10 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/09/17 18:14:43 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/14 06:13:49 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	str_size = ft_strlen(s);
-	if (start >= str_size || !s)
+	if (!s)
 		return (NULL);
-	if (str_size < len)
+	if (start >= str_size)
+		return (ft_strdup(""));
+	if (str_size <= len)
 		substring = malloc(str_size - start + 1);
 	else
-		substring = malloc(len +1);
+		substring = malloc(len + 1);
 	if (!substring)
 		return (NULL);
 	s += start;

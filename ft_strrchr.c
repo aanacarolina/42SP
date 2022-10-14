@@ -6,29 +6,28 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:38:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/10/12 23:04:09 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/14 05:01:30 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
-{
-	int		i;
-	char	ch;
-	
+{	
+	int	i;
+
 	i = ft_strlen(s);
-	ch = (char)c;
-	if (!ch)
-		return ((char *) s);
+	if (c == 0)
+		return ((char *)s + i);
 	while (i >= 0)
 	{
-		if (s[i] == ch)
-			return ((char *) &s[i]);
+		if (s[i] == (char)c)
+			return ((char *)s + i);
 		i--;
 	}
-	return ((char *) 0);
+	return (NULL);
 }
+
 /*
 int main (void)
 {

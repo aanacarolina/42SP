@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:34:22 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/10/12 22:55:41 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/13 02:10:47 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ int	ft_atoi(const char *nptr)
 	else if (nptr[i] == '+')
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
 		result = result * 10 + nptr[i] - '0';
-			i++;
+		i++;
+	}
 	return (result * sign);
 }
 /*

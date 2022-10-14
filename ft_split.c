@@ -6,42 +6,55 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:38:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/09/17 17:32:59 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/14 05:05:42 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**create(const char *start, char c, size_t str_index)
+static size_t	ft_countword(char const *s, char c)
 {
-	char		**split;
-	const char	*end;
-	size_t		str_size;
+	size_t	count;
 
-	while (*start && *start == c)
-		start++;
-	end = start;
-	while (*end && *end != c)
-		end++;
-	str_size = end - start;
-	if (str_size)
-		split = create(end, c, str_index + 1);
-	else
-		split = ft_calloc(str_index + 1, sizeof(*split));
-	if (split && str_size)
+	if (!*s)
+		return (0);
+	count = 0;
+	while (*s)
 	{
-		split[str_index] = ft_substr(start, 0, str_size);
-		if (split[str_index])
-			return (split);
-		while (split[++str_index])
-			free(split[str_index]);
-		free(split);
-		split = 0;
+		while (*s == c)
+			s++;
+		if (*s)
+			count++;
+		while (*s != c && *s)
+			s++;
 	}
-	return (split);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	return (create(s, c, 0));
+	char	**lst;
+	size_t	word_len;
+	int		i;
+
+	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
+	if (!s || !lst)
+		return (0);
+	i = 0;
+	while (*s)
+	{
+		while (*s == c && *s)
+			s++;
+		if (*s)
+		{
+			if (!ft_strchr(s, c))
+				word_len = ft_strlen(s);
+			else
+				word_len = ft_strchr(s, c) - s;
+			lst[i++] = ft_substr(s, 0, word_len);
+			s += word_len;
+		}
+	}
+	lst[i] = NULL;
+	return (lst);
 }

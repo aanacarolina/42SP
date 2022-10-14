@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:35:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/10/12 22:35:32 by anacaro3         ###   ########.fr       */
+/*   Updated: 2022/10/14 06:07:14 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,52 @@
 
 int	count_num(int n)
 {
-	int i;
+	int	i;
 
-	i = 1; //pq qq numero tem pelo menos 1 char
-	while(n >= 10)
+	i = 1;
+	if (n < 0)
+		i++;
+	while (n >= 10 || n <= -10)
 	{
 		n = n / 10;
 		i++;
 	}
-	if(n < 0)
-		i++;
 	return (i);
 }
-char	*ft_itoa(int	n)
+
+char	*ft_transform(char *s, int len_n, int n)
 {
-	int len_n;
-	char *s;
-
-	len_n = count_num(n);
-	s = (char *)malloc(sizeof(char)*(len_n +1));
-
-	if(!s)
-		return(NULL);
-	s[len_n] = '\0';
-	len_n--;
-
-	while(len_n >= 0)
+	while (len_n >= 0)
 	{
 		s[len_n] = n % 10 + 48;
 		n = n / 10;
 		len_n--;
 	}
-	if(n < 0)
-	{
-		n =  n * -1;
-		s[0]= '-';
-	}
-	return (s);
+	return ((char *)s);
 }
 
+char	*ft_itoa(int n)
+{
+	int		len_n;
+	char	*s;
+	int		sign;
+
+	sign = 1;
+	len_n = count_num(n);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	s = (char *)malloc(sizeof(char) *(len_n +1));
+	if (!s)
+		return (NULL);
+	s[len_n] = '\0';
+	len_n--;
+	if (n < 0)
+	{
+		n = n * -1;
+		sign = 0;
+	}
+	s = ft_transform(s, len_n, n);
+	if (sign == 0)
+		s[0] = '-';
+	return (s);
+}
