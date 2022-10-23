@@ -1,4 +1,3 @@
-
 #include <stddef.h>
 #include "get_next_line.h"
 
