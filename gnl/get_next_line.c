@@ -10,35 +10,97 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
 
-#include<stdio.h>
-#include<fcntl.h>
+char	*read_line(char *str)
+	{
+	int		i;
+	char	*s;
 
-
-int count_lines(int c, int ln)
-{
-    while ((c = getchar()  != EOF)) 
-    if (c == ' \n') 
-    ++nl;
-    return(nl);
+	i = 0;
+	if (!str[i])
+		return (NULL);
+	while (str[i] != '\n' && str[i])
+		i++;
+	s = (char *)malloc(sizeof(char) * (i + 2));
+	if (!s)
+		return (NULL);
+	i = 0;
+	while (str[i] != '\n' && str[i])
+	{
+		s[i] = str[i];
+		i++;
+	}
+	if (str[i] == '\n')
+	{
+		s[i] = str[i];
+		i++;
+	}
+	s[i] = '\0';
+	return (s);
 }
 
-char *get_next_line(int fd)
+char	*extra_letters(char *str)
 {
-char *buf;
-size_t nbyte;
-char 
+	int		i;
+	int		j;
+	char	*s;
 
-nbyte = 5;
-fd = open( 0);
-if(fd < 0 || nbyte < 0 )
-    return(NULL)
-read(fd, *buf, nbyte);
-return (fd);
+	i = 0;
+	j = 0;
+	while (str[i] != '\n' && str[i])
+		i++;
+	if (!str[i])
+	{
+		free(str);
+		return (NULL);
+	}
+	s = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
+	if (!s)
+		return (NULL);
+	i++;
+	while (str[i])
+		s[j++] = str[i++];
+	s[j] = '\0';
+	free(str);
+	return (s);
 }
 
-int main (void)
+char	*join_strings(int fd, char *str)
 {
+	char	*buffer;
+	int		read_bytes;
 
-    return (0);
+	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (NULL);
+	read_bytes = 1;
+	while (read_bytes > 0 && !ft_strchr(str, '\n'))
+	{
+		read_bytes = read(fd, buffer, BUFFER_SIZE);
+		if (read_bytes < 0)
+		{
+			free(buffer);
+			return (NULL);
+		}
+		buffer[read_bytes] = '\0';
+		str = ft_strjoin(str, buffer);
+	}
+	free(buffer);
+	return (str);
+}
+
+char	*get_next_line(int fd)
+{
+	char		*line;
+	static char	*keep;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (0);
+	keep = join_strings(fd, keep);
+	if (!keep)
+		return (NULL);
+	line = read_line(keep);
+	keep = extra_letters(keep);
+	return (line);
 }
