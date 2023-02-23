@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <unistd.h>
 
+
+void	ft_close(int keycode, t_mlx *m)
+{
+	if (keycode  == ESC_KEY || keycode == X_KEY)
+	mlx_destroy_window(mlx_ptr, win_ptr);
+	win_ptr = NULL;
+	return (0);
+}
+
 void bresenham_line (int x0, int y0, int x_n, int y_n)
 {
 	void *	mlx_ptr;
@@ -49,6 +58,7 @@ void bresenham_line (int x0, int y0, int x_n, int y_n)
 	mlx_loop(mlx_ptr); //fica ouvindo eventos - esperando algo aontecer
 
 }
+
 
 
 int main(void)
