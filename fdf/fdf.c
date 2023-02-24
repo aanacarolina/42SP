@@ -1,76 +1,126 @@
 #include <mlx.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <math.h>
+#include <stdlib.h>
+#include "fdf.h"
 
-
-void	ft_close(int keycode, t_mlx *m)
+void bresenham_line(int x0, int y0, int x_n, int y_n, int color, t_data *minilib)
 {
-	if (keycode  == ESC_KEY || keycode == X_KEY)
-	mlx_destroy_window(mlx_ptr, win_ptr);
-	win_ptr = NULL;
+	int x;
+	int y;
+	int delta_x;
+	int delta_y;
+	int decision;
+	int sx;
+	int sy;
+	int err;
+
+	delta_x = abs(x_n - x0);					// posição atual MENOS posição anterior - distancias
+	delta_y = abs(y_n - y0);				// posição atual MENOS posição anterior - distancias
+	decision = (2 * delta_y) - delta_x; // ponto de decisao qual a melhor próxima linha a seguir
+	sx = x0 < x_n ? 1 : -1;
+    sy = y0 < y_n ? 1 : -1;
+    err = delta_x - delta_y;						// para nao perder valores iniciais, pois estaremos usando y0 como contador
+
+	while (x0 != x_n || y0 != y_n)
+	{
+		while (x0 != x_n || y0 != y_n)
+    {
+        mlx_pixel_put(minilib->mlx_ptr, minilib->win_ptr, x0, y0, color);
+        int e2 = 2 * err;
+        if (e2 > -delta_y)
+        {
+            err = err - delta_y;
+            x0 = x0 + sx;
+        }
+        if (e2 < delta_x)
+        {
+            err = err + delta_x;
+            y0 = y0 + sy;
+        }
+    }
+
+    mlx_pixel_put(minilib->mlx_ptr, minilib->win_ptr, x_n, y_n, color);
+    mlx_loop(minilib->mlx_ptr);
+}
+}
+void init_and_new_win(t_data *minilib)
+{
+
+	minilib->win_width = 960;
+	minilib->win_height = 640;
+	minilib->mlx_ptr = mlx_init();																			// incializa a conexão entre o software e o monitor
+	minilib->win_ptr = mlx_new_window(minilib->mlx_ptr, minilib->win_width, minilib->win_height, "fdf_42"); // gerenciador de janela
+}
+
+int ft_close_esc(int keysym, t_data *minilib)
+{
+
+	if (keysym == XK_Escape)
+	{
+		mlx_destroy_window(minilib->mlx_ptr, minilib->win_ptr);
+		exit(0);
+	}
 	return (0);
 }
 
-void bresenham_line (int x0, int y0, int x_n, int y_n)
+int ft_close_x(t_data *minilib)
 {
-	void *	mlx_ptr;
-	void *	win_ptr;
-	int		win_width;
-	int 	win_height;
-	int *	line_start;
-	int * 	line_end;
-	int 	x;
-	int		y; 
-	int 	delta_x;
-	int 	delta_y;
-	int		decision;
-	int		pink;
-	int		yellow;
-	int		red;
 
-	win_width = 960;
-	win_height = 640;
-	mlx_ptr = mlx_init(); //incializa a conexão entre o software e o monitor 
-	win_ptr = mlx_new_window(mlx_ptr, win_width, win_height, "fdf_42"); //gerenciado de janela 
-	delta_x = x_n - x0;  //posição atual MENOS posição anterior
-	delta_y = y_n - y0; //posição atual MENOS posição anterior
-	decision = (2 * delta_y) - delta_x; //ponto de decisao qual a melhor próxima linha a seguir 
-	x = x0; // para nao perder valores iniciais, pois estaremos usando x0 como contador
-	y = y0; // para nao perder valores iniciais, pois estaremos usando y0 como contador
-	pink = 0xFF00FF;
-	yellow = 0xFFFF00;
-	red = 0xFF0000;
-
-	while (x < x_n)
-	{
-		if (decision >= 0){
-		mlx_pixel_put(mlx_ptr, win_ptr, x, y, yellow);
-		y = y + 1;
-		decision = decision + 2 * delta_y - 2 * delta_x;
-		}
-		else {
-		mlx_pixel_put(mlx_ptr, win_ptr, x, y, pink);
-		decision = decision + 2 * delta_y;
-		}
-		x = x +1;
-	}
-
-	mlx_loop(mlx_ptr); //fica ouvindo eventos - esperando algo aontecer
-
+	mlx_destroy_window(minilib->mlx_ptr, minilib->win_ptr);
+	exit(0);
+	return (0);
 }
-
-
 
 int main(void)
 {
 
-int x0 = 125;
-int y0 = 125;
-int x_n = 250;
-int y_n = 250;
+	t_data minilib;
 
-bresenham_line(x0, y0, x_n, y_n);
-printf("[%i %i", x0, y0);
- 
-return(0);
+	int red = 0xFF0000;
+
+	t_position p_0;
+	t_position p_1;
+	t_position p_2;
+
+	p_0.x = 100;
+	p_0.y = 100;
+	p_0.color = red;
+
+	p_1.x = 200;
+	p_1.y = 100;
+	p_1.color = red;
+
+	p_2.x = 100;
+	p_2.y = 200;
+	p_2.color = red;
+
+	int pink = 0xFF00FF;
+	int yellow = 0xFFFF00;
+
+	int x0 = 100;
+	int y0 = 100;
+	int x_n = 400;
+	int y_n = 400;
+
+	int x01 = 400;
+	int y01 = 100;
+	int x_n1 = 100;
+	int y_n1 = 100;
+
+	int x02 = 100;
+	int y02 = 400;
+	int x_n2 = 400;
+	int y_n2 = 400;
+
+	init_and_new_win(&minilib);
+	mlx_hook(minilib.win_ptr, KeyPress, KeyPressMask, ft_close_esc, &minilib);
+	mlx_hook(minilib.win_ptr, DestroyNotify, NoEventMask, ft_close_x, &minilib);
+	bresenham_line(x0, y0, x_n, y_n, pink, &minilib);
+	bresenham_line(x01, y01, x_n1, y_n1, red, &minilib);
+	bresenham_line(x02, y02, x_n2, y_n2, yellow, &minilib);
+	mlx_loop(minilib.mlx_ptr); // fica ouvindo eventos - esperando algo aontecer
+
+	return (0);
 }
