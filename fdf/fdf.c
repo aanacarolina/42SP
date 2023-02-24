@@ -7,50 +7,46 @@
 
 void bresenham_line(int x0, int y0, int x_n, int y_n, int color, t_data *minilib)
 {
-	int x;
-	int y;
+
 	int delta_x;
 	int delta_y;
-	int decision;
 	int sx;
 	int sy;
-	int err;
+	int decision;
+	int dec_2;
 
-	delta_x = abs(x_n - x0);					// posição atual MENOS posição anterior - distancias
-	delta_y = abs(y_n - y0);				// posição atual MENOS posição anterior - distancias
-	decision = (2 * delta_y) - delta_x; // ponto de decisao qual a melhor próxima linha a seguir
+	delta_x = abs(x_n - x0);// posição atual MENOS posição anterior - distancias
+	delta_y = abs(y_n - y0);// posição atual MENOS posição anterior - distancias
 	sx = x0 < x_n ? 1 : -1;
     sy = y0 < y_n ? 1 : -1;
-    err = delta_x - delta_y;						// para nao perder valores iniciais, pois estaremos usando y0 como contador
+    decision = delta_x - delta_y;// ponto de decisao qual a melhor próxima linha a seguir
 
+	
 	while (x0 != x_n || y0 != y_n)
-	{
-		while (x0 != x_n || y0 != y_n)
     {
         mlx_pixel_put(minilib->mlx_ptr, minilib->win_ptr, x0, y0, color);
-        int e2 = 2 * err;
-        if (e2 > -delta_y)
+        dec_2 = 2 * decision;
+        if (dec_2 > -delta_y)
         {
-            err = err - delta_y;
+            decision = decision - delta_y;
             x0 = x0 + sx;
         }
-        if (e2 < delta_x)
+        if (dec_2 < delta_x)
         {
-            err = err + delta_x;
+            decision = decision + delta_x;
             y0 = y0 + sy;
         }
     }
 
     mlx_pixel_put(minilib->mlx_ptr, minilib->win_ptr, x_n, y_n, color);
-    mlx_loop(minilib->mlx_ptr);
 }
-}
+
 void init_and_new_win(t_data *minilib)
 {
 
 	minilib->win_width = 960;
 	minilib->win_height = 640;
-	minilib->mlx_ptr = mlx_init();																			// incializa a conexão entre o software e o monitor
+	minilib->mlx_ptr = mlx_init(); // incializa a conexão entre o software e o monitor
 	minilib->win_ptr = mlx_new_window(minilib->mlx_ptr, minilib->win_width, minilib->win_height, "fdf_42"); // gerenciador de janela
 }
 
@@ -72,6 +68,8 @@ int ft_close_x(t_data *minilib)
 	exit(0);
 	return (0);
 }
+
+
 
 int main(void)
 {
@@ -99,6 +97,7 @@ int main(void)
 	int pink = 0xFF00FF;
 	int yellow = 0xFFFF00;
 
+	
 	int x0 = 100;
 	int y0 = 100;
 	int x_n = 400;
