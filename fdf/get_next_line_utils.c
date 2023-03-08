@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:54:06 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/08 19:54:07 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:55:47 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ size_t	ft_strlen(const char *str)
 
 	count = 0;
 	if (!str)
-		return (0);
 	while (str[count] != '\0')
 		count++;
 	return (count);

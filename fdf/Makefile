@@ -4,6 +4,7 @@ SRCS =	fdf_utils.c\
 		fdf.c\
 		ft_close.c\
 		ft_parse_map.c\
+		ft_read_maps.c\
 		get_next_line_utils.c\
 		get_next_line.c\
 		main.c\

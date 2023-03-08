@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:53:43 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/08 19:53:44 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:56:37 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substring[i] = '\0';
 	return (substring);
 }
+
 static size_t	ft_countword(char const *s, char c)
 {
 	size_t	count;
