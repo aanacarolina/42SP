@@ -3,6 +3,7 @@ NAME = fdf
 SRCS =	fdf.c\
 		ft_close.c\
 		main.c\
+		ft_parse\
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 

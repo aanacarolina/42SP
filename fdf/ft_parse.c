@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "fdf.h"
 
 int** readMapFromFile(const char* filename, int* rows, int* cols) {
     FILE* fp;

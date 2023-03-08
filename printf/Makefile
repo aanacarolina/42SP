@@ -1,28 +1,23 @@
 NAME = libftprintf.a
 
-SRCS =  ft_printf.c\
-		printf_utils.c\
-		printf.h
+SRCS = 	./ft_printf.c ft_printf_utils_p1.c ft_printf_utils_p2.c
 
-INCLUDE = .
-
+INCLUDES = .
 OBJS = $(patsubst %.c, %.o, $(SRCS))
+CFLAGS = -Wall -Wextra -Werror
 
-FLAGS = -Wall, -Wextra and -Werror
+all: $(NAME)
 
-all : $(NAME)
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-$(NAME) : $(OBJS)
-	ar rcs $(NAME) $(OBJS) 
+$(OBJS): $(SRCS) ./ft_printf.h
+	cc $(CFLAGS) -c $(SRCS) -I $(INCLUDES)
 
-$(OBJS) : $(SRCS) 
-	cc $(FLAGS) -c $(SRCS) -I $(INCLUDE)
-
-clean : 
+clean:
 	rm -f $(OBJS)
 
-fclean : clean
+fclean: clean
 	rm -f $(NAME)
 
-re : fclean all
-	
+re: fclean all

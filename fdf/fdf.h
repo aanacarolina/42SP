@@ -1,13 +1,18 @@
+#ifndef FDF_H
+# define FDF_H
+
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+#endif
+
 #include <mlx.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <X11/keysym.h>
 #include <X11/X.h>
-#include <mlx.h>
-#include <stdio.h>
-#include <unistd.h>
 #include <math.h>
 #include <stdlib.h>
+
 
 # define ESC_KEY ESC
 
@@ -32,3 +37,4 @@ void	init_and_new_win(t_data *minilib);
 int		ft_close_esc(int keysym, t_data *minilib);
 int		ft_close_x(t_data *minilib);
 
+#endif

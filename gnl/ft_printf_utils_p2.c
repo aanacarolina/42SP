@@ -1,8 +1,18 @@
-TODO - HEADER
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils_p2.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 19:21:45 by anacaro3          #+#    #+#             */
+/*   Updated: 2022/11/09 19:23:33 by anacaro3         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_hex_lower(unsigned long decimal, int i, int j)
+int	ft_hex_lower(unsigned long decimal, int i, int j)
 {
 	unsigned long	result;
 	unsigned long	rest;
