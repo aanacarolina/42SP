@@ -1,9 +1,12 @@
 NAME = fdf
 
-SRCS =	fdf.c\
+SRCS =	fdf_utils.c\
+		fdf.c\
 		ft_close.c\
+		ft_parse_map.c\
+		get_next_line_utils.c\
+		get_next_line.c\
 		main.c\
-		ft_parse\
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
@@ -29,3 +32,4 @@ fclean: clean
 # = variavel, atribuição
 #nome regra: dependencia - opcional
 # o que vai ser executado qdo e se a dependencia for encontrar
+#PHONY simular alguma coisa -TODO - ver o que é

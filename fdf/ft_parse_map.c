@@ -1,18 +1,5 @@
 
-#include <stdio.h>
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include "fdf.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -27,24 +14,6 @@ char	*ft_strdup(const char *s)
 		new[i++] = *s++;
 	new[i] = '\0';
 	return (new);
-}
-
-char	*ft_strchr(const char *s, int c)
-{
-	int		i;
-	char	ch;
-
-	i = 0;
-	ch = (unsigned char)c;
-	while (s[i])
-	{
-		if (s[i] == ch)
-			return ((char *)s + i);
-		i++;
-	}
-	if (!ch && s[i] == '\0')
-		return ((char *)s + i);
-	return ((void *) 0);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -170,9 +139,4 @@ int *parse_line (char *map_line)
     free(line);
     return line_size;
    // while (j < i)
-}
-
-int main (void)
-{
-
 }

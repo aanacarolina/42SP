@@ -8,7 +8,7 @@ int** readMapFromFile(const char* filename, int* rows, int* cols) {
     // Open the file
     fp = ft_open(filename, "r");
     if (fp == NULL) {
-        ft_printf(stderr, "Error: could not open file %s\n", filename);
+        printf(stderr, "Error: could not open file %s\n", filename);
         return NULL;
     }
     
@@ -45,9 +45,9 @@ int main() {
     // Print the matrix
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
-            ft_printf("%3d", map[i][j]);
+            printf("%3d", map[i][j]);
         }
-        ft_printf("\n");
+        printf("\n");
     }
     
     // Free the memory used by the matrix
