@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "fdf.h"
 
 char	*ft_strdup(const char *s)
@@ -153,3 +152,13 @@ int *parse_line (char *map_line)
     return line_size;
    // while (j < i)
 }
+
+
+
+
+
+// a [x=0 y=0 z=0]
+// j [x=3 y=2 z=10] 
+
+// condicao de parada = tamanho da linha (x)
+// malloc = linha x col

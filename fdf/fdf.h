@@ -8,8 +8,8 @@
 #include <mlx.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <X11/keysym.h>
-#include <X11/X.h>
+//#include <X11/keysym.h>
+//#include <X11/X.h>
 #include <math.h>
 #include <stdlib.h>
 

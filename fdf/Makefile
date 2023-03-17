@@ -11,7 +11,10 @@ SRCS =	fdf_utils.c\
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
-FLAGS = -lmlx -lXext -lX11 -Wall -Wextra -Werror
+#FLAGS = -lmlx -lXext -lX11 -Wall -Wextra -Werror
+CFLAGS=-I/opt/X11/include 
+FLAGS =  -L. -lmlx -framework OpenGL -framework AppKit -Wall -Wextra -Werror
+#remove only needed for macos
 
 all: $(NAME)
 

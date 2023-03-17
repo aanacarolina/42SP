@@ -12,5 +12,4 @@
 
 #include "fdf.h"
 
-void    read_files(char *file_name)
-{}
+void    ft_matrix(char *file_name)
