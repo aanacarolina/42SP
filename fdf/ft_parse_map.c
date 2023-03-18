@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:53:43 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/17 20:45:08 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/17 23:20:37 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,28 +70,28 @@ int	ft_atoi(const char *nptr)
 
 int	*parse_line(char *map_line)
 {
-	char	**line;
+	char	**str_line;
 	int		i;
 	int		j;
-	int		*line_size;
+	int		*int_line;
 
-	line = ft_split(map_line, ' ');
+	str_line = ft_split(map_line, ' ');
 	free(map_line);
 
 	i = 0;
-	while (line[i] != NULL)
+	while (str_line[i] != NULL)
 		i++;
-	line_size = malloc((i + 1) * sizeof(int));
-	if (line_size == NULL)
+	int_line = malloc((i + 1) * sizeof(int));
+	if (int_line == NULL)
 		return (0);
 
 	j = 0;
-	while (line[j] != NULL)
+	while (str_line[j] != NULL)
 	{
-		line_size[j] = ft_atoi(line[j]);
-		free(line[j]);
+		int_line[j] = ft_atoi(str_line[j]);
+		free(str_line[j]);
 		j++;
 	}
-	free(line);
-	return (line_size);
+	free(str_line);
+	return (int_line);
 }
