@@ -3,17 +3,18 @@ NAME = fdf
 SRCS =	fdf_utils.c\
 		fdf.c\
 		ft_close.c\
+		ft_isometric.c\
+		ft_matrix.c\
 		ft_parse_map.c\
-		ft_read_maps.c\
 		get_next_line_utils.c\
 		get_next_line.c\
 		main.c\
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
-#FLAGS = -lmlx -lXext -lX11 -Wall -Wextra -Werror
-CFLAGS=-I/opt/X11/include 
-FLAGS =  -L. -lmlx -framework OpenGL -framework AppKit -Wall -Wextra -Werror
+FLAGS = -lmlx -lXext -lX11 -Wall -Wextra -Werror
+#CFLAGS=-I/opt/X11/include 
+#FLAGS =  -L. -lmlx -framework OpenGL -framework AppKit -Wall -Wextra -Werror
 #remove only needed for macos
 
 all: $(NAME)

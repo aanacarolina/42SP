@@ -6,73 +6,13 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:53:43 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/08 19:56:37 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/17 20:45:08 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-char	*ft_strdup(const char *s)
-{
-	char	*new;
-	int		i;
 
-	i = 0;
-	new = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!new)
-		return (NULL);
-	while (*s)
-		new[i++] = *s++;
-	new[i] = '\0';
-	return (new);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char			*substring;
-	unsigned int	str_size;
-	unsigned int	i;
-
-	i = 0;
-	str_size = ft_strlen(s);
-	if (!s)
-		return (NULL);
-	if (start >= str_size)
-		return (ft_strdup(""));
-	if (str_size <= len)
-		substring = malloc(str_size - start + 1);
-	else
-		substring = malloc(len + 1);
-	if (!substring)
-		return (NULL);
-	s += start;
-	while (*s && i < len)
-	{
-		substring[i] = *s++;
-		i++;
-	}
-	substring[i] = '\0';
-	return (substring);
-}
-
-static size_t	ft_countword(char const *s, char c)
-{
-	size_t	count;
-
-	if (!*s)
-		return (0);
-	count = 0;
-	while (*s)
-	{
-		while (*s == c)
-			s++;
-		if (*s)
-			count++;
-		while (*s != c && *s)
-			s++;
-	}
-	return (count);
-}
 
 char	**ft_split(char const *s, char c)
 {
@@ -128,37 +68,30 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-int *parse_line (char *map_line)
+int	*parse_line(char *map_line)
 {
-    char **line = ft_split(map_line, ' ');
-    free(map_line);
+	char	**line;
+	int		i;
+	int		j;
+	int		*line_size;
 
-    int i = 0;
-    int j = 0;
-    while(line[i] != NULL)
-        i++;
-    int *line_size = malloc((i + 1) * sizeof(int));
-    if(line_size == NULL)//IF NULL FREE SPLIT tbm, funcao especifica
-       return(0);
+	line = ft_split(map_line, ' ');
+	free(map_line);
 
-    j = 0;
-    while(line[j] != NULL)
-    {
-        line_size[j] = ft_atoi(line[j]);
-        free(line[j]);
-        j++;
-    }
-    free(line);
-    return line_size;
-   // while (j < i)
+	i = 0;
+	while (line[i] != NULL)
+		i++;
+	line_size = malloc((i + 1) * sizeof(int));
+	if (line_size == NULL)
+		return (0);
+
+	j = 0;
+	while (line[j] != NULL)
+	{
+		line_size[j] = ft_atoi(line[j]);
+		free(line[j]);
+		j++;
+	}
+	free(line);
+	return (line_size);
 }
-
-
-
-
-
-// a [x=0 y=0 z=0]
-// j [x=3 y=2 z=10] 
-
-// condicao de parada = tamanho da linha (x)
-// malloc = linha x col

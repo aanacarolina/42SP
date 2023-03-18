@@ -12,47 +12,47 @@
 
 #include "fdf.h"
 
-void bresenham_line(int x0, int y0, int x_n, int y_n, int color, t_data *minilib)
+void bresenham_line(t_position *coord, t_data *mlx)
 {
 
-	int delta_x;
-	int delta_y;
-	int sx;
-	int sy;
-	int decision;
-	int dec_2;
+	int	delta_x;
+	int	delta_y;
+	int	sx;
+	int	sy;
+	int	decision;
+	int	dec_2;
 
-	delta_x = abs(x_n - x0);// posição atual MENOS posição anterior - distancias
-	delta_y = abs(y_n - y0);// posição atual MENOS posição anterior - distancias
-	sx = x0 < x_n ? 1 : -1;
-    sy = y0 < y_n ? 1 : -1;
-    decision = delta_x - delta_y;// ponto de decisao qual a melhor próxima linha a seguir
+	delta_x = abs(coord->x_end - coord->x_start); // posição atual MENOS posição anterior - distancias
+	delta_y = abs(coord->y_end - coord->y_start); // posição atual MENOS posição anterior - distancias
+	sx = coord->x_start < coord->x_end ? 1 : -1;
+	sy = coord->y_start < coord->y_end ? 1 : -1;
+	decision = delta_x - delta_y;
 
-	
-	while (x0 != x_n || y0 != y_n)
-    {
-        mlx_pixel_put(minilib->mlx_ptr, minilib->win_ptr, x0, y0, color);
-        dec_2 = 2 * decision;
-        if (dec_2 > -delta_y)
-        {
-            decision = decision - delta_y;
-            x0 = x0 + sx;
-        }
-        if (dec_2 < delta_x)
-        {
-            decision = decision + delta_x;
-            y0 = y0 + sy;
-        }
-    }
+	while (coord->x_start != coord->x_end || coord->y_start != coord->y_end)
+	{
+		ft_pixel_put(mlx->mlx_ptr, mlx->win_ptr, coord->x_start, coord->color);
+		dec_2 = 2 * decision;
+		if (dec_2 > -delta_y)
+		{
+			decision = decision - delta_y;
+			x0 = x0 + sx;
+		}
+		if (dec_2 < delta_x)
+		{
+			decision = decision + delta_x;
+			y0 = y0 + sy;
+		}
+	}
 
-    mlx_pixel_put(minilib->mlx_ptr, minilib->win_ptr, x_n, y_n, color);
+	ft_pixel_put(mlx->mlx_ptr, mlx->win_ptr, coord->x_start, coord->color);
 }
 
-void init_and_new_win(t_data *minilib)
+void init_and_new_win(t_data *mlx)
 {
 
-	minilib->win_width = 960;
-	minilib->win_height = 640;
-	minilib->mlx_ptr = mlx_init(); // incializa a conexão entre o software e o monitor
-	minilib->win_ptr = mlx_new_window(minilib->mlx_ptr, minilib->win_width, minilib->win_height, "fdf_42"); // gerenciador de janela
+	mlx->win_width = 960;
+	mlx->win_height = 640;
+	mlx->mlx_ptr = mlx_init();
+	mlx->win_ptr = mlx_new_window(mlx->mlx_ptr, \
+									mlx->w_width, mlx->w_height, "fdf");
 }
