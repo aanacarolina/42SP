@@ -56,6 +56,6 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 static size_t	ft_countword(char const *s, char c);
 char			**ft_split(char const *s, char c);
 int				ft_atoi(const char *nptr);
-int 			*parse_line (char *map_line);
+int 			*parse_line (char *map_line, int *int_line_size);
 
 #endif

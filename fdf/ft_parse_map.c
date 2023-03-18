@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:53:43 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/17 23:20:37 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/18 19:37:30 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,13 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-int	*parse_line(char *map_line)
+int	*parse_line(char *map_line, int *int_line_size)
 {
 	char	**str_line;
+    int     j;
 	int		i;
-	int		j;
 	int		*int_line;
+    
 
 	str_line = ft_split(map_line, ' ');
 	free(map_line);
@@ -92,6 +93,7 @@ int	*parse_line(char *map_line)
 		free(str_line[j]);
 		j++;
 	}
+    int_line_size[0] = j;
 	free(str_line);
 	return (int_line);
 }
