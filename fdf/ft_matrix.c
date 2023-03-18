@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:53:47 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/18 19:53:19 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/18 20:06:22 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,21 @@ void	matrix(int fd)
 	int		j;
 	int		*line;
 	char	**new_matrix[0][0];
-	int		int_line_size; 
+	int		int_line_size; //tamanho da linha, que tbm é = colunas
 
-	line = parse_line(get_next_line(fd), &int_line_size); 
+	line = parse_line(get_next_line(fd), &int_line_size); //cada uma das linhas (o segundo ponteiro)
 
 	i = 0;
 	while (i < int_line_size)
-	{
-		
-	}
-	
-
-    
-    i = 0;
-	j = 0;
-	while (i < line)
 	{
 		new_matrix[i][j] += line[j];
 		j++;
 	}
 	
-
   return (new_matrix)
 }
 
+/*
 while (x < xlen)
     ...
     while (y < ylen)
@@ -103,3 +94,5 @@ line_size[768, ]
 char 1 letra um bit / int 1 numero 8 bits 
 [768, 0, 145]
 768
+
+*/

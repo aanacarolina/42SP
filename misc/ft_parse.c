@@ -4,8 +4,7 @@
 
 void papel_higienico_transformador (int *bunda)
 {
-	int j = 5548;
-	bunda[0]=j;
+	bunda[0];
 	printf("%i CADE A BUNDA:\n", *bunda);
 	(void)bunda;
 }
