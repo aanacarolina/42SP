@@ -12,7 +12,7 @@ void papel_higienico_transformador (int *bunda)
 int main (void)
 {
 	int i = 0;
-	papel_higienico_transformador(&i);
+	papel_higienico_transformador(&i); //deref 
 	printf("Bunda Size: %i\n", i);
 	int matriz_inteiros[5] = {0, 0, 10, 10, 0};
     size_t matrix_size = sizeof(matriz_inteiros) / sizeof(matriz_inteiros[0]);
@@ -28,4 +28,5 @@ int main (void)
 	
 
 }
+
 

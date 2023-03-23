@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:54:13 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/08 19:54:14 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/22 21:37:28 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,5 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = read_line(keep);
 	keep = extra_letters(keep);
-	return (line);
+	return (line); //[*"0 0 0 0 0 0 0"]
 }
