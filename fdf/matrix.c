@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 23:43:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/24 00:04:07 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/24 00:27:29 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,33 +32,16 @@ int line_count(int fd) // funcao para retornar tamanho linha /
 }
 
 
-int col_count(int fd, int *int_col_size) // funcao para retornar qtdade colunas  = quantidade elementos na linha /
-{
-
-	char *col_size;
-
-	col_size = parse_line(get_next_line(fd), &col_size);
-
-	while (col_size)
-	{
-		i++;
-		free(col_size);
-		col_size = get_next_line(fd);
-		if(col_size)
-		free(line_count);
-	}
-	return (i); // sai = 3 (numero)
-}
-
-
 int matrix(int fd, int *int_col_size)
 {
-	int line;
-	int col;
+	int ref_col;
+	int line_size;
+	int col_size;
 	int **matrix;
 	
-	line = line_count(fd);
-	col = int_col_size[0];
-
-	return (matrix[line][col]);
+	line_size = line_count(fd);
+	ref_col = parse_line(get_next_line(fd), int_col_size);
+	col_size = &int_col_size;
+	
+	return (matrix[line_size][col_size]); //ex: matriz42[11][19]
 }
