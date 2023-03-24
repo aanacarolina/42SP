@@ -35,6 +35,7 @@ fclean: clean
 
 
 # = variavel, atribuição
-#nome regra: dependencia - opcional
-# o que vai ser executado qdo e se a dependencia for encontrar
-#PHONY simular alguma coisa -TODO - ver o que é
+# Target = nome regra : dependencia - opcional
+# Recipe = o que vai ser executado qdo e se a dependencia for encontrar
+#PHONY ignora arquivos de mesmo nome na pasta, priorizando a regra do make
+#-o output

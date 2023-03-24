@@ -6,13 +6,11 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:53:43 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/22 21:09:21 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/23 23:42:24 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-
 
 char	**ft_split(char const *s, char c)
 {
@@ -68,7 +66,7 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-int	*parse_line(char *map_line, int *int_line_size)
+int	*parse_line(char *map_line, int *int_col_size)
 {
 	char	**str_line;
     int     j;
@@ -93,7 +91,7 @@ int	*parse_line(char *map_line, int *int_line_size)
 		free(str_line[j]);
 		j++;
 	}
-    int_line_size[0] = j;
+    int_col_size[0] = j;
 	free(str_line);
 	return (int_line);
 }
