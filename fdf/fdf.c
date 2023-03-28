@@ -24,8 +24,7 @@ void bresenham_line(t_position *coord, t_data *mlx)
 
 	delta_x = abs(coord->x_end - coord->x_start); // posição atual MENOS posição anterior - distancias
 	delta_y = abs(coord->y_end - coord->y_start); // posição atual MENOS posição anterior - distancias
-	sx = coord->x_start < coord->x_end ? 1 : -1;
-	sy = coord->y_start < coord->y_end ? 1 : -1;
+	
 	decision = delta_x - delta_y;
 
 	while (coord->x_start != coord->x_end || coord->y_start != coord->y_end)
