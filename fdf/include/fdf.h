@@ -6,13 +6,14 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:23:48 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/29 21:33:53 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/29 22:43:42 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
+#include <stddef.h>
 
 typedef struct s_point //guarda infos dos pontos
 {
@@ -26,15 +27,14 @@ typedef struct s_map //guarda infos dos mapas
 {
 	int		col_size;
 	int		row_size;
-	t_map	*points;
+	t_point	*points;
 	size_t	points_size;
 } t_map;
 
 typedef	struct s_fdf // estrutura mãe <3
 {
-		
 	t_map	map;
-} t_fdf;
+}	t_fdf;
 
 #endif
 

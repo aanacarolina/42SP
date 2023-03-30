@@ -9,9 +9,10 @@ LIBFT_DIR = $(LIBS_DIR)libft/
 MLX_DIR = $(LIBS_DIR)minilibx/
 
 SRCS =	./src/main.c\
-		/src/parse_map_utils.c\
+		./src/parse_map_utils.c\
+		./src/utils.c\
 		$(LIBS_DIR)gnl/get_next_line_utils.c\
-		$(LIBS_DIR)gnl/get_next_line.c\
+		$(LIBS_DIR)gnl/get_next_line.c
 
 INC =	./include/fdf.h
 
