@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:35:38 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/29 22:49:54 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/30 19:27:40 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
-
-
 
 static int	count_col(char **split)
 {
@@ -71,3 +69,4 @@ int	ft_counter(t_map *parse_map, char *file_name)
 	close(fdf_file);
 	return (0);
 }
+

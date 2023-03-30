@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:19:19 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/29 22:52:39 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/30 19:26:01 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ void	free_split(char **split)
 
 	count = 0;
 	while (split[count] != NULL)
-    {
+	{
 		free(split[count]);
-        count++;
-    }
+		count++;
+	}
 	free(split);
 }
+

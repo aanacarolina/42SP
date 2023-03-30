@@ -34,6 +34,8 @@ $(NAME) : $(OBJS) $(LIBS)
 #$(OBJS) : $(SRCS) 
 #	cc $(FLAGS) -c $(SRCS) 
 
+#valgrind --show-leak-kinds=all --leak-check=full .directory
+
 %.o : %.c 
 	cc $(FLAGS) -c $< -o $@  
 
