@@ -1,38 +1,54 @@
+#targets 
+
 NAME = fdf
 
-SRCS =	fdf_utils.c\
-		fdf.c\
-		ft_close.c\
-		ft_isometric.c\
-		ft_matrix.c\
-		ft_parse_map.c\
-		get_next_line_utils.c\
-		get_next_line.c\
-		main.c\
+LIBS_DIR = ./libs/
+
+LIBFT_DIR = $(LIBS_DIR)libft/
+
+MLX_DIR = $(LIBS_DIR)minilibx/
+
+SRCS =	./src/main.c\
+		/src/parse_map_utils.c\
+		$(LIBS_DIR)gnl/get_next_line_utils.c\
+		$(LIBS_DIR)gnl/get_next_line.c\
+
+INC =	./include/fdf.h
+
+LIBS =	$(LIBFT_DIR)libft.a
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
-FLAGS = -lmlx -lXext -lX11 -Wall -Wextra -Werror
-#CFLAGS=-I/opt/X11/include 
-#FLAGS =  -L. -lmlx -framework OpenGL -framework AppKit -Wall -Wextra -Werror
-#remove only needed for macos
+FLAGS_MLX = -lmlx -lXext -lX11 
+FLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+#recipes
 
-$(NAME): $(OBJS)
+all : $(NAME)
 
-	cc $(OBJS) $(FLAGS) -o $(NAME)	
+$(NAME) : $(OBJS) $(LIBS)
+	cc $(OBJS) $(FLAGS) $(LIBS) -o $(NAME)
+#	cc $(OBJS) $(MLX_DIR) $(FLAGS) -o $(NAME)
 
-re: fclean all
+#$(OBJS) : $(SRCS) 
+#	cc $(FLAGS) -c $(SRCS) 
 
-clean:
+%.o : %.c 
+	cc $(FLAGS) -c $< -o $@  
+
+clean :
 	rm -f $(OBJS)
 
-fclean: clean
-	rm -f $(NAME)
+fclean : clean
+	rm -f $(OBJS) $(NAME)
 
-.PHONY: clean fclean re all $(NAME)
+re : fclean all
 
+$(LIBS) :
+	$(MAKE) -C $(LIBFT_DIR)
+#$(MAKE) -C $(MLX_DIR)
+
+.PHONY : clean fclean re all $(NAME)
 
 # = variavel, atribuição
 # Target = nome regra : dependencia - opcional

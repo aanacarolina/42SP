@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:21:31 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/11/09 19:23:07 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:35:54 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,7 @@ int	ft_putchar(char c)
 	return (1);
 }
 
-int	ft_putstr(char *str)
-{
-	int	count;
 
-	count = 0;
-	if (!str)
-		return (ft_putstr("(null)"));
-	while (str[count] != '\0')
-	{
-		write(1, &str[count], 1);
-		count++;
-	}
-	return (count);
-}
 
 int	ft_putnbr(int n)
 {

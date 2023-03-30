@@ -6,17 +6,17 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 19:21:45 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/11/09 19:23:33 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:58:25 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hex_lower(unsigned long decimal, int i, int j)
+int ft_hex_lower(unsigned long decimal, int i, int j)
 {
-	unsigned long	result;
-	unsigned long	rest;
-	char			*hexa;
+	unsigned long result;
+	unsigned long rest;
+	char *hexa;
 
 	result = decimal;
 	if (decimal == 0)
@@ -40,11 +40,11 @@ int	ft_hex_lower(unsigned long decimal, int i, int j)
 	return (j);
 }
 
-int	ft_hex_upper(unsigned long decimal, int i, int j)
+int ft_hex_upper(unsigned long decimal, int i, int j)
 {
-	unsigned long	result;
-	unsigned long	rest;
-	char			*hexa;
+	unsigned long result;
+	unsigned long rest;
+	char *hexa;
 
 	result = decimal;
 	if (decimal == 0)
@@ -68,9 +68,9 @@ int	ft_hex_upper(unsigned long decimal, int i, int j)
 	return (j);
 }
 
-int	ft_pointer(unsigned long ptr)
+int ft_pointer(unsigned long ptr)
 {
-	int	result;
+	int result;
 
 	if (!ptr)
 		return (ft_putstr("(nil)"));
