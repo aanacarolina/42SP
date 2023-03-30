@@ -34,7 +34,7 @@ $(NAME) : $(OBJS) $(LIBS)
 #$(OBJS) : $(SRCS) 
 #	cc $(FLAGS) -c $(SRCS) 
 
-#valgrind --show-leak-kinds=all --leak-check=full .directory
+#valgrind --show-leak-kinds=all --leak-check=full ./fdf ./test_maps/42.fdf
 
 %.o : %.c 
 	cc $(FLAGS) -c $< -o $@  

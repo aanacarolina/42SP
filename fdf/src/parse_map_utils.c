@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:35:38 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/30 19:27:40 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/30 20:40:18 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,21 @@ static int	file_opener(char *file_name)
 	return (fdf_file);
 }
 
+void file_closer(int fd)
+{
+	ft_putstr_fd("Empty file. Bye!\n", 2);
+	close(fd);
+	exit(1);
+}
+
+void one_point_map()
+{
+	
+	ft_putstr_fd("This map has only one point, boring!\n", 2);
+	exit(1);
+}
+
+
 int	ft_counter(t_map *parse_map, char *file_name)
 {
 	char	*line;
@@ -52,13 +67,11 @@ int	ft_counter(t_map *parse_map, char *file_name)
 	fdf_file = file_opener(file_name);
 	line = get_next_line(fdf_file);
 	if (line == NULL)
-		return (1);
-	parse_map->row_size = 1;
+		file_closer(fdf_file);
 	cols = ft_split(line, ' ');
 	parse_map->col_size = count_col(cols);
 	free(line);
 	free_split(cols);
-
 	line = get_next_line(fdf_file);
 	while (line != NULL)
 	{
@@ -66,7 +79,10 @@ int	ft_counter(t_map *parse_map, char *file_name)
 		free(line);
 		line = get_next_line(fdf_file);
 	}
+	parse_map->points_size = parse_map->row_size * parse_map->col_size;
 	close(fdf_file);
+	if (parse_map->points_size < 2)
+		one_point_map();
 	return (0);
 }
 
