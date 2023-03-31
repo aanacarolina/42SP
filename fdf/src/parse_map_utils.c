@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:35:38 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/30 20:40:18 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:16:44 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,15 @@ static int	file_opener(char *file_name)
 	return (fdf_file);
 }
 
-void file_closer(int fd)
+void	file_closer(int fd)
 {
 	ft_putstr_fd("Empty file. Bye!\n", 2);
 	close(fd);
 	exit(1);
 }
 
-void one_point_map()
+void	one_point_map(void)
 {
-	
 	ft_putstr_fd("This map has only one point, boring!\n", 2);
 	exit(1);
 }
