@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:24:09 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/30 22:23:20 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/31 21:40:08 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "../include/fdf.h"
 #include <stddef.h>
 #include <fcntl.h>
+#include <stdio.h>
 
 static int	file_opener(t_fdf *fdf, char *file_name)
 {
@@ -29,6 +30,28 @@ static int	file_opener(t_fdf *fdf, char *file_name)
 		exit_special(fdf, NULL);
 	}
 	return (fdf_file);
+}
+
+static t_point	*get_point(t_map *map, int row_size, int count_r, int count_c)
+{
+	t_point	*point_tmp;
+
+	point_tmp = map->points + ((row_size * count_r) + count_c);
+	return (point_tmp);
+}
+
+
+static	void	get_z_and_color(char *column, t_point * tmp)
+{
+	char **z_and_color;
+
+	z_and_color = ft_split(column, ',');
+	tmp->z = ft_atoi(z_and_color[0]); 
+	if (z_and_color[1] != NULL)
+		tmp->color = atoi_hexa(z_and_color[1]);
+	else
+		tmp->color = 50;
+	free_split(z_and_color);
 }
 
 static	void	create_columns(t_fdf *fdf, int count_r, char **z_values)
@@ -55,7 +78,6 @@ void	create_map(t_fdf *fdf, char *file_name)
 	int		count_r;
 	char	*line;
 	char	**z_values;
-	t_point	*tmp;
 	int		fd;
 
 	fd = file_opener(fdf, file_name);
@@ -73,4 +95,5 @@ void	create_map(t_fdf *fdf, char *file_name)
 		free_split(z_values);
 		count_r++;
 	}
+
 }

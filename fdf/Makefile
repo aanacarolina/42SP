@@ -9,14 +9,17 @@ LIBFT_DIR = $(LIBS_DIR)libft/
 MLX_DIR = $(LIBS_DIR)minilibx/
 
 SRCS =	./src/main.c\
+		./src/create_map.c\
 		./src/parse_map_utils.c\
 		./src/utils.c\
+		./src/window.c\
 		$(LIBS_DIR)gnl/get_next_line_utils.c\
 		$(LIBS_DIR)gnl/get_next_line.c
 
 INC =	./include/fdf.h
 
-LIBS =	$(LIBFT_DIR)libft.a
+LIBS =	$(LIBFT_DIR)libft.a\
+		$(MLX_DIR)libmlx.a
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
@@ -27,9 +30,8 @@ FLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
-$(NAME) : $(OBJS) $(LIBS)
-	cc $(OBJS) $(FLAGS) $(LIBS) -o $(NAME)
-#	cc $(OBJS) $(MLX_DIR) $(FLAGS) -o $(NAME)
+$(NAME) : $(LIBS) $(OBJS)
+	cc $(OBJS) $(LIBS) $(FLAGS) $(FLAGS_MLX) -o $(NAME)
 
 #$(OBJS) : $(SRCS) 
 #	cc $(FLAGS) -c $(SRCS) 
@@ -48,8 +50,8 @@ fclean : clean
 re : fclean all
 
 $(LIBS) :
-	$(MAKE) -C $(LIBFT_DIR)
-#$(MAKE) -C $(MLX_DIR)
+	make -C $(LIBFT_DIR)
+	make -C $(MLX_DIR)
 
 .PHONY : clean fclean re all $(NAME)
 

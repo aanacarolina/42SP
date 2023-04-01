@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:23:48 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/30 22:21:02 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/03/31 21:55:11 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ typedef struct s_minilibx //minilibx
 	int		w_height;
 	void	*img;
 	char	*address;
+	int		bits_per_pixel;
+	int 	line_length;
+	int		endian;
 }	t_minilibx;
 
 typedef struct s_fdf // estrutura mãe <3
