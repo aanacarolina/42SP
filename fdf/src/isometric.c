@@ -20,9 +20,9 @@ void	x_rotation(t_map *points, int size, double ang)
 	nsin = -sin(rad);
 	while (size--)
 	{
-		tmp_y = points[size].coor[Y];
-		points[size].coor[Y] = pcos * tmp_y + nsin * points[size].coor[Z];
-		points[size].coor[Z] = psin * tmp_y + pcos * points[size].coor[Z];
+		tmp_y = points[size].y
+		points[size].y = pcos * tmp_y + nsin * points[size].z; 
+		points[size].z = psin * tmp_y + pcos * points[size].z;
 	}
 }
 
