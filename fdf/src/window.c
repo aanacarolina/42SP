@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 19:25:34 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/31 22:57:17 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 00:32:56 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,4 @@ void	init_and_new_win(t_fdf *fdf)
 	mlx_hook(fdf->mlx.win_ptr, 2, (1L << 0), ft_close_esc, fdf);
 	mlx_hook(fdf->mlx.win_ptr, 17, (0), ft_close_x, fdf);
 	mlx_hook(fdf->mlx.win_ptr, 12, (1L << 15), ft_expose, fdf);
-	mlx_loop(fdf->mlx.mlx_ptr);
 }	

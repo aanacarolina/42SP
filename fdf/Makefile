@@ -9,7 +9,10 @@ LIBFT_DIR = $(LIBS_DIR)libft/
 MLX_DIR = $(LIBS_DIR)minilibx/
 
 SRCS =	./src/main.c\
+		./src/bresenham.c\
 		./src/create_map.c\
+		./src/create_draw.c\
+		./src/isometric.c\
 		./src/parse_map_utils.c\
 		./src/utils.c\
 		./src/window.c\
@@ -24,7 +27,8 @@ LIBS =	$(LIBFT_DIR)libft.a\
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
 FLAGS_MLX = -lmlx -lXext -lX11 
-FLAGS = -Wall -Wextra -Werror
+#FLAGS = -Wall -Wextra -Werror -lm
+FLAGS = -lm
 
 #recipes
 

@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   draw_utils.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 22:20:34 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/01 19:53:50 by anacaro3         ###   ########.fr       */
+/*   Created: 2023/04/01 21:45:42 by anacaro3          #+#    #+#             */
+/*   Updated: 2023/04/02 00:29:40 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef DRAW_UTILS_H
+# define DRAW_UTILS_H
 
 # include "fdf.h"
 
-void	free_split(char **split);
-int		atoi_hexa(char *hexa);
-void	fill_fdf_struct(t_fdf *fdf);
-void	exit_special(t_fdf *fdf, char *msg);
+int		draw_pixel(t_fdf *fdf, double x, double y, int color);
+void	draw_col(t_fdf *fdf);
+void	draw_row(t_fdf *fdf);
+
+
 
 #endif

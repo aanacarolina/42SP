@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   isometric.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/01 19:47:31 by anacaro3          #+#    #+#             */
+/*   Updated: 2023/04/01 20:05:11 by anacaro3         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <math.h>
-#include src/matrix
+#include "../include/fdf.h"
 
 /*
          [1     0      0]
    X     [0  cos0  -sin0]
          [0  sin0   cos0]
 */
-void	x_rotation(t_map *points, int size, double ang)
+void	x_rotation(t_point *point, int size, double ang)
 {
 	double	tmp_y;
 	double	pcos;
@@ -20,9 +32,9 @@ void	x_rotation(t_map *points, int size, double ang)
 	nsin = -sin(rad);
 	while (size--)
 	{
-		tmp_y = points[size].y
-		points[size].y = pcos * tmp_y + nsin * points[size].z; 
-		points[size].z = psin * tmp_y + pcos * points[size].z;
+		tmp_y = point[size].y;
+		point[size].y = pcos * tmp_y + nsin * point[size].z;
+		point[size].z = psin * tmp_y + pcos * point[size].z;
 	}
 }
 
@@ -31,7 +43,7 @@ void	x_rotation(t_map *points, int size, double ang)
    Y     [0     1      0]
          [-sin0 0   cos0]
 */
-void	y_rotation(t_point *points, int points_size, double ang)
+void	y_rotation(t_point *point, int size, double ang)
 {
 	double	tmp_x;
 	double	pcos;
@@ -45,9 +57,9 @@ void	y_rotation(t_point *points, int points_size, double ang)
 	nsin = -sin(rad);
 	while (size--)
 	{
-		tmp_x = points[size].coor[X];
-		points[size].coor[X] = pcos * tmp_x + psin * points[size].coor[Z];
-		points[size].coor[Z] = nsin * tmp_x + pcos * points[size].coor[Z];
+		tmp_x = point[size].x;
+		point[size].x = pcos * tmp_x + psin * point[size].z;
+		point[size].x = nsin * tmp_x + pcos * point[size].z;
 	}
 }
 
@@ -56,7 +68,7 @@ void	y_rotation(t_point *points, int points_size, double ang)
    Z     [sin0   cos0  0]
          [0     0      1]
 */
-void	z_rotation(t_point *points, int size, double ang)
+void	z_rotation(t_point *point, int size, double ang)
 {
 	double	tmp_x;
 	double	pcos;
@@ -70,9 +82,9 @@ void	z_rotation(t_point *points, int size, double ang)
 	nsin = -sin(rad);
 	while (size--)
 	{
-		tmp_x = points[size].coor[X];
-		points[size].coor[X] = pcos * tmp_x + nsin * points[size].coor[Y];
-		points[size].coor[Y] = psin * tmp_x + pcos * points[size].coor[Y];
+		tmp_x = point[size].x;
+		point[size].x = pcos * tmp_x + nsin * point[size].x;
+		point[size].x = psin * tmp_x + pcos * point[size].y;
 	}
 }
 
@@ -82,3 +94,29 @@ void	z_rotation(t_point *points, int size, double ang)
          [0   0   Sz  0]
          [0   0   0   1]
 */
+
+void	scale(t_point *point, int size, int scale)
+{
+	while (size--)
+	{
+		point[size].x *= scale;
+		point[size].y *= scale;
+		point[size].z *= scale;
+	}
+}
+
+/*
+         [1   0   0  Tx]
+         [0   1   0  Ty]
+         [0   0   1  Tz]
+         [0   0   0   1]
+*/
+
+void	translation(t_point *point, int size, const t_point *new_coor)
+{
+	while (size--)
+	{
+		point[size].x = new_coor->x + point[size].x;
+		point[size].y = new_coor->y + point[size].y;
+	}
+}

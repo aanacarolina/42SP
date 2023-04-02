@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 19:51:18 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/31 22:29:22 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 00:33:49 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "../include/create_map.h"
 #include "../include/window.h"
 #include "../libs/libft/libft.h"
+#include "../libs/minilibx/mlx.h"
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -53,8 +54,8 @@ int	main(int argc, char **argv)
 	init_and_new_win(&fdf);
 
 
-
-
+	mlx_loop(fdf.mlx.mlx_ptr);
 	exit_special(&fdf, NULL);
+
 	return (0);
 }

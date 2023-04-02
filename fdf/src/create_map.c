@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:24:09 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/31 21:40:08 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 00:34:17 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static t_point	*get_point(t_map *map, int row_size, int count_r, int count_c)
 	point_tmp = map->points + ((row_size * count_r) + count_c);
 	return (point_tmp);
 }
-
 
 static	void	get_z_and_color(char *column, t_point * tmp)
 {

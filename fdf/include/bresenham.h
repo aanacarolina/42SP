@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   bresenham.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 22:20:34 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/01 19:53:50 by anacaro3         ###   ########.fr       */
+/*   Created: 2023/04/01 20:33:29 by anacaro3          #+#    #+#             */
+/*   Updated: 2023/04/01 20:51:03 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef BRESENHAM_H
+# define BRESENHAM_H
 
-# include "fdf.h"
+#define FALSE 0
+#define TRUE 1
 
-void	free_split(char **split);
-int		atoi_hexa(char *hexa);
-void	fill_fdf_struct(t_fdf *fdf);
-void	exit_special(t_fdf *fdf, char *msg);
+typedef struct s_bres
+{
+	int	deltax;
+	int	deltay;
+	int	signalx;
+	int	signaly;
+	int	interchange;
+	int	error;
+}	t_bres;
 
 #endif

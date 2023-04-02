@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:23:48 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/31 21:55:11 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 00:35:15 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_map //guarda infos dos mapas
 	int		row_size;
 	t_point	*points;
 	size_t	points_size;
+	double	scale;
 }	t_map;
 
 typedef struct s_minilibx //minilibx
@@ -42,7 +43,7 @@ typedef struct s_minilibx //minilibx
 	void	*img;
 	char	*address;
 	int		bits_per_pixel;
-	int 	line_length;
+	int		line_length;
 	int		endian;
 }	t_minilibx;
 
