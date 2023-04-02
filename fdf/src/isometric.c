@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 19:47:31 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/01 20:05:11 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 00:44:07 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,11 +112,11 @@ void	scale(t_point *point, int size, int scale)
          [0   0   0   1]
 */
 
-void	translation(t_point *point, int size, const t_point *new_coor)
+void	translation(t_point *point, int size, int x, int y)
 {
 	while (size--)
 	{
-		point[size].x = new_coor->x + point[size].x;
-		point[size].y = new_coor->y + point[size].y;
+		point[size].x = x + point[size].x;
+		point[size].y = y + point[size].y;
 	}
 }

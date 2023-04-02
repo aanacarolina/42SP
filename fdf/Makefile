@@ -11,7 +11,7 @@ MLX_DIR = $(LIBS_DIR)minilibx/
 SRCS =	./src/main.c\
 		./src/bresenham.c\
 		./src/create_map.c\
-		./src/create_draw.c\
+		./src/draw_utils.c\
 		./src/isometric.c\
 		./src/parse_map_utils.c\
 		./src/utils.c\

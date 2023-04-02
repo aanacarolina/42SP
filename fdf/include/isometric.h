@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_utils.h                                       :+:      :+:    :+:   */
+/*   isometric.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/01 21:45:42 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 00:44:38 by anacaro3         ###   ########.fr       */
+/*   Created: 2023/04/02 00:40:25 by anacaro3          #+#    #+#             */
+/*   Updated: 2023/04/02 00:43:50 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRAW_UTILS_H
-# define DRAW_UTILS_H
+#ifndef ISOMETRIC_H
+# define ISOMETRIC_H
 
-# include "fdf.h"
+void	x_rotation(t_point *point, int size, double ang);
+void	y_rotation(t_point *point, int size, double ang);
+void	z_rotation(t_point *point, int size, double ang);
+void	scale(t_point *point, int size, int scale);
+void	translation(t_point *point, int size, int x, int y);
 
-int		draw_pixel(t_fdf *fdf, double x, double y, int color);
-void	draw_col(t_fdf *fdf);
-void	draw_row(t_fdf *fdf);
-void	draw_map(t_fdf *fdf, int create);
 
 #endif

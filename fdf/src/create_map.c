@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:24:09 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 00:34:17 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 00:59:01 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static	void	get_z_and_color(char *column, t_point * tmp)
 	if (z_and_color[1] != NULL)
 		tmp->color = atoi_hexa(z_and_color[1]);
 	else
-		tmp->color = 50;
+		tmp->color = 0xffffffff;
 	free_split(z_and_color);
 }
 
