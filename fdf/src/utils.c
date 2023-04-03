@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:19:19 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 22:20:49 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 23:20:37 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,22 @@ void	exit_special(t_fdf *fdf, char *msg)
 		free(fdf->mlx.mlx_ptr);
 	}
 	exit(1);
+}
+
+int	scale_factor(t_fdf *fdf)
+{
+	int	bigger_point;
+	int	smaller_win;
+	int	factor;
+
+	bigger_point = fdf->map.row_size;
+	smaller_win = fdf->mlx.w_width;
+	if (fdf->map.col_size > fdf->map.row_size)
+		bigger_point = fdf->map.col_size;
+	if (fdf->mlx.w_height < fdf->mlx.w_width)
+		smaller_win = fdf->mlx.w_height;
+	factor = (smaller_win - 20) / bigger_point;
+	if (factor < 1)
+		factor = 1;
+	return (factor);
 }

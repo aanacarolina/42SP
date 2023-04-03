@@ -6,13 +6,14 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 20:10:33 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 22:51:13 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 23:21:46 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fdf.h"
 #include "../include/isometric.h"
 #include "../include/bresenham.h"
+#include "../include/utils.h"
 #include "../libs/minilibx/mlx.h"
 
 static void	put_pixel(char *address, int color, int endian)
@@ -90,12 +91,15 @@ void print_all_points(t_fdf *fdf)
 
 void	draw_map(t_fdf *fdf, int create)
 {
+	int	scale_fct;
+
+	scale_fct = scale_factor(fdf);
 	if (create)
 	{
 		x_rotation(fdf->map.points, fdf->map.points_size, 30);
 		y_rotation(fdf->map.points, fdf->map.points_size, -30);
 		z_rotation(fdf->map.points, fdf->map.points_size, 35);
-		scale(fdf->map.points, fdf->map.points_size, 19);
+		scale(fdf->map.points, fdf->map.points_size, scale_fct);
 		translation(fdf->map.points, fdf->map.points_size, WIDTH / 2, HEIGHT / 2);
 		draw_col(fdf);
 		draw_row(fdf);
