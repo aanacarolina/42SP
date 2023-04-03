@@ -6,14 +6,14 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:23:48 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 00:35:15 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 21:39:15 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
-# define WIDTH 1280
-# define HEIGHT 720
+# define WIDTH 1200
+# define HEIGHT 600
 
 # include <stddef.h>
 
@@ -54,5 +54,3 @@ typedef struct s_fdf // estrutura mãe <3
 }	t_fdf;
 
 #endif
-
-

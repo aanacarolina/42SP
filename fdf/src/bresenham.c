@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 20:54:20 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 02:09:25 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 21:37:54 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "../include/fdf.h"
 #include "../include/draw_utils.h"
 
-int ft_sign(int x)
+int	ft_sign(int x)
 {
 	if (x < 0)
 		return (-1);
@@ -23,36 +23,33 @@ int ft_sign(int x)
 		return (1);
 }
 
-void start_bres(t_bres *bres, t_point start, t_point end)
+void	start_bres(t_bres *bres, t_point start, t_point end)
 {
-	int tmp;
+	int	tmp;
 
-	bres->deltax = fabs((end.x - start.x)); // descarta sinal
-	bres->deltay = fabs((end.y - start.y));
-	bres->signalx = ft_sign((end.x - start.x)); // subtração do ponto INTERNO x final pelo x inicial - se > 0 signalx = 1 e se < signalx = -1
-	bres->signaly = ft_sign((end.y - start.y));
-
-	bres->interchange = FALSE; // flag para ver o maior valor e ai vai desenhar  a partir desse ponto, mantendo o maior constante
-
+	bres->deltax = fabs(end.x - start.x);
+	bres->deltay = fabs(end.y - start.y);
+	bres->signalx = ft_sign(end.x - start.x);
+	bres->signaly = ft_sign(end.y - start.y);
+	bres->interchange = FALSE;
 	if (bres->deltay > bres->deltax)
 	{
 		tmp = bres->deltax;
 		bres->deltax = bres->deltay;
 		bres->deltay = tmp;
-		bres->interchange = TRUE; // troca aqui a flag
+		bres->interchange = TRUE;
 	}
-	bres->error = 2 * bres->deltay - bres->deltax; // diferença para entender se está no meio e decidir se o pixel vai desenhado no pixel de cima ou de baixo
+	bres->error = 2 * bres->deltay - bres->deltax;
 }
 
-void create_line(t_fdf *fdf, t_bres *bres, t_point start, t_point end)
+void	create_line(t_fdf *fdf, t_bres *bres, t_point start, t_point end)
 {
-	int x = start.x;
-	int y = start.y;
-	int i;
+	int	x = start.x;
+	int	y = start.y;
+	int	i;
 
 	i = 0;
-	printf("----------\n");
-	while (i < bres->deltax) // começa a ligar o ponto
+	while (i < bres->deltax)
 	{
 		draw_pixel(fdf, x, y, start.color);
 		while (bres->error >= 0)
@@ -72,18 +69,13 @@ void create_line(t_fdf *fdf, t_bres *bres, t_point start, t_point end)
 	}
 }
 
-void bresenham(t_fdf *fdf, t_point start, t_point end)
+void	bresenham(t_fdf *fdf, t_point start, t_point end)
 {
-	t_bres bres;
+	t_bres	bres;
 
 	start_bres(&bres, start, end);
 	if (bres.deltax == 0 && bres.deltay == 0)
-		{draw_pixel(fdf, start.x, start.y, start.color);
-				printf("\n draw pixel");}
-
+		draw_pixel(fdf, start.x, start.y, start.color);
 	else
-	{
 		create_line(fdf, &bres, start, end);
-		printf("\n create line");
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 19:47:31 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 00:44:07 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 22:36:25 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	y_rotation(t_point *point, int size, double ang)
 	{
 		tmp_x = point[size].x;
 		point[size].x = pcos * tmp_x + psin * point[size].z;
-		point[size].x = nsin * tmp_x + pcos * point[size].z;
+		point[size].z = nsin * tmp_x + pcos * point[size].z;
 	}
 }
 
@@ -83,8 +83,8 @@ void	z_rotation(t_point *point, int size, double ang)
 	while (size--)
 	{
 		tmp_x = point[size].x;
-		point[size].x = pcos * tmp_x + nsin * point[size].x;
-		point[size].x = psin * tmp_x + pcos * point[size].y;
+		point[size].x = pcos * tmp_x + nsin * point[size].y;
+		point[size].y = psin * tmp_x + pcos * point[size].y;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:35:38 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/03/30 21:16:44 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 21:46:27 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	one_point_map(void)
 	exit(1);
 }
 
-
 int	ft_counter(t_map *parse_map, char *file_name)
 {
 	char	*line;
@@ -84,4 +83,3 @@ int	ft_counter(t_map *parse_map, char *file_name)
 		one_point_map();
 	return (0);
 }
-
