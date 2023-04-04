@@ -27,8 +27,7 @@ LIBS =	$(LIBFT_DIR)libft.a\
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
 FLAGS_MLX = -lmlx -lXext -lX11 
-#FLAGS = -Wall -Wextra -Werror -lm
-FLAGS = -lm
+FLAGS = -Wall -Wextra -Werror -lm
 
 #recipes
 

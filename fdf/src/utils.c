@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:19:19 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 23:20:37 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 23:40:00 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,32 +31,22 @@ void	free_split(char **split)
 
 int	atoi_hexa(char *hex)
 {
-	long 	decimal;
+	long	decimal;
 	long	base;
 	int		i;
-	int		length;
 
 	decimal = 0;
 	base = 1;
-	length = ft_strlen(hex);
-	i =  length--;
+	i = ft_strlen(hex) - 1;
 	while (i >= 2)
 	{
 		if (hex[i] >= '0' && hex[i] <= '9')
-		{
 			decimal += (hex[i] - 48) * base;
-			base *= 16;
-		}
 		else if (hex[i] >= 'A' && hex[i] <= 'F')
-		{
 			decimal += (hex[i] - 55) * base;
-			base *= 16;
-		}
 		else if (hex[i] >= 'a' && hex[i] <= 'f')
-		{
 			decimal += (hex[i] - 87) * base;
-			base *= 16;
-		}
+		base *= 16;
 		i--;
 	}
 	return (decimal);

@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 20:10:33 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 23:21:46 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 23:43:31 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	draw_pixel(t_fdf *fdf, double x1, double y1, int color)
 
 void	draw_col(t_fdf *fdf)
 {
-	int	count;
+	unsigned int	count;
 
 	count = 0;
 	while (count < (fdf->map.points_size - fdf->map.col_size))
@@ -66,12 +66,12 @@ void	draw_col(t_fdf *fdf)
 
 void	draw_row(t_fdf *fdf)
 {
-	int	count;
+	unsigned int	count;
 
 	count = 0;
 	while (count < (fdf->map.points_size - 1))
 	{
-		if (count % fdf->map.col_size != (fdf->map.col_size - 1))
+		if ((int)count % fdf->map.col_size != (fdf->map.col_size - 1))
 			bresenham(fdf, fdf->map.points[count], fdf->map.points[count + 1]);
 		count++;
 	}
@@ -103,27 +103,6 @@ void	draw_map(t_fdf *fdf, int create)
 		translation(fdf->map.points, fdf->map.points_size, WIDTH / 2, HEIGHT / 2);
 		draw_col(fdf);
 		draw_row(fdf);
-
-/*
-	t_point *tmp;
-
-	t_map *map = &fdf->map;
-
-	for (int r = 0; r < map->row_size; r++)
-	{
-		for (int c = 0; c < map->col_size; c++)
-		{
-			tmp = map->points + ((map->row_size * r) + c);
-				printf("(% .2lf, % .2lf, % .2lf)", tmp->x, tmp->y, tmp->z);
-			if (c == (map->col_size - 1))
-				printf("\n");
-		}
-	}
-*/
-	//t_point a0; a0.x = 500.0; a0.y=250.0; a0.z=0.0
-	//t_point a1; a1.x = 550.0; a1.y=250.0; a1.z=0.0
-	//t_point a0; a0.x = 500.0; a0.y=250.0; a0.z=0.0
-
 	}
 	mlx_put_image_to_window(fdf->mlx.mlx_ptr, fdf->mlx.win_ptr, fdf->mlx.img, 0, 0);
 }

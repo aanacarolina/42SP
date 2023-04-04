@@ -6,11 +6,12 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 19:25:34 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 21:52:09 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 23:26:54 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fdf.h"
+#include "../include/draw_utils.h"
 #include "../include/utils.h"
 #include "../libs/minilibx/mlx.h"
 
@@ -29,7 +30,7 @@ int	ft_close_x(t_fdf *fdf)
 
 int	ft_expose(t_fdf *fdf)
 {
-	fdf = NULL;
+	draw_map(fdf, 0);
 	return (0);
 }
 

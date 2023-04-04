@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 20:54:20 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 21:37:54 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/02 23:41:39 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,14 @@ void	start_bres(t_bres *bres, t_point start, t_point end)
 	bres->error = 2 * bres->deltay - bres->deltax;
 }
 
-void	create_line(t_fdf *fdf, t_bres *bres, t_point start, t_point end)
+void	create_line(t_fdf *fdf, t_bres *bres, t_point start)
 {
-	int	x = start.x;
-	int	y = start.y;
+	int	x;
+	int	y;
 	int	i;
 
+	x = start.x;
+	y = start.y;
 	i = 0;
 	while (i < bres->deltax)
 	{
@@ -77,5 +79,5 @@ void	bresenham(t_fdf *fdf, t_point start, t_point end)
 	if (bres.deltax == 0 && bres.deltay == 0)
 		draw_pixel(fdf, start.x, start.y, start.color);
 	else
-		create_line(fdf, &bres, start, end);
+		create_line(fdf, &bres, start);
 }

@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:24:09 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 22:05:46 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/04 19:43:59 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ static	void	create_columns(t_fdf *fdf, int count_r, char **z_values)
 		get_z_and_color(z_values[count_c], tmp);
 		x++;
 		count_c++;
-		printf("%p, % .2lf, % .2lf, % .2lf |", tmp, tmp->x, tmp->y, tmp->z);
 	}
 }
 
@@ -95,20 +94,5 @@ void	create_map(t_fdf *fdf, char *file_name)
 		free(line);
 		free_split(z_values);
 		count_r++;
-		printf("\n");
 	}
-	printf("\n\n\n\n");
-
-	t_map map = fdf->map;
-	t_point tmp;
-
-	for(int countt=0;  countt < map.points_size; countt++)
-	{
-		tmp = map.points[countt];
-		printf("(%p, % .2lf, % .2lf, % .2lf)", &map.points[countt], tmp.x, tmp.y, tmp.z);
-		if(countt % map.col_size == map.col_size-1)
-			printf("\n");
-	}
-
-
 }
