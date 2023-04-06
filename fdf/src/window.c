@@ -6,14 +6,14 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 19:25:34 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 23:26:54 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/06 20:09:14 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fdf.h"
 #include "../include/draw_utils.h"
 #include "../include/utils.h"
-#include "../libs/minilibx/mlx.h"
+#include <mlx.h>
 
 int	ft_close_esc(int keysym, t_fdf *fdf)
 {

@@ -6,14 +6,14 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:23:48 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 21:39:15 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/04 22:46:18 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 # define WIDTH 1200
-# define HEIGHT 600
+# define HEIGHT 800
 
 # include <stddef.h>
 

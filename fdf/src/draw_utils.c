@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 20:10:33 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 23:43:31 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/06 20:08:46 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../include/isometric.h"
 #include "../include/bresenham.h"
 #include "../include/utils.h"
-#include "../libs/minilibx/mlx.h"
+#include <mlx.h>
 
 static void	put_pixel(char *address, int color, int endian)
 {
@@ -59,7 +59,8 @@ void	draw_col(t_fdf *fdf)
 	count = 0;
 	while (count < (fdf->map.points_size - fdf->map.col_size))
 	{
-		bresenham(fdf, fdf->map.points[count], fdf->map.points[count + fdf->map.col_size]);
+		bresenham(fdf, fdf->map.points[count], \
+				fdf->map.points[count + fdf->map.col_size]);
 		count++;
 	}
 }
@@ -77,18 +78,6 @@ void	draw_row(t_fdf *fdf)
 	}
 }
 
-/*
-void print_all_points(t_fdf *fdf)
-{
-	int i = 0;
-	
-	while (i < 9)
-	{
-		printf("X: [%f]\t Y:[%f]\n", fdf->map.points[i].x, fdf->map.points[i].y);
-		i++;
-	}
-}*/
-
 void	draw_map(t_fdf *fdf, int create)
 {
 	int	scale_fct;
@@ -100,10 +89,11 @@ void	draw_map(t_fdf *fdf, int create)
 		y_rotation(fdf->map.points, fdf->map.points_size, -30);
 		z_rotation(fdf->map.points, fdf->map.points_size, 35);
 		scale(fdf->map.points, fdf->map.points_size, scale_fct);
-		translation(fdf->map.points, fdf->map.points_size, WIDTH / 2, HEIGHT / 2);
+		translation(fdf->map.points, fdf->map.points_size, \
+					WIDTH / 2, HEIGHT / 2);
 		draw_col(fdf);
 		draw_row(fdf);
 	}
-	mlx_put_image_to_window(fdf->mlx.mlx_ptr, fdf->mlx.win_ptr, fdf->mlx.img, 0, 0);
+	mlx_put_image_to_window(fdf->mlx.mlx_ptr, fdf->mlx.win_ptr, \
+							fdf->mlx.img, 0, 0);
 }
-

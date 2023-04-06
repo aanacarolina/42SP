@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 21:24:09 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/04 19:43:59 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/06 20:03:03 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,6 @@ void	create_map(t_fdf *fdf, char *file_name)
 		free_split(z_values);
 		count_r++;
 	}
+	line = get_next_line(fd);
+	free(line);
 }

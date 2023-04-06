@@ -6,14 +6,14 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 22:19:19 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/02 23:40:00 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/06 20:09:03 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/utils.h"
 #include "../include/fdf.h"
 #include "../libs/libft/libft.h"
-#include "../libs/minilibx/mlx.h"
+#include <mlx.h>
 #include <stdlib.h>
 
 void	free_split(char **split)

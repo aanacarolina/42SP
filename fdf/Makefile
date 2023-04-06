@@ -22,24 +22,26 @@ SRCS =	./src/main.c\
 INC =	./include/fdf.h
 
 LIBS =	$(LIBFT_DIR)libft.a\
-		$(MLX_DIR)libmlx.a
+		#$(MLX_DIR)libmlx.a
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
-FLAGS_MLX = -lmlx -lXext -lX11 
-FLAGS = -Wall -Wextra -Werror -lm
+FLAGS_MLX = -lmlx -lXext -lX11 -lm -O3
+FLAGS = -Wall -Wextra -Werror -g3
 
 #recipes
 
 all : $(NAME)
 
-$(NAME) : $(LIBS) $(OBJS)
+$(NAME) : $(OBJS)
+	$(MAKE_LIBS)
 	cc $(OBJS) $(LIBS) $(FLAGS) $(FLAGS_MLX) -o $(NAME)
 
 #$(OBJS) : $(SRCS) 
 #	cc $(FLAGS) -c $(SRCS) 
 
 #valgrind --show-leak-kinds=all --leak-check=full ./fdf ./test_maps/42.fdf
+#norminette include/ libs/gnl libs/libft src
 
 %.o : %.c 
 	cc $(FLAGS) -c $< -o $@  
@@ -52,11 +54,11 @@ fclean : clean
 
 re : fclean all
 
-$(LIBS) :
+$(MAKE_LIBS) :
 	make -C $(LIBFT_DIR)
 	make -C $(MLX_DIR)
 
-.PHONY : clean fclean re all $(NAME)
+.PHONY : all clean fclean re
 
 # = variavel, atribuição
 # Target = nome regra : dependencia - opcional
