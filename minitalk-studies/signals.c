@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 20:19:18 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/04/15 18:18:39 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/04/21 17:37:03 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@
 	printf("CAPTURAR SINAL: %d\n", signo);
  }
  
-
+//returns  the  process  ID (PID) of the calling process.  
+//(This is often used by routines that generate unique temporary filenames.)
+ getpid()  
+ 
 /*
 int main(int argc, char *argv[])
 {
@@ -35,14 +38,24 @@ int main(int argc, char *argv[])
 	return(0);
 }*/
 
+//add signal signum from set. 
+//RETURN 0 on success and -1 on error
+int sigaddset()
 
-//https://archive.org/details/guia-de-infraestrutura-de-ti/mode/2up?ref=ol&view=theater
 
+
+//is used to change the action taken by a process on receipt of a specific signal.
+//signum specifies the signal and can be any valid signal except SIGKILL and SIGSTOP.
+//If act is non-NULL, the new action for signal signum is installed from act.
+//If oldact is non-NULL, the previous action is saved in oldact.
+//RETURN = 0 on success; on error, -1 is returned, and errno is set to indicate the error.
 int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact)
 {
 	act = printf("Just printing a msg to handle the signal %i : ", signum);
 	return(act);
 }
+
+
 /*
 int main(int argc, char *argv[])
 {
@@ -52,7 +65,7 @@ int main(int argc, char *argv[])
 	return(0);
 }
 */
-
+/*
 int main()
 {
 	int child_pid;
@@ -66,4 +79,10 @@ int main()
 	else
 		printf("this is the CHILD PID %d\n", (int) getpid());
 	return(0);
+}
+*/
+
+int main(void)
+{
+	sigact
 }
