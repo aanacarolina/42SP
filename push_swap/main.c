@@ -64,17 +64,17 @@ void TESTE_create_node(int argc, char **argv)
 {
 
 	(void)argc;
-	t_node *node_criado = create_node(atoi("145"), NULL);
+	t_node *node_criado = create_node(atoi(argv[1]), NULL);
 	assert(node_criado->data == 145);
 	assert(node_criado->next == NULL);
-	t_node *next_node = create_node(atoi("2"), NULL);
+	t_node *next_node = create_node(atoi(argv[2]), NULL);
 	insert_tail(node_criado, next_node);
 	assert(node_criado->next == next_node);
-	assert(node_criado->next->data == 2);
+	assert(node_criado->next->data == 13);
 	assert(node_criado->next->next == NULL);
-	t_node *new_tail = create_node(atoi("3"), NULL);
+	t_node *new_tail = create_node(atoi(argv[3]), NULL);
 	insert_tail(node_criado, new_tail);
-	assert(new_tail->data == 13);
+	assert(new_tail->data == 42);
 	assert(new_tail->next == NULL);
 	assert(next_node->next == new_tail);
 	assert(node_criado->next->next == new_tail);
@@ -83,7 +83,7 @@ void TESTE_create_node(int argc, char **argv)
 	free(node_criado);
 	free(next_node);
 	free(new_tail);
-	printf("CANSEI DESSA MSG, MUDEI🎊 BORA,,MAIS🎊\n");
+	printf("🎊\n");
 }
 
 t_node *arguments_to_list(int argc, char **argv)
@@ -105,6 +105,15 @@ t_node *arguments_to_list(int argc, char **argv)
 }
 
 
+int check_duplicates_input(char ** args)
+{
+	int flag = 1;
+	
+	
+
+	return(flag);
+}
+
 
 // prints a linked list with its nodes
 void DEBUG_printlist(t_node *head)
@@ -113,16 +122,19 @@ void DEBUG_printlist(t_node *head)
 	int i;
 
 	i = 0;
-	if (head == NULL){
+	if (head == NULL)
+	{
 		printf("this list is NULL");
 		return;
 	}
 	temp = head;
 	printf("node [%i]: data: [%i]\n", i, temp->data);
 	i++;
-	while (temp != NULL){
+	while (temp != NULL)
+	{
 		temp = temp->next;
-		if(temp != NULL){
+		if (temp != NULL)
+		{
 			printf("node [%i]: data: [%i]\n", i, temp->data);
 			i++;
 		}
@@ -138,18 +150,28 @@ void TESTE_arguments_to_list(int argc, char **argv)
 int main(int argc, char **argv)
 {
 
-	if(argc < 3){
-		printf("you need to provide at least 2 arguments\n");
+	if (argc < 2)
+	{
+		printf("🚪 EXIT \n");
+		exit(1);
 	}
 	
-	
-	//TESTE_create_node(argc, argv);
+	TESTE_create_node(argc, argv);
 	TESTE_arguments_to_list(argc, argv);
 	return (0);
 }
 
-//TODO: validar qty argumentos
-//TODO: se é INT - e nao char ou
-//TODO: que são entre ou igual MIN INT e MAX INT
-//TODO: sinais
-//TODO: valores unicos
+// TODO: validar qty argumentos -
+// If no parameters are specified, the program must not display anything and give the prompt back.
+
+// TODO: se é INT - e nao char ou
+// TODO: que são entre ou igual MIN INT e MAX INT
+// TODO: sinais (ATOI?)
+// TODO: valores unicos
+
+/*
+
+• In case of error, it must display "Error" followed by a ’\n’ on the standard error.
+Errors include for example: some arguments aren’t integers, some arguments are
+bigger than an integer and/or there are duplicates.
+*/
