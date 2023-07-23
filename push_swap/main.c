@@ -28,7 +28,7 @@ typedef struct s_node
 						 // ponteiro tem que ser do mesmo typo do dado que aponta
 } t_node;
 
-//creates (already allocating memory for) a node
+// creates (already allocating memory for) a node
 t_node *create_node(int data, t_node *next)
 {
 	t_node *node;
@@ -39,7 +39,7 @@ t_node *create_node(int data, t_node *next)
 	return (node);
 }
 
-//inserts a node(new_last_node) at the end of a list(head) 
+// inserts a node(new_last_node) at the end of a list(head)
 void insert_tail(t_node *head, t_node *new_last_node)
 {
 	t_node *temp;
@@ -86,19 +86,17 @@ void TESTE_create_node(int argc, char **argv)
 	printf("CANSEI DESSA MSG, MUDEI🎊 BORA,,MAIS🎊\n");
 }
 
-
-t_node *arguments_to_list(int argc, char **argv){
+t_node *arguments_to_list(int argc, char **argv)
+{
 
 	int i;
 	t_node *head;
 	t_node *new_node;
 
-	printf("argc = %i \n", argc);
 	head = create_node(atoi(argv[1]), NULL);
-	i = 2; 
+	i = 2;
 	while (i != argc)
 	{
-		printf("argv[%i] = %s\n ", i, argv[i]);
 		new_node = create_node(atoi(argv[i]), NULL);
 		insert_tail(head, new_node);
 		i++;
@@ -107,19 +105,46 @@ t_node *arguments_to_list(int argc, char **argv){
 }
 
 
-void TESTE_arguments_to_list(int argc, char **argv){
-	t_node *llist = arguments_to_list(argc, argv);
 
+// prints a linked list with its nodes
+void DEBUG_printlist(t_node *head)
+{
+	t_node *temp;
+	int i;
+
+	i = 0;
+	if (head == NULL){
+		printf("this list is NULL");
+		return;
+	}
+	temp = head;
+	printf("node [%i]: data: [%i]\n", i, temp->data);
+	i++;
+	while (temp != NULL){
+		temp = temp->next;
+		if(temp != NULL){
+			printf("node [%i]: data: [%i]\n", i, temp->data);
+			i++;
+		}
+	}
 }
 
-void printlist(){
-	
+void TESTE_arguments_to_list(int argc, char **argv)
+{
+	t_node *llist = arguments_to_list(argc, argv);
+	DEBUG_printlist(llist);
 }
 
 int main(int argc, char **argv)
 {
-	
+
 	TESTE_create_node(argc, argv);
 	TESTE_arguments_to_list(argc, argv);
 	return (0);
 }
+
+//TODO: validar qty argumentos
+//TODO: se é INT - e nao char ou
+//TODO: que são entre ou igual MIN INT e MAX INT
+//TODO: sinais
+//TODO: valores unicos
