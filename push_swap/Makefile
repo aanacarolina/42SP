@@ -46,7 +46,7 @@ fclean : clean
 re : fclean all
 
 make_libs :
-	make -C $(LIBFT_DIR)
+	@make -C $(LIBFT_DIR) --no-print-directory
 
 .PHONY : all clean fclean re
 
