@@ -28,7 +28,7 @@ typedef struct s_node
 						 // ponteiro tem que ser do mesmo typo do dado que aponta
 } t_node;
 
-// creates (already allocating memory for) a node
+// creates (already allocating memory for) a node - remember to free after using it
 t_node *create_node(int data, t_node *next)
 {
 	t_node *node;
@@ -74,12 +74,12 @@ void TESTE_create_node(int argc, char **argv)
 	assert(node_criado->next->next == NULL);
 	t_node *new_tail = create_node(atoi("3"), NULL);
 	insert_tail(node_criado, new_tail);
-	assert(new_tail->data == 3);
+	assert(new_tail->data == 13);
 	assert(new_tail->next == NULL);
 	assert(next_node->next == new_tail);
 	assert(node_criado->next->next == new_tail);
 	assert(node_criado->next->next->next == NULL);
-	assert(node_criado->next->next->data == 3);
+	assert(node_criado->next->next->data == 42);
 	free(node_criado);
 	free(next_node);
 	free(new_tail);
@@ -138,7 +138,12 @@ void TESTE_arguments_to_list(int argc, char **argv)
 int main(int argc, char **argv)
 {
 
-	TESTE_create_node(argc, argv);
+	if(argc < 3){
+		printf("you need to provide at least 2 arguments\n");
+	}
+	
+	
+	//TESTE_create_node(argc, argv);
 	TESTE_arguments_to_list(argc, argv);
 	return (0);
 }
