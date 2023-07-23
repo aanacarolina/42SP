@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <assert.h>
 
 /*
 create node
@@ -27,74 +28,66 @@ typedef struct s_node
 						 // ponteiro tem que ser do mesmo typo do dado que aponta
 } t_node;
 
-int main(int argc, char **argv)
+t_node *create_node(int data, t_node *next)
+{
+	t_node *node;
+
+	node = calloc(1, sizeof(t_node));
+	node->data = data;
+	node->next = next;
+	return (node);
+}
+
+void insert_tail(t_node *head, t_node *new_last_node)
+{
+	t_node *temp;
+
+	if (head->next == NULL)
+	{
+		head->next = new_last_node;
+	}
+	else
+	{
+		temp = head->next;
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+
+		temp->next = new_last_node;
+	}
+}
+
+
+
+void TESTE_create_node(int argc, char **argv)
 {
 
-	t_node *head;
-	t_node *newnode;
-	t_node *temp;
-	int count = 0;
-	head = 0;
+	(void)argc;
+	t_node *node_criado = create_node(atoi("145"), NULL);
+	assert(node_criado->data == 145);
+	assert(node_criado->next == NULL);
+	t_node *next_node = create_node(atoi("2"), NULL);
+	insert_tail(node_criado, next_node);
+	assert(node_criado->next == next_node);
+	assert(node_criado->next->data == 2);
+	assert(node_criado->next->next == NULL);
+	t_node *new_tail = create_node(atoi("3"), NULL);
+	insert_tail(node_criado, new_tail);
+	assert(new_tail->data == 3);
+	assert(new_tail->next == NULL);
+	assert(next_node->next == new_tail);
+	assert(node_criado->next->next == new_tail);
+	assert(node_criado->next->next->next == NULL);
+	assert(node_criado->next->next->data == 3);
+	free(node_criado);
+	free(next_node);
+	free(new_tail);
+	printf("CANSEI DESSA MSG, MUDEI🎊 BORA,,MAIS🎊\n");
+}
 
-	/*while(count != argc){
-		printf("%s \n",  argv[count]);
-		count++;
-	}*/
-
-	/*while (argv[count] != NULL)
-	{
-		printf("%s \n", argv[count]);
-		count++;
-	}*/
-
-	if ('\0' == 0){
-		printf("eh ingual \n");
- 	}
-	else{
-		printf("ningual \n");
-	}
-
-
-	while(argv[count] != 0)
-	{
-		int j = 0;
-		while(argv[count][j] != '\0')
-		{
-			write(1, &argv[count][j], 1);
-			j++;
-		}
-		write(1, " ", 1);
-		j = 0;
-		count++;
-	}
-	printf("\n");
-
-	if (1) // ver se certo
-	{
-		newnode = calloc(1, sizeof(t_node)); // vai criar o noovo espaço na meoria para o novo node e vai guardarr o endereço
-											 // size of node sizeof struct = 8 bites (int 4 bites + pointer 4 bites)  returns (a void pointer) to the starting address of the memory block
-
-		// printf("[%c] argv \n", argv[1][0]);
-		// printf("[%i] argc \n", argc);
-
-		/*
-		newnode->next = head;
-		if (head == 0)
-		{ // empty list
-			head = temp = newnode;
-		}
-		else
-		{
-			temp.next = newnode;
-			temp = node;
-		}
-
-		temp = head;
-		while (temp != 0)
-		{
-			printf(temp.data)
-				temp = temp.next;
-			count++; // saber qtos nodes tem
-		}*/
-	}
+int main(int argc, char **argv)
+{
+	TESTE_create_node(argc, argv);
+	return (0);
 }
