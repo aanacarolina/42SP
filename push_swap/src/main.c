@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <assert.h>
+#include "../push_swap.h"
 
 /*
 create node
@@ -20,13 +20,6 @@ next = null
 depois mudar o valor da anterior, que era NULL, para o node que acabamos de criar
 
 */
-
-typedef struct s_node
-{
-	int data;			 // variable name and content
-	struct s_node *next; // only pointer can hold add to another variable
-						 // ponteiro tem que ser do mesmo typo do dado que aponta
-} t_node;
 
 // creates (already allocating memory for) a node - remember to free after using it
 t_node *create_node(int data, t_node *next)
@@ -60,32 +53,7 @@ void insert_tail(t_node *head, t_node *new_last_node)
 	}
 }
 
-void TESTE_create_node(int argc, char **argv)
-{
-
-	(void)argc;
-	t_node *node_criado = create_node(atoi(argv[1]), NULL);
-	assert(node_criado->data == 145);
-	assert(node_criado->next == NULL);
-	t_node *next_node = create_node(atoi(argv[2]), NULL);
-	insert_tail(node_criado, next_node);
-	assert(node_criado->next == next_node);
-	assert(node_criado->next->data == 13);
-	assert(node_criado->next->next == NULL);
-	t_node *new_tail = create_node(atoi(argv[3]), NULL);
-	insert_tail(node_criado, new_tail);
-	assert(new_tail->data == 42);
-	assert(new_tail->next == NULL);
-	assert(next_node->next == new_tail);
-	assert(node_criado->next->next == new_tail);
-	assert(node_criado->next->next->next == NULL);
-	assert(node_criado->next->next->data == 42);
-	free(node_criado);
-	free(next_node);
-	free(new_tail);
-	printf("🎊\n");
-}
-
+//creates a llist from arguments 
 t_node *arguments_to_list(int argc, char **argv)
 {
 
@@ -105,59 +73,19 @@ t_node *arguments_to_list(int argc, char **argv)
 }
 
 
-int check_duplicates_input(char ** args)
-{
-	int flag = 1;
-	
-	
-
-	return(flag);
-}
-
-
-// prints a linked list with its nodes
-void DEBUG_printlist(t_node *head)
-{
-	t_node *temp;
-	int i;
-
-	i = 0;
-	if (head == NULL)
-	{
-		printf("this list is NULL");
-		return;
-	}
-	temp = head;
-	printf("node [%i]: data: [%i]\n", i, temp->data);
-	i++;
-	while (temp != NULL)
-	{
-		temp = temp->next;
-		if (temp != NULL)
-		{
-			printf("node [%i]: data: [%i]\n", i, temp->data);
-			i++;
-		}
-	}
-}
-
-void TESTE_arguments_to_list(int argc, char **argv)
-{
-	t_node *llist = arguments_to_list(argc, argv);
-	DEBUG_printlist(llist);
-}
-
 int main(int argc, char **argv)
 {
-
 	if (argc < 2)
 	{
-		printf("🚪 EXIT \n");
+		printf("🚪 EXIT \n");//TODO remove at the end
 		exit(1);
 	}
-	
+
 	TESTE_create_node(argc, argv);
 	TESTE_arguments_to_list(argc, argv);
+	TESTE_args_checker();
+	TESTE_non_int_checker();
+	TESTE_max_min_int_checker();
 	return (0);
 }
 

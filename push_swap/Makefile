@@ -9,7 +9,8 @@ LIBFT_DIR = $(LIBS_DIR)libft/
 SRCS =	./src/main.c\
 		./src/push_swap.c\
 		./src/linked_list.c\
-		./src/args_checker.c
+		./src/args_checker.c\
+		tests.c
 
 INC =	push_swap.h
 
@@ -17,7 +18,8 @@ LIBS =	$(LIBFT_DIR)libft.a
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
-FLAGS = -Wall -Wextra -Werror -g3
+#FLAGS = -Wall -Wextra -Werror -g3
+FLAGS = -g3
 
 #RECIPES
 
