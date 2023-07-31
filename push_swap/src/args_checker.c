@@ -97,3 +97,5 @@ int max_min_int_checker(int argc, char **argv)
 	}
 	return (1); // e no final return (1)
 }
+
+//TODO - checker-wrapper (maybe change return of dups-checker)
