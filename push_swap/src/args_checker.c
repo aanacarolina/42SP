@@ -6,16 +6,16 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/07/23 18:35:52 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/05 14:38:37 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <stdio.h>
 
-int isDuplicate(char *args[], int argCount, char *newArg)
+int	isDuplicate(char *args[], int argCount, char *newArg)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < argCount)
@@ -29,12 +29,12 @@ int isDuplicate(char *args[], int argCount, char *newArg)
 	return (0); // No duplicate found
 }
 
-int dups_checker(int argc, char **argv)
+int	dups_checker(int argc, char **argv)
 {
-	int argCount;
-	int i;
-	char *arg;
-	char *arguments[argc - 1];
+	int		argCount;
+	int		i;
+	char	*arg;
+	char	*arguments[argc - 1];
 
 	argCount = 0;
 	i = 1;
@@ -50,15 +50,17 @@ int dups_checker(int argc, char **argv)
 		arguments[argCount++] = arg;
 		i++;
 	}
-	ft_putstr_fd("No duplicate arguments found.\n", 2); // TODO: remove or commment before handing in
+	ft_putstr_fd("No duplicate arguments found.\n", 2);
+		// TODO: remove or commment before handing in
 	return (0);
 }
 
-// checks if is nothing other than INT - returns 0 in case of error or 1 if everything is fine
-int non_int_checker(int argc, char **argv)
+// checks if is nothing other than INT
+	- returns 0 in case of error or 1 if everything is fine
+int	non_int_checker(int argc, char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (i < argc)
@@ -79,10 +81,10 @@ int non_int_checker(int argc, char **argv)
 }
 
 // checks if numbers are between MAX AND MIN (range)
-int max_min_int_checker(int argc, char **argv)
+int	max_min_int_checker(int argc, char **argv)
 {
-	int i;
-	long current;
+	int		i;
+	long	current;
 
 	i = 1;
 	while (i < argc)
@@ -93,9 +95,9 @@ int max_min_int_checker(int argc, char **argv)
 		if (current < INT_MIN || current > INT_MAX)
 			return (0); // se for fora do range acaba return (0)
 		else
-			i++;		// se nao segue o baile
+			i++; // se nao segue o baile
 	}
 	return (1); // e no final return (1)
 }
 
-//TODO - checker-wrapper (maybe change return of dups-checker)
+// TODO - checker-wrapper (maybe change return of dups-checker)

@@ -15,10 +15,6 @@ int getQtyElementsArray (char *arreizin){
 
 }
 
-int main (int argc, char **argv){
-
-
-}
 
 /*
 Saber qual a quantidade de digitos do maior item, pois essa será nossa condição de qts vezes iremos fazer essa operação (BSD)
