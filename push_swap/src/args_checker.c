@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/05 14:38:37 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/05 16:44:07 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	isDuplicate(char *args[], int argCount, char *newArg)
 	{
 		if (ft_strncmp(args[i], newArg, ft_strlen(args[i])) == 0)
 		{
-			return (1); // Duplicate found
+			return (1);
 		}
 		i++;
 	}
@@ -43,20 +43,20 @@ int	dups_checker(int argc, char **argv)
 		arg = argv[i];
 		if (isDuplicate(arguments, argCount, arg))
 		{
-			// ft_putstr_fd("👯 Duplicate argument found!\n", 2);
-			ft_putstr_fd("Error \n", 2);
-			return (1);
+			//ft_putstr_fd("👯 Duplicate argument found!\n", 2);
+			//ft_putstr_fd("Error \n", 2);
+			return (0);
 		}
 		arguments[argCount++] = arg;
 		i++;
 	}
-	ft_putstr_fd("No duplicate arguments found.\n", 2);
-		// TODO: remove or commment before handing in
-	return (0);
+	//ft_putstr_fd("No duplicate arguments found.\n", 2);
+	// TODO: remove or commment before submission
+	return (1);
 }
 
-// checks if is nothing other than INT
-	- returns 0 in case of error or 1 if everything is fine
+// checks if arg is nothing other than INT
+// returns 0 in case of error or 1 if everything is fine
 int	non_int_checker(int argc, char **argv)
 {
 	int	i;
@@ -90,8 +90,8 @@ int	max_min_int_checker(int argc, char **argv)
 	while (i < argc)
 	{
 		// argv[i] -> atol
-		current = ft_atol(argv[i]); // salvar resultado de atol numa var long
-		// verificar se < int-min || > int-max
+		current = ft_atol(argv[i]); // salva resultado de atol numa var long
+		// verifica se < int-min || > int-max
 		if (current < INT_MIN || current > INT_MAX)
 			return (0); // se for fora do range acaba return (0)
 		else
@@ -100,4 +100,19 @@ int	max_min_int_checker(int argc, char **argv)
 	return (1); // e no final return (1)
 }
 
-// TODO - checker-wrapper (maybe change return of dups-checker)
+// if any checker function returns 0 means some arg is invalid;
+int	checker_wrapper(int argc, char **argv)
+{
+	int dups;
+	int non_int;
+	int max_min;
+
+	dups = dups_checker(argc, argv);
+	non_int = non_int_checker(argc, argv);
+	max_min = max_min_int_checker(argc, argv);
+
+	if (dups == 1 && non_int == 1 && max_min == 1)
+		return (1);
+	else
+		return (0);
+}
