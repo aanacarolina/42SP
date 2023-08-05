@@ -1,24 +1,31 @@
+#include "../push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "../push_swap.h"
 
-
-
-
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc < 2)
 	{
-		printf("🚪 EXIT \n");//TODO remove at the end
+		printf("🚪 EXIT \n"); // TODO remove at the end
 		exit(1);
 	}
-
+	if (checker_wrapper(argc, argv) == 0)
+	{
+		ft_putstr_fd("Error\n", 2);
+		exit(1);
+	}
+	else
+	{
+		printf("execute the program");
+	}
+	/*
 	TESTE_create_node(argc, argv);
 	TESTE_arguments_to_list(argc, argv);
 	TESTE_args_checker();
 	TESTE_non_int_checker();
 	TESTE_max_min_int_checker();
+	*/
 	return (0);
 }
 
@@ -32,7 +39,8 @@ int main(int argc, char **argv)
 
 /*
 
-• In case of error, it must display "Error" followed by a ’\n’ on the standard error.
+• In case of error,
+	it must display "Error" followed by a ’\n’ on the standard error.
 Errors include for example: some arguments aren’t integers, some arguments are
 bigger than an integer and/or there are duplicates.
 */
