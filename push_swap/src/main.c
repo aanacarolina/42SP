@@ -29,7 +29,8 @@ int main(int argc, char **argv)
 		int size;
 
 		i = 0;
-		size = sizeof(argv - 1) / sizeof(atoi(argv[0]));
+		//size = sizeof(argv) / sizeof(atoi(argv[0]));
+		size = 5;
 		sortedArr = bubbleSort(array_args, size);
 		while (i < argc)
 		{
