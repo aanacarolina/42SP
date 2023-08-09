@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	if (argc < 2)
 	{
@@ -17,7 +17,15 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		printf("execute the program");
+		int i = 1;
+		int *array_args = args_array(argc, argv);
+		while (i < argc)
+		{
+			printf("array of args[%d]: %c\n", i, array_args[i]);
+			i++;
+		}
+
+		free(array_args);
 	}
 	/*
 	TESTE_create_node(argc, argv);

@@ -10,23 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
 #include <stdio.h>
 
-int	*args_array(int argc, char **argv)
+int *args_array(int argc, char **argv)
 {
 	int i;
 	int arr_size;
-	int arr_args[arr_size];
+	int *arr_args;
 
+	arr_args = calloc(argc, sizeof(int));
 	i = 1;
-	arr_size = argc;
-
-	
+	arr_size = argc - 1;
 	while (i < argc)
 	{
-		arr_args[i] = argv[i];
-		i++; 
+		arr_args[arr_size] = ft_atoi(argv[i]);
+		i++;
+		arr_size++;
 	}
-	
-	printf(arr_args);
+
+	return (arr_args);
 }
