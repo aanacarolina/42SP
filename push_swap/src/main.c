@@ -17,11 +17,11 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		int i = 1;
+		int i = 0;
 		int *array_args = args_array(argc, argv);
 		while (i < argc)
 		{
-			printf("array of args[%d]: %c\n", i, array_args[i]);
+			printf("array of args[%d]: %d\n", i, array_args[i]);
 			i++;
 		}
 
