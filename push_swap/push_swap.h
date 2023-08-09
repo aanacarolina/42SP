@@ -29,6 +29,7 @@ int					non_int_checker(int argc, char **argv);
 int					max_min_int_checker(int argc, char **argv);
 int					checker_wrapper(int argc, char **argv);
 int 				*args_array(int argc, char **argv);
+int					*bubbleSort(int *arr, int size);
 void				TESTE_create_node(int argc, char **argv);
 void				TESTE_arguments_to_list(int argc, char **argv);
 void				TESTE_args_checker(void);

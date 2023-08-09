@@ -25,6 +25,18 @@ int main(int argc, char **argv)
 			i++;
 		}
 
+		int *sortedArr;
+		int size;
+
+		i = 0;
+		size = sizeof(argv - 1) / sizeof(atoi(argv[0]));
+		sortedArr = bubbleSort(array_args, size);
+		while (i < argc)
+		{
+			printf("SORTED array of args[%d]: %d\n", i, sortedArr[i]);
+			i++;
+		}
+
 		free(array_args);
 	}
 	/*

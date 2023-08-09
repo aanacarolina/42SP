@@ -11,6 +11,8 @@ SRCS =	./src/main.c\
 		./src/linked_list.c\
 		./src/args_checker.c\
 		./src/array.c\
+		./src/sort.c\
+		./src/operations.c\
 		tests.c
 
 INC =	push_swap.h
