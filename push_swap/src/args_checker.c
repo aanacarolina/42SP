@@ -13,47 +13,6 @@
 #include "../push_swap.h"
 #include <stdio.h>
 
-int	isDuplicate(char *args[], int argCount, char *newArg)
-{
-	int	i;
-
-	i = 0;
-	while (i < argCount)
-	{
-		if (ft_strncmp(args[i], newArg, ft_strlen(args[i])) == 0)
-		{
-			return (1);
-		}
-		i++;
-	}
-	return (0); // No duplicate found
-}
-
-int	dups_checker(int argc, char **argv)
-{
-	int		argCount;
-	int		i;
-	char	*arg;
-	char	*arguments[argc - 1];
-
-	argCount = 0;
-	i = 1;
-	while (i < argc)
-	{
-		arg = argv[i];
-		if (isDuplicate(arguments, argCount, arg))
-		{
-			//ft_putstr_fd("👯 Duplicate argument found!\n", 2);
-			//ft_putstr_fd("Error \n", 2);
-			return (0);
-		}
-		arguments[argCount++] = arg;
-		i++;
-	}
-	//ft_putstr_fd("No duplicate arguments found.\n", 2);
-	// TODO: remove or commment before submission
-	return (1);
-}
 
 // checks if arg is nothing other than INT
 // returns 0 in case of error or 1 if everything is fine
@@ -98,6 +57,50 @@ int	max_min_int_checker(int argc, char **argv)
 			i++; // se nao segue o baile
 	}
 	return (1); // e no final return (1)
+}
+
+
+int	isDuplicate(char *args[], int argCount, char *newArg)
+{
+	int	i;
+
+	i = 0;
+	while (i < argCount)
+	{
+		if (ft_strncmp(args[i], newArg, ft_strlen(args[i])) == 0) //TODO 
+		{
+			return (1);
+		}
+		i++;
+	}
+	return (0); 
+}
+// checks for unique args //TODO check why considers repeated ex.: 3 and 34
+// returns 0 in case of error or 1 if everything is fine
+int	dups_checker(int argc, char **argv)
+{
+	int		argCount;
+	int		i;
+	char	*arg;
+	char	*arguments[argc - 1];
+
+	argCount = 0;
+	i = 1;
+	while (i < argc)
+	{
+		arg = argv[i];
+		if (isDuplicate(arguments, argCount, arg))
+		{
+			//ft_putstr_fd("👯 Duplicate argument found!\n", 2);
+			//ft_putstr_fd("Error \n", 2);
+			return (0);
+		}
+		arguments[argCount++] = arg;
+		i++;
+	}
+	//ft_putstr_fd("No duplicate arguments found.\n", 2);
+	// TODO: remove or commment before submission
+	return (1);
 }
 
 // if any checker function returns 0 means some arg is invalid;

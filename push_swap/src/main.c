@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	{
 		int i = 0;
 		int *array_args = args_array(argc, argv);
-		while (i < argc)
+		while (i < argc - 1)
 		{
 			printf("array of args[%d]: %d\n", i, array_args[i]);
 			i++;
@@ -32,12 +32,13 @@ int main(int argc, char **argv)
 		//size = sizeof(argv) / sizeof(atoi(argv[0]));
 		size = 5;
 		sortedArr = bubbleSort(array_args, size);
-		while (i < argc)
+		while (i < argc - 1) 
 		{
 			printf("SORTED array of args[%d]: %d\n", i, sortedArr[i]);
 			i++;
 		}
-
+		printf("5th %d", sortedArr[4]);
+		printf("last %d", sortedArr[10]);
 		free(array_args);
 	}
 	/*

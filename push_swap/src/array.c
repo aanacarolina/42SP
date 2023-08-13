@@ -19,7 +19,7 @@ int *args_array(int argc, char **argv)
 	int j;
 	int *arr_args;
 
-	arr_args = calloc(argc, argc * sizeof(int));
+	arr_args = calloc(argc - 1, sizeof(int));
 	i = 1;
 	j = 0;
 	while (i < argc)
