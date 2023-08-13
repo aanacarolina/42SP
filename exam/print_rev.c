@@ -25,7 +25,7 @@ int main(int argc, char **argv)
             }
             write(1, " ", 1);
             i++;
-            k++;
+            k++; //then get value of k and (k-- aand write)
         }
             printf("[%d]", k);
     }
