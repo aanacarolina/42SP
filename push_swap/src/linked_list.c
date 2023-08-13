@@ -1,7 +1,7 @@
+#include "../push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "../push_swap.h"
 
 /*
 Llista encadeada - dynamic size
@@ -10,7 +10,8 @@ Array - fixed size
 
 Acessar
 O(n) worst case
-Na lista encadeada, somente acesso sequencial, ou seja, passando de node em node até chegar onde quiser.
+Na lista encadeada, somente acesso sequencial, ou seja,
+	passando de node em node até chegar onde quiser.
 O(1)
 Array por sua vez tem acesso direto, ou seja, informe a posição vá la direto
 
@@ -50,14 +51,15 @@ create node
 data = valor da variavel
 next = null
 
-depois mudar o valor da anterior, que era NULL, para o node que acabamos de criar
+depois mudar o valor da anterior, que era NULL,
+	para o node que acabamos de criar
 
 */
 
-// creates (already allocating memory for) a node - remember to free after using it
-t_node *create_node(int data, t_node *next)
+// creates (already allocating memory for) a node -> remember to free after using it
+t_node	*create_node(int data, t_node *next)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = calloc(1, sizeof(t_node));
 	node->data = data;
@@ -66,9 +68,9 @@ t_node *create_node(int data, t_node *next)
 }
 
 // inserts a node(new_last_node) at the end of a list(head)
-void insert_tail(t_node *head, t_node *new_last_node)
+void	insert_tail(t_node *head, t_node *new_last_node)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (head->next == NULL)
 	{
@@ -81,18 +83,16 @@ void insert_tail(t_node *head, t_node *new_last_node)
 		{
 			temp = temp->next;
 		}
-
 		temp->next = new_last_node;
 	}
 }
 
-//creates a llist from arguments 
-t_node *arguments_to_list(int argc, char **argv)
+// creates a llist from arguments
+t_node	*arguments_to_list(int argc, char **argv)
 {
-
-	int i;
-	t_node *head;
-	t_node *new_node;
+	int		i;
+	t_node	*head;
+	t_node	*new_node;
 
 	head = create_node(atoi(argv[1]), NULL);
 	i = 2;

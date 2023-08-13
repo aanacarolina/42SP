@@ -10,6 +10,7 @@ int	main(int argc, char **argv)
 	int		*sortedArr;
 	int		size;
 	t_node	*listinha_b;
+	t_node	*listinha_a;
 
 	if (argc < 2)
 	{
@@ -46,17 +47,16 @@ int	main(int argc, char **argv)
 	}*/
 	else
 	{
-		t_node *listinha_a = arguments_to_list(argc, argv);
-		listinha_b = create_node(0, NULL);;
-		//DEBUG_printlist(listinha_a);
-		//DEBUG_printlist(listinha_b);
-		//printf("%d %d ANTES \n", listinha_a->data, listinha_a->next->data);
-		sa(&listinha_a);
-		sb(&listinha_b);
-		ss(&listinha_a, &listinha_b);
+		listinha_a = arguments_to_list(argc, argv);
+		listinha_b = create_node(NULL, NULL); //empty list t_node vazio
 		printf("DEPOIX \n");
+		sa(&listinha_a);
 		//DEBUG_printlist(listinha_a);
+		sb(&listinha_b);
 		//DEBUG_printlist(listinha_b);
+		ss(&listinha_a, &listinha_b);
+		DEBUG_printlist(listinha_a);
+		printf("DEPOIX \n");
 	}
 	/*
 	TESTE_create_node(argc, argv);
