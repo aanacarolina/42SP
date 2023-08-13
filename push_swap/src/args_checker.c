@@ -6,13 +6,12 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/05 16:44:07 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/13 14:43:42 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <stdio.h>
-
 
 // checks if arg is nothing other than INT
 // returns 0 in case of error or 1 if everything is fine
@@ -59,21 +58,21 @@ int	max_min_int_checker(int argc, char **argv)
 	return (1); // e no final return (1)
 }
 
-
 int	isDuplicate(char *args[], int argCount, char *newArg)
 {
 	int	i;
 
 	i = 0;
+
 	while (i < argCount)
 	{
-		if (ft_strncmp(args[i], newArg, ft_strlen(args[i])) == 0) //TODO 
+		if (ft_strncmp(args[i], newArg, ft_strlen(newArg)) == 0)
 		{
 			return (1);
 		}
 		i++;
 	}
-	return (0); 
+	return (0);
 }
 // checks for unique args //TODO check why considers repeated ex.: 3 and 34
 // returns 0 in case of error or 1 if everything is fine
@@ -91,14 +90,14 @@ int	dups_checker(int argc, char **argv)
 		arg = argv[i];
 		if (isDuplicate(arguments, argCount, arg))
 		{
-			//ft_putstr_fd("👯 Duplicate argument found!\n", 2);
-			//ft_putstr_fd("Error \n", 2);
+			// ft_putstr_fd("👯 Duplicate argument found!\n", 2);
+			// ft_putstr_fd("Error \n", 2);
 			return (0);
 		}
 		arguments[argCount++] = arg;
 		i++;
 	}
-	//ft_putstr_fd("No duplicate arguments found.\n", 2);
+	// ft_putstr_fd("No duplicate arguments found.\n", 2);
 	// TODO: remove or commment before submission
 	return (1);
 }
@@ -106,14 +105,13 @@ int	dups_checker(int argc, char **argv)
 // if any checker function returns 0 means some arg is invalid;
 int	checker_wrapper(int argc, char **argv)
 {
-	int dups;
-	int non_int;
-	int max_min;
+	int	dups;
+	int	non_int;
+	int	max_min;
 
 	dups = dups_checker(argc, argv);
 	non_int = non_int_checker(argc, argv);
 	max_min = max_min_int_checker(argc, argv);
-
 	if (dups == 1 && non_int == 1 && max_min == 1)
 		return (1);
 	else

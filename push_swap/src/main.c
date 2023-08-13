@@ -37,8 +37,8 @@ int main(int argc, char **argv)
 			printf("SORTED array of args[%d]: %d\n", i, sortedArr[i]);
 			i++;
 		}
-		printf("5th %d", sortedArr[4]);
-		printf("last %d", sortedArr[10]);
+		printf("5th %d \n", sortedArr[4]);
+		//printf("last %d \n", sortedArr[10]);
 		free(array_args);
 	}
 	/*
