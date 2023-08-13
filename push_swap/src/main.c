@@ -48,15 +48,15 @@ int	main(int argc, char **argv)
 	{
 		t_node *listinha_a = arguments_to_list(argc, argv);
 		listinha_b = create_node(0, NULL);;
-		DEBUG_printlist(listinha_a);
-		DEBUG_printlist(listinha_b);
-		printf("%d %d ANTES \n", listinha_a->data, listinha_a->next->data);
+		//DEBUG_printlist(listinha_a);
+		//DEBUG_printlist(listinha_b);
+		//printf("%d %d ANTES \n", listinha_a->data, listinha_a->next->data);
 		sa(&listinha_a);
 		sb(&listinha_b);
 		ss(&listinha_a, &listinha_b);
 		printf("DEPOIX \n");
-		DEBUG_printlist(listinha_a);
-		DEBUG_printlist(listinha_b);
+		//DEBUG_printlist(listinha_a);
+		//DEBUG_printlist(listinha_b);
 	}
 	/*
 	TESTE_create_node(argc, argv);

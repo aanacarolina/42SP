@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/13 17:13:06 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:43:37 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	sa(t_node **head_a)
 	t_node	*temp2;
 
 	if (head_a == NULL || (*head_a)->next == NULL)
-	{
 		head_a;
-	}
 	else
 	{
 		// temp = calloc(1, sizeof(t_node));
@@ -33,6 +31,7 @@ void	sa(t_node **head_a)
 		temp->next = (*llist);        // 30
 		temp->next->next = temp2;     // mas se nao aponta pro endereço do 3o
 		(*head_a) = temp;
+		ft_putstr_fd("sa\n", 1);
 	}
 }
 
@@ -46,9 +45,7 @@ void	sb(t_node **head_b)
 	t_node	*temp2;
 
 	if (head_b == NULL || (*head_b)->next == NULL)
-	{
 		head_b;
-	}
 	else
 	{
 		// temp = calloc(1, sizeof(t_node));
@@ -58,6 +55,7 @@ void	sb(t_node **head_b)
 		temp->next = (*llist);        // 30
 		temp->next->next = temp2;     // mas se nao aponta pro endereço do 3o
 		(*head_b) = temp;
+		ft_putstr_fd("sb\n", 1);
 	}
 }
 
@@ -66,9 +64,14 @@ void	ss(t_node **head_a, t_node **head_b)
 {
 	sa(head_a);
 	sb(head_b);
+	ft_putstr_fd("ss\n", 1);
 }
 //**pa (push a): Take the first element at the top of b and put it at the top of a.**
 // Do nothing if b is empty.
+/*void	pa(t_node **head_a, t_node **head_b)
+{
+	if (head_b != NULL)
+}
 
 /* **pb (push b): Take the first element at the top of a and put it at the top of b.**
 >Do nothing if a is empty.

@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/13 17:03:29 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:16:51 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int					*bubbleSort(int *arr, int size);
 void				sa(t_node **head_a);
 void				sb(t_node **head_b);
 void				ss(t_node **head_a, t_node **head_b);
+void				pa(t_node **head_a, t_node **head_b);
 void				TESTE_create_node(int argc, char **argv);
 void				TESTE_arguments_to_list(int argc, char **argv);
 void				TESTE_args_checker(void);
