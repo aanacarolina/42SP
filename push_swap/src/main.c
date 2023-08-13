@@ -3,43 +3,56 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
+	int	i;
+	int	*array_args;
+	int	*sortedArr;
+	int	size;
+
 	if (argc < 2)
 	{
-		printf("🚪 EXIT \n"); // TODO remove at the end
+		printf("🚪 EXIT at ARG < 2 \n"); // TODO remove at the end
 		exit(1);
 	}
 	if (checker_wrapper(argc, argv) == 0)
 	{
 		ft_putstr_fd("Error\n", 2);
+		printf("🚪 EXIT at checker \n"); // TODO remove at the end
 		exit(1);
 	}
-	else
+	/* else
 	{
-		int i = 0;
-		int *array_args = args_array(argc, argv);
+		i = 0;
+		array_args = args_array(argc, argv);
 		while (i < argc - 1)
 		{
 			printf("array of args[%d]: %d\n", i, array_args[i]);
 			i++;
 		}
-
-		int *sortedArr;
-		int size;
-
 		i = 0;
-		//size = sizeof(argv) / sizeof(atoi(argv[0]));
+		// size = sizeof(argv) / sizeof(atoi(argv[0]));
 		size = 5;
 		sortedArr = bubbleSort(array_args, size);
-		while (i < argc - 1) 
+		while (i < argc - 1)
 		{
 			printf("SORTED array of args[%d]: %d\n", i, sortedArr[i]);
 			i++;
 		}
 		printf("5th %d \n", sortedArr[4]);
-		//printf("last %d \n", sortedArr[10]);
+		// printf("last %d \n", sortedArr[10]);
 		free(array_args);
+	}*/
+	else
+	{
+		t_node *listinha = arguments_to_list(argc, argv);
+		DEBUG_printlist(listinha);
+		//printf("%d %d ANTES \n", listinha->data, listinha->next->data);
+		sa(&listinha);
+		printf("DEPOIX \n");
+		DEBUG_printlist(listinha);
+
+
 	}
 	/*
 	TESTE_create_node(argc, argv);
@@ -50,19 +63,3 @@ int main(int argc, char **argv)
 	*/
 	return (0);
 }
-
-// TODO: validar qty argumentos -
-// If no parameters are specified, the program must not display anything and give the prompt back.
-
-// TODO: se é INT - e nao char ou
-// TODO: que são entre ou igual MIN INT e MAX INT
-// TODO: sinais (ATOI?)
-// TODO: valores unicos
-
-/*
-
-• In case of error,
-	it must display "Error" followed by a ’\n’ on the standard error.
-Errors include for example: some arguments aren’t integers, some arguments are
-bigger than an integer and/or there are duplicates.
-*/

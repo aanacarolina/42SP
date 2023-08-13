@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/05 15:37:15 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:08:49 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ int					max_min_int_checker(int argc, char **argv);
 int					checker_wrapper(int argc, char **argv);
 int 				*args_array(int argc, char **argv);
 int					*bubbleSort(int *arr, int size);
+void				sa(t_node **head);
 void				TESTE_create_node(int argc, char **argv);
 void				TESTE_arguments_to_list(int argc, char **argv);
 void				TESTE_args_checker(void);
 void				TESTE_non_int_checker(void);
 void				TESTE_max_min_int_checker(void);
+void				DEBUG_printlist(t_node *head);
+

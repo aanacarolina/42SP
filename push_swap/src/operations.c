@@ -1,161 +1,63 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
+/*   Updated: 2023/08/13 16:24:24 by anacaro3         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#define MAX_SIZE 100 // Maximum size of the arrays (adjust as needed)
+#include "../push_swap.h"
 
-typedef struct s_stack
+//**sa (swap a): Swap the first 2 elements at the top of stack a.**
+//>Do nothing if there is only one or no elements.**
+void	sa(t_node **head)
 {
-	int arr[MAX_SIZE];
-	int top;
-} t_stack;
+	t_node	**llist;
+	t_node	*temp;
+	t_node	*temp2;
 
-void initStack(t_stack *s)
-{
-	s->top = -1;
+	//temp = calloc(1, sizeof(t_node));
+	llist = head;
+	temp2 = (*llist)->next->next; //salvando o next do terceiro
+	temp = (*llist)->next; //50
+	temp->next = (*llist); //30
+	temp->next->next = temp2; //mas se nao aponta pro endereço do 3o
+	(*head) = temp;
 }
 
-int isEmpty(t_stack *s)
-{
-	return s->top == -1;
-}
+//**sb (swap b): Swap the first 2 elements at the top of stack b.**
+//> Do nothing if there is only one or no elements.
 
-void push(t_stack *s, int value)
-{
-	if (s->top < MAX_SIZE - 1)
-	{
-		s->top++;
-		s->arr[s->top] = value;
-	}
-	else
-	{
-		printf("Stack overflow\n");
-	}
-}
+//**ss : sa and sb at the same time.**
 
-int pop(t_stack *s)
-{
-	if (!isEmpty(s))
-	{
-		int value = s->arr[s->top];
-		s->top--;
-		return value;
-	}
-	else
-	{
-		printf("Stack underflow\n");
-		return -1; // Or some other sentinel value
-	}
-}
+//**pa (push a): Take the first element at the top of b and put it at the top of a.**
+// Do nothing if b is empty.
 
-void sa(t_stack *a)
-{
-	if (a->top >= 1)
-	{
-		int temp = a->arr[a->top];
-		a->arr[a->top] = a->arr[a->top - 1];
-		a->arr[a->top - 1] = temp;
-	}
-}
-
-void sb(t_stack *b)
-{
-	sa(b); // sb is the same as sa
-}
-
-void ss(t_stack *a, t_stack *b)
-{
-	sa(a);
-	sb(b);
-}
-
-void pa(t_stack *a, t_stack *b)
-{
-	if (!isEmpty(b))
-	{
-		int value = pop(b);
-		push(a, value);
-	}
-}
-
-void pb(t_stack *a, t_stack *b)
-{
-	pa(b, a); // pb is essentially the same as pa with stacks swapped
-}
-
-void rotate(t_stack *s)
-{
-	if (!isEmpty(s))
-	{
-		int first = s->arr[s->top];
-		for (int i = s->top; i > 0; i--)
-		{
-			s->arr[i] = s->arr[i - 1];
-		}
-		s->arr[0] = first;
-	}
-}
-
-void ra(t_stack *a)
-{
-	rotate(a);
-}
-
-void rb(t_stack *b)
-{
-	ra(b); // rb is the same as ra
-}
-
-void rr(t_stack *a, t_stack *b)
-{
-	ra(a);
-	rb(b);
-}
-
-void reverseRotate(t_stack *s)
-{
-	if (!isEmpty(s))
-	{
-		int last = s->arr[0];
-		for (int i = 0; i < s->top; i++)
-		{
-			s->arr[i] = s->arr[i + 1];
-		}
-		s->arr[s->top] = last;
-	}
-}
-
-void rra(t_stack *a)
-{
-	reverseRotate(a);
-}
-
-void rrb(t_stack *b)
-{
-	rra(b); // rrb is the same as rra
-}
-
-void rrr(t_stack *a, t_stack *b)
-{
-	rra(a);
-	rrb(b);
-}
-
-/*int main()
-{
-	// Initialize stacks
-	t_stack stackA, stackB;
-	initStack(&stackA);
-	initStack(&stackB);
-
-	// Perform actions on the stacks
-	// Example usage:
-	push(&stackA, 3);
-	push(&stackA, 5);
-	push(&stackB, 7);
-
-	sa(&stackA);
-	pb(&stackA, &stackB);
-	rr(&stackA, &stackB);
-
-	return 0;
-}
+/* **pb (push b): Take the first element at the top of a and put it at the top of b.**
+>Do nothing if a is empty.
+1st time: creates a node on b
+head of B not null anymore, points to the current head of list A
+	- and next becomes null
+if second time: points to the node already there
+2nd node of list A becomes first node
 */
+
+//**ra (rotate a): Shift up all elements of stack a by 1.**
+//>The first element becomes the last one.
+
+//**rb (rotate b): Shift up all elements of stack b by 1.**
+//>The first element becomes the last one.
+
+//**rr : ra and rb at the same time.**
+
+//**rra (reverse rotate a): Shift down all elements of stack a by 1.**
+//>The last element becomes the first one.
+
+//**rrb (reverse rotate b): Shift down all elements of stack b by 1.**
+//>The last element becomes the first one.
+
+//**rrr : rra and rrb at the same time.**
