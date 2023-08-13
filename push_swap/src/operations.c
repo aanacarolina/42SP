@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/13 16:55:42 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:13:06 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,20 @@ void	sa(t_node **head_a)
 	t_node	*temp;
 	t_node	*temp2;
 
-	// temp = calloc(1, sizeof(t_node));
-	llist = head_a;
-	temp2 = (*llist)->next->next; // salvando o next do terceiro
-	temp = (*llist)->next;        // 50
-	temp->next = (*llist);        // 30
-	temp->next->next = temp2;     // mas se nao aponta pro endereço do 3o
-	(*head_a) = temp;
+	if (head_a == NULL || (*head_a)->next == NULL)
+	{
+		head_a;
+	}
+	else
+	{
+		// temp = calloc(1, sizeof(t_node));
+		llist = head_a;
+		temp2 = (*llist)->next->next; // salvando o next do terceiro
+		temp = (*llist)->next;        // 50
+		temp->next = (*llist);        // 30
+		temp->next->next = temp2;     // mas se nao aponta pro endereço do 3o
+		(*head_a) = temp;
+	}
 }
 
 //**sb (swap b): Swap the first 2 elements at the top of stack b.**
@@ -38,13 +45,20 @@ void	sb(t_node **head_b)
 	t_node	*temp;
 	t_node	*temp2;
 
-	// temp = calloc(1, sizeof(t_node));
-	llist = head_b;
-	temp2 = (*llist)->next->next; // salvando o next do terceiro
-	temp = (*llist)->next;        // 50
-	temp->next = (*llist);        // 30
-	temp->next->next = temp2;     // mas se nao aponta pro endereço do 3o
-	(*head_b) = temp;
+	if (head_b == NULL || (*head_b)->next == NULL)
+	{
+		head_b;
+	}
+	else
+	{
+		// temp = calloc(1, sizeof(t_node));
+		llist = head_b;
+		temp2 = (*llist)->next->next; // salvando o next do terceiro
+		temp = (*llist)->next;        // 50
+		temp->next = (*llist);        // 30
+		temp->next->next = temp2;     // mas se nao aponta pro endereço do 3o
+		(*head_b) = temp;
+	}
 }
 
 //**ss : sa and sb at the same time.**

@@ -5,10 +5,11 @@
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	int	*array_args;
-	int	*sortedArr;
-	int	size;
+	int		i;
+	int		*array_args;
+	int		*sortedArr;
+	int		size;
+	t_node	*listinha_b;
 
 	if (argc < 2)
 	{
@@ -45,14 +46,17 @@ int	main(int argc, char **argv)
 	}*/
 	else
 	{
-		t_node *listinha = arguments_to_list(argc, argv);
-		DEBUG_printlist(listinha);
-		//printf("%d %d ANTES \n", listinha->data, listinha->next->data);
-		sa(&listinha);
+		t_node *listinha_a = arguments_to_list(argc, argv);
+		listinha_b = create_node(0, NULL);;
+		DEBUG_printlist(listinha_a);
+		DEBUG_printlist(listinha_b);
+		printf("%d %d ANTES \n", listinha_a->data, listinha_a->next->data);
+		sa(&listinha_a);
+		sb(&listinha_b);
+		ss(&listinha_a, &listinha_b);
 		printf("DEPOIX \n");
-		DEBUG_printlist(listinha);
-
-
+		DEBUG_printlist(listinha_a);
+		DEBUG_printlist(listinha_b);
 	}
 	/*
 	TESTE_create_node(argc, argv);
