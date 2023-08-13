@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/13 16:54:02 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:55:42 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,44 @@
 
 //**sa (swap a): Swap the first 2 elements at the top of stack a.**
 //>Do nothing if there is only one or no elements.**
-void	sa(t_node **head)
+void	sa(t_node **head_a)
 {
 	t_node	**llist;
 	t_node	*temp;
 	t_node	*temp2;
 
-	//temp = calloc(1, sizeof(t_node));
-	llist = head;
-	temp2 = (*llist)->next->next; //salvando o next do terceiro
-	temp = (*llist)->next; //50
-	temp->next = (*llist); //30
-	temp->next->next = temp2; //mas se nao aponta pro endereço do 3o
-	(*head) = temp;
+	// temp = calloc(1, sizeof(t_node));
+	llist = head_a;
+	temp2 = (*llist)->next->next; // salvando o next do terceiro
+	temp = (*llist)->next;        // 50
+	temp->next = (*llist);        // 30
+	temp->next->next = temp2;     // mas se nao aponta pro endereço do 3o
+	(*head_a) = temp;
 }
 
 //**sb (swap b): Swap the first 2 elements at the top of stack b.**
 //> Do nothing if there is only one or no elements.
 
-void	sb(t_node **head)
+void	sb(t_node **head_b)
 {
 	t_node	**llist;
 	t_node	*temp;
 	t_node	*temp2;
 
-	//temp = calloc(1, sizeof(t_node));
-	llist = head;
-	temp2 = (*llist)->next->next; //salvando o next do terceiro
-	temp = (*llist)->next; //50
-	temp->next = (*llist); //30
-	temp->next->next = temp2; //mas se nao aponta pro endereço do 3o
-	(*head) = temp;
+	// temp = calloc(1, sizeof(t_node));
+	llist = head_b;
+	temp2 = (*llist)->next->next; // salvando o next do terceiro
+	temp = (*llist)->next;        // 50
+	temp->next = (*llist);        // 30
+	temp->next->next = temp2;     // mas se nao aponta pro endereço do 3o
+	(*head_b) = temp;
 }
 
 //**ss : sa and sb at the same time.**
-void ss(t_node **head_a,  t_node **head_b) {
-
+void	ss(t_node **head_a, t_node **head_b)
+{
 	sa(head_a);
 	sb(head_b);
-	
 }
 //**pa (push a): Take the first element at the top of b and put it at the top of a.**
 // Do nothing if b is empty.
