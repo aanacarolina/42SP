@@ -92,7 +92,7 @@ void DEBUG_printlist(t_node *head)
 		temp = temp->next;
 		if (temp != NULL)
 		{
-			printf("node [%i]: data: [%i]\n", i, temp->data);
+			printf("node [%i]: data: [%i] next: [%i] \n", i, temp->data, temp->next);
 			i++;
 		}
 	}

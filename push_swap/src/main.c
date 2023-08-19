@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 		char *arg_1[] = {"./program", "20"};
 		
 		listinha_a = arguments_to_list(argc, argv);
-		listinha_b = NULL; //not a list yet, just a normal var - simulate empty list 
+		//listinha_b = NULL; //not a list yet, just a normal var - simulate empty list 
 		listinha_b = create_node(20, NULL);//simulate list of 1 node
 		//listinha_b = arguments_to_list(2, arg_2);//simulate list of 2 nodes
 		//listinha_b = arguments_to_list(3, arg_3); //simulate list of 3 nodes

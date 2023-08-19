@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/19 17:55:47 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/19 18:15:04 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,12 @@ void	push_b(t_node **head_a, t_node **head_b)
 	t_node	*temp_b;
 
 	llist_a = head_a;
+	llist_b = head_b;
+		temp_b = (*llist_b)->next;
+		printf("node temp b data: [%i]\n", temp_b->data);
+		printf("node llist b data: [%i]\n", (*llist_b)->data);
 	if (*llist_a != NULL)
 	{
-		llist_b = head_b;
 		if (*head_b == NULL)
 		{
 			(*llist_b) = (*llist_a);
@@ -98,7 +101,6 @@ void	push_b(t_node **head_a, t_node **head_b)
 		}
 		else
 		{
-			temp_b = (*llist_b)->next;
 			(*llist_b) = (*llist_a);
 			// b agora aponta pro primeiro node de a
 			(*llist_a) = (*llist_a)->next;
@@ -106,7 +108,7 @@ void	push_b(t_node **head_a, t_node **head_b)
 			if (temp_b != NULL)
 			// se lista B tiver mais que 2 elementos
 			{
-				(*llist_b)->next = temp_b->next;
+				(*llist_b)->next = temp_b;
 			}
 		}
 	}
