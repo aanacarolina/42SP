@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/19 16:50:52 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/19 17:55:47 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,13 +108,10 @@ void	push_b(t_node **head_a, t_node **head_b)
 			{
 				(*llist_b)->next = temp_b->next;
 			}
-			else // if not is last node
-			{
-				(*llist_b)->next = NULL;
-			}
 		}
 	}
 }
+
 //**ra (rotate a): Shift up all elements of stack a by 1.**
 //>The first element becomes the last one.
 
