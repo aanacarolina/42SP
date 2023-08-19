@@ -53,6 +53,7 @@ int	main(int argc, char **argv)
 	{
 		char* args_b[] = {"./program", "20", "40"};
 		TESTE_push_a(argc, argv, 3, args_b);
+		TESTE_push_b(argc, argv, 3, args_b);
 	}
 	/*
 	TESTE_create_node(argc, argv);
