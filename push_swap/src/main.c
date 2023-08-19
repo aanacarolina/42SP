@@ -54,11 +54,21 @@ int	main(int argc, char **argv)
 		
 		listinha_a = arguments_to_list(argc, argv);
 		//listinha_b = NULL; //not a list yet, just a normal var - simulates empty list 
-		//listinha_b = arguments_to_list(argc, argv);//simulates list of few nodes
-		//listinha_b = arguments_to_list(2, arg_1);//simulates list of 2 nodes
-		//listinha_b = arguments_to_list(3, arg_2);//simulates list of 2 nodes
+		//listinha_b = arguments_to_list(2, arg_1);//simulates list of 1 node
+		listinha_b = arguments_to_list(3, arg_2);//simulates list of 2 nodes
 		//listinha_b = arguments_to_list(4, arg_3); //simulates list of 3 nodes
 		//listinha_b = arguments_to_list(6, arg_5); //simulates list of 5  nodes
+		printf("A\n");
+		DEBUG_printlist(listinha_a);
+		printf("\n \n B \n");
+		DEBUG_printlist(listinha_b);
+		printf("\n \n");
+		pa(&listinha_a, &listinha_b);
+		printf("\n \n A \n");
+		DEBUG_printlist(listinha_a);
+		printf("\n \n B \n");
+		DEBUG_printlist(listinha_b);
+
 		
 	}
 	/*
