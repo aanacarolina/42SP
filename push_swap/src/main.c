@@ -21,6 +21,12 @@ int	main(int argc, char **argv)
 		printf("🚪 EXIT at checker \n"); // TODO remove at the end
 		exit(1);
 	}
+	if (argc == 2){
+		ft_putstr_fd("List of ONE is already sorted\n", 1);
+		printf("🚪 EXIT at only one arg \n"); // TODO remove at the end
+		exit(1);
+	}
+
 	/* else
 	{
 		i = 0;
