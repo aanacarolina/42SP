@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/19 15:42:12 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/19 18:21:47 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include "libs/libft/libft.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 
 typedef struct s_node
 {

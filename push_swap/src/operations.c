@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/19 18:15:04 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/19 18:44:08 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,12 @@ void	push_b(t_node **head_a, t_node **head_b)
 
 	llist_a = head_a;
 	llist_b = head_b;
-		temp_b = (*llist_b)->next;
-		printf("node temp b data: [%i]\n", temp_b->data);
-		printf("node llist b data: [%i]\n", (*llist_b)->data);
+	temp_b = (*llist_b)->next;
+	
+	printf("node temp b data: [%i]\n", temp_b->data);
+	printf("node temp b next: [%i]\n", temp_b->next);
+	printf("node llist b data: [%i]\n", (*llist_b)->data);
+	printf("node llist b next: [%i]\n", (*llist_b)->next);
 	if (*llist_a != NULL)
 	{
 		if (*head_b == NULL)
