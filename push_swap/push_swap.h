@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/13 18:10:18 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/19 15:42:12 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define INT_MAX 2147483647
 
 #include "libs/libft/libft.h"
+#include <stdio.h>
 
 typedef struct s_node
 {
@@ -31,10 +32,12 @@ int					max_min_int_checker(int argc, char **argv);
 int					checker_wrapper(int argc, char **argv);
 int					*args_array(int argc, char **argv);
 int					*bubbleSort(int *arr, int size);
+void				swap_aux(t_node **head);
 void				sa(t_node **head_a);
 void				sb(t_node **head_b);
 void				ss(t_node **head_a, t_node **head_b);
-void				pa(t_node **head_a, t_node **head_b);
+// void				push_a(t_node **head_a, t_node **head_b);
+void				push_b(t_node **head_a, t_node **head_b);
 void				TESTE_create_node(int argc, char **argv);
 void				TESTE_arguments_to_list(int argc, char **argv);
 void				TESTE_args_checker(void);

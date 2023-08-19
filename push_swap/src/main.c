@@ -48,15 +48,19 @@ int	main(int argc, char **argv)
 	else
 	{
 		listinha_a = arguments_to_list(argc, argv);
-		listinha_b = create_node(NULL, NULL); //empty list t_node vazio
-		printf("DEPOIX \n");
-		sa(&listinha_a);
-		//DEBUG_printlist(listinha_a);
-		sb(&listinha_b);
-		//DEBUG_printlist(listinha_b);
-		ss(&listinha_a, &listinha_b);
+		//listinha_b = NULL; //not a list yet, just a normal var - SIMULATE EMPTY LIST
+		listinha_b = create_node(20, NULL); //simulate list of 1 node
+		//listinha_b = create_node(); //simulate list of 2 or more nodes
+		printf("[ANTES] -> LISTINHA A \n");
 		DEBUG_printlist(listinha_a);
-		printf("DEPOIX \n");
+		printf("\n[ANTES] -> LISTINHA B\n");
+		DEBUG_printlist(listinha_b);
+		push_b(&listinha_a, &listinha_b);
+		printf("\n\n[DEPOIS] - LISTINHA A\n");
+		DEBUG_printlist(listinha_a);
+		printf("\n[DEPOIS] - LISTINHA B\n");
+		DEBUG_printlist(listinha_b);
+
 	}
 	/*
 	TESTE_create_node(argc, argv);
