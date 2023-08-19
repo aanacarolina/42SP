@@ -59,16 +59,7 @@ int	main(int argc, char **argv)
 		//listinha_b = arguments_to_list(3, arg_2);//simulates list of 2 nodes
 		//listinha_b = arguments_to_list(4, arg_3); //simulates list of 3 nodes
 		//listinha_b = arguments_to_list(6, arg_5); //simulates list of 5  nodes
-		printf("[ANTES] -> LISTINHA A \n");
-		DEBUG_printlist(listinha_a);
-		printf("\n[ANTES] -> LISTINHA B\n");
-		DEBUG_printlist(listinha_b);
-		push_b(&listinha_a, &listinha_b);
-		printf("\n\n[DEPOIS] - LISTINHA A\n");
-		DEBUG_printlist(listinha_a);
-		printf("\n[DEPOIS] - LISTINHA B\n");
-		DEBUG_printlist(listinha_b);
-
+		
 	}
 	/*
 	TESTE_create_node(argc, argv);

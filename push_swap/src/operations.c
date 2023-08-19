@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/19 18:49:21 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/19 18:53:56 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ make 2nd node of a become de first
 
 */
 
-void	push_b(t_node **head_a, t_node **head_b)
+void	push_aux(t_node **head_a, t_node **head_b)
 {
 	t_node	**llist_a;
 	t_node	**llist_b;
@@ -88,7 +88,6 @@ void	push_b(t_node **head_a, t_node **head_b)
 	llist_a = head_a;
 	llist_b = head_b;
 	temp_b = (*llist_b);
-
 	if (*llist_a != NULL)
 	{
 		if (*head_b == NULL)
@@ -107,6 +106,21 @@ void	push_b(t_node **head_a, t_node **head_b)
 			(*llist_b)->next = temp_b;
 		}
 	}
+}
+
+void	pa(t_node **head_a, t_node **head_b)
+{
+	push_aux(head_a, head_b);
+	ft_putstr_fd("pa\n", 1);
+}
+
+//**sb (swap b): Swap the first 2 elements at the top of stack b.**
+//> Do nothing if there is only one or no elements.
+
+void	pb(t_node **head_a, t_node **head_b)
+{
+	push_aux(head_a, head_b);
+	ft_putstr_fd("pb\n", 1);
 }
 
 //**ra (rotate a): Shift up all elements of stack a by 1.**
