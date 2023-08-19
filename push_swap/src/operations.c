@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/19 18:44:08 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/19 18:49:21 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,8 @@ void	push_b(t_node **head_a, t_node **head_b)
 
 	llist_a = head_a;
 	llist_b = head_b;
-	temp_b = (*llist_b)->next;
-	
-	printf("node temp b data: [%i]\n", temp_b->data);
-	printf("node temp b next: [%i]\n", temp_b->next);
-	printf("node llist b data: [%i]\n", (*llist_b)->data);
-	printf("node llist b next: [%i]\n", (*llist_b)->next);
+	temp_b = (*llist_b);
+
 	if (*llist_a != NULL)
 	{
 		if (*head_b == NULL)
@@ -108,11 +104,7 @@ void	push_b(t_node **head_a, t_node **head_b)
 			// b agora aponta pro primeiro node de a
 			(*llist_a) = (*llist_a)->next;
 			// lista A agora aponta pro segundo node de a tipo a deleção desse node de A
-			if (temp_b != NULL)
-			// se lista B tiver mais que 2 elementos
-			{
-				(*llist_b)->next = temp_b;
-			}
+			(*llist_b)->next = temp_b;
 		}
 	}
 }
