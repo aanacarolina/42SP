@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/19 19:09:09 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/19 19:48:52 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,7 @@ void				TESTE_args_checker(void);
 void				TESTE_non_int_checker(void);
 void				TESTE_max_min_int_checker(void);
 void				DEBUG_printlist(t_node *head);
+void				TESTE_push_a(int argc_a, char **list_a, int argc_b,
+						char **list_b);
+void				TESTE_push_b(int argc_a, char **list_a, int argc_b,
+						char **list_b);

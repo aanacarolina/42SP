@@ -8,9 +8,7 @@ int	main(int argc, char **argv)
 	int		i;
 	int		*array_args;
 	int		*sortedArr;
-	int		size;
-	t_node	*listinha_b;
-	t_node	*listinha_a;
+	int		size;	
 
 	if (argc < 2)
 	{
@@ -47,29 +45,8 @@ int	main(int argc, char **argv)
 	}*/
 	else
 	{
-		char *arg_5[] = {"./program", "20", "40", "60", "80", "100"};
-		char *arg_3[] = {"./program", "20", "40", "60"};
-		char *arg_2[] = {"./program", "20", "40"};
-		char *arg_1[] = {"./program", "20"};
-		
-		listinha_a = arguments_to_list(argc, argv);
-		//listinha_b = NULL; //not a list yet, just a normal var - simulates empty list 
-		//listinha_b = arguments_to_list(2, arg_1);//simulates list of 1 node
-		listinha_b = arguments_to_list(3, arg_2);//simulates list of 2 nodes
-		//listinha_b = arguments_to_list(4, arg_3); //simulates list of 3 nodes
-		//listinha_b = arguments_to_list(6, arg_5); //simulates list of 5  nodes
-		printf("A\n");
-		DEBUG_printlist(listinha_a);
-		printf("\n \n B \n");
-		DEBUG_printlist(listinha_b);
-		printf("\n \n");
-		pa(&listinha_a, &listinha_b);
-		printf("\n \n A \n");
-		DEBUG_printlist(listinha_a);
-		printf("\n \n B \n");
-		DEBUG_printlist(listinha_b);
-
-		
+		char* args_b[] = {"./program", "20", "40"};
+		TESTE_push_a(argc, argv, 3, args_b);
 	}
 	/*
 	TESTE_create_node(argc, argv);
