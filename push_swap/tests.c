@@ -154,7 +154,6 @@ void	DEBUG_llist(t_node **head_a, t_node **head_b)
 	llist_b = head_b;
 	temp_head = (*llist_a);
 
-	
 	printf("\n HEAD A [%p]", head_a); 
 	printf("\n HEAD A [%i]", head_a); 
 	printf("\n *HEAD A [%p]", *head_a); 
@@ -200,6 +199,57 @@ void	DEBUG_llist(t_node **head_a, t_node **head_b)
 
 	
 }
+
+
+void	DEBUG_one_item_llist(t_node **head_a, t_node **head_b)
+{
+	t_node **llist_a;
+	t_node **llist_b;
+	t_node *temp_head;
+
+	llist_a = head_a;
+	llist_b = head_b;
+	temp_head = (*llist_a);
+
+	
+	
+	printf("\n & HEAD A DATA [%p]", &(*head_a)->data);
+	printf("\n HEAD A DATA [%i]", (*head_a)->data);
+	printf("\n HEAD A NEXT [%p]", (*head_a)->next);
+	printf("\n --------------- \n");
+	printf("\n list a [%p]", llist_a);
+	printf("\n list a data [%i]", (*llist_a)->data);
+	printf("\n list a next [%p]", (*llist_a)->next);
+	printf("\n --------------- \n");
+	printf("\n HEAD B [%p]", head_b);
+	printf("\n HEAD B DATA[%i]", (*head_b)->data);
+	printf("\n HEAD B NEXT [%p]", (*head_b)->next);
+	printf("\n HEAD B NEXT DATA [%i]", (*head_b)->next->data);
+	printf("\n & HEAD B NEXT DATA [%p]", &(*head_b)->next->data);
+	printf("\n --------------- \n");
+	
+}
+
+void	TESTE_rotate_a(int argc, char **argv)
+{
+	t_node *listinha_a = arguments_to_list(argc, argv);
+	//t_node *listinha_b = NULL; //not a list yet,
+	//char *args_b[] = {"./program", "20", "40", "60", "80", "100"};
+	char *args_b[] = {"./program", "20"};
+	t_node *listinha_b = arguments_to_list(2, args_b);
+
+	printf("LISTA A antes\n");
+	DEBUG_printlist(listinha_a);
+	printf("\n LISTA B antes \n");
+	DEBUG_printlist(listinha_b);
+	rotate_a(&listinha_a, &listinha_b);
+	printf("\n LISTA A depoix\n");
+	DEBUG_printlist(listinha_a);
+	printf("\n LISTA B depoix\n");
+	DEBUG_printlist(listinha_b);
+	printf("\n ---------------------------------- \n");
+
+	}
 
 //**HEAD com 2 asteriscos é o ponteiro para a lista
 //*HEAD com 1 asteriscos é o ponteiro para o primeiro node da lista  

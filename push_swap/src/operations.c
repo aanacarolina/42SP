@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/26 17:55:31 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/26 20:26:29 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	swap_aux(t_node **head)
 	t_node	*temp;
 	t_node	*temp2;
 
-	if (head == NULL || (*head)->next == NULL)
-		head;
-	else
+	if (head == NULL && (*head)->next == NULL)
 	{
 		// temp = calloc(1, sizeof(t_node));
 		llist = head;
@@ -147,24 +145,26 @@ void	pb(t_node **head_a, t_node **head_b)
 	ft_putstr_fd("pb\n", 1);
 }
 
-
 void	rotate_a(t_node **head_a, t_node **head_b)
 {
-	t_node **llist_a;
-	t_node **llist_b;
-	t_node *temp_head;
+	t_node	**llist_a;
+	t_node	**llist_b;
+	t_node	*initial_head;
 
 	llist_a = head_a;
 	llist_b = head_b;
-	temp_head = (*llist_a);
-
-	DEBUG_llist(head_a, head_b);
 	
+	if (llist_a != NULL && (*llist_a)->next != NULL)
+	{
+		initial_head = (*llist_a);
+		(*llist_a) = (*llist_a)->next; 
+		
+	}
 }
 
 void	rotate_b(t_node **head_a, t_node **head_b)
 {
-	printf("hello");
+	printf("rotate b");
 }
 //**ra (rotate a): Shift up all elements of stack a by 1.**
 void	ra(t_node **head_a, t_node **head_b)

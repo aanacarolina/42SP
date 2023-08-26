@@ -54,8 +54,9 @@ int	main(int argc, char **argv)
 
 	t_node *listinha_a = arguments_to_list(argc, argv);
 	//t_node *listinha_b = NULL; //not a list yet,
-	char *args_b[] = {"./program", "20", "40", "60", "80", "100"};
-	t_node *listinha_b = arguments_to_list(6, args_b);
+	char *args_b[] = {"./program", "20", "40", "60", };
+	t_node *listinha_b = arguments_to_list(4, args_b);
+	
 	printf("LISTA A antes\n");
 	DEBUG_printlist(listinha_a);
 	printf("\n LISTA B antes \n");
@@ -66,6 +67,7 @@ int	main(int argc, char **argv)
 	printf("\n LISTA B depoix\n");
 	DEBUG_printlist(listinha_b);
 	printf("\n ---------------------------------- \n");
+
 	}
 	/*
 	TESTE_create_node(argc, argv);
