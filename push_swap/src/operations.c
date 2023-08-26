@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/19 19:14:45 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/26 16:24:11 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,18 +141,44 @@ void	pa(t_node **head_a, t_node **head_b)
 }
 
 //**pb (push b): Take the first element at the top of a and put it at the top of b.**
-
 void	pb(t_node **head_a, t_node **head_b)
 {
 	push_b(head_a, head_b);
 	ft_putstr_fd("pb\n", 1);
 }
 
+
+void	rotate_a(t_node **head_a, t_node **head_b)
+{
+	t_node **llist_a;
+	t_node **llist_b;
+	t_node *temp_head;
+
+	llist_a = head_a;
+	llist_b = head_b;
+	temp_head = (*llist_a);
+
+	DEBUG_llist(head_a, head_b);
+	
+}
+
+void	rotate_b(t_node **head_a, t_node **head_b)
+{
+	printf("hello");
+}
 //**ra (rotate a): Shift up all elements of stack a by 1.**
-//>The first element becomes the last one.
+void	ra(t_node **head_a, t_node **head_b)
+{
+	rotate_a(head_a, head_b);
+	ft_putstr_fd("ra\n", 1);
+}
 
 //**rb (rotate b): Shift up all elements of stack b by 1.**
-//>The first element becomes the last one.
+void	rb(t_node **head_a, t_node **head_b)
+{
+	rotate_b(head_a, head_b);
+	ft_putstr_fd("rb\n", 1);
+}
 
 //**rr : ra and rb at the same time.**
 

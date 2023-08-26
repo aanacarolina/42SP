@@ -51,9 +51,21 @@ int	main(int argc, char **argv)
 	}*/
 	else
 	{
-		char* args_b[] = {"./program", "20", "40"};
-		TESTE_push_a(argc, argv, 3, args_b);
-		TESTE_push_b(argc, argv, 3, args_b);
+
+	t_node *listinha_a = arguments_to_list(argc, argv);
+	//t_node *listinha_b = NULL; //not a list yet,
+	char *args_b[] = {"./program", "20", "40", "60", "80", "100"};
+	t_node *listinha_b = arguments_to_list(6, args_b);
+	printf("PA A\n");
+	DEBUG_printlist(listinha_a);
+	printf("\n PA B \n");
+	DEBUG_printlist(listinha_b);
+	rotate_a(&listinha_a, &listinha_b);
+	printf("\n PA A\n");
+	DEBUG_printlist(listinha_a);
+	printf("\n PA B \n");
+	DEBUG_printlist(listinha_b);
+	printf("\n ---------------------------------- \n");
 	}
 	/*
 	TESTE_create_node(argc, argv);

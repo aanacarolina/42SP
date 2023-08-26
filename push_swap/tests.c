@@ -142,3 +142,37 @@ void	TESTE_push_b(int argc_a, char **list_a, int argc_b, char **list_b)
 	DEBUG_printlist(listinha_b);
 	printf("\n ---------------------------------- \n");
 }
+
+
+void	DEBUG_llist(t_node **head_a, t_node **head_b)
+{
+	t_node **llist_a;
+	t_node **llist_b;
+	t_node *temp_head;
+
+	llist_a = head_a;
+	llist_b = head_b;
+	temp_head = (*llist_a);
+
+	printf("\n HEAD A [%p]\n", head_a);
+	printf("\n HEAD A DATA [%i]\n", (*head_a)->data);
+	printf("\n HEAD A NEXT [%p]\n", (*head_a)->next);
+	printf("\n --------------- \n");
+	printf("\n list a [%p]\n", llist_a);
+	printf("\n list a data [%i]\n", (*llist_a)->data);
+	printf("\n list a next [%p]\n", (*llist_a)->next);
+	printf("\n --------------- \n");
+	printf("\n HEAD B [%p]\n", head_b);
+	printf("\n HEAD B DATA[%i]\n", (*head_b)->data);
+	printf("\n HEAD B NEXT [%p]\n", (*head_b)->next);
+	printf("\n --------------- \n");
+	printf("\n list b [%p]\n", llist_b);
+	printf("\n list b data [%i]\n", (*llist_b)->data);
+	printf("\n list b next [%p]\n", (*llist_b)->next);
+	printf("\n --------------- \n");
+	printf("\n temp [%p]\n", temp_head);
+	printf("\n temp data[%i]\n", (temp_head)->data);
+	printf("\n temp next [%p]\n", (temp_head)->next);
+
+	
+}
