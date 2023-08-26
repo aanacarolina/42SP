@@ -56,14 +56,14 @@ int	main(int argc, char **argv)
 	//t_node *listinha_b = NULL; //not a list yet,
 	char *args_b[] = {"./program", "20", "40", "60", "80", "100"};
 	t_node *listinha_b = arguments_to_list(6, args_b);
-	printf("PA A\n");
+	printf("LISTA A antes\n");
 	DEBUG_printlist(listinha_a);
-	printf("\n PA B \n");
+	printf("\n LISTA B antes \n");
 	DEBUG_printlist(listinha_b);
 	rotate_a(&listinha_a, &listinha_b);
-	printf("\n PA A\n");
+	printf("\n LISTA A depoix\n");
 	DEBUG_printlist(listinha_a);
-	printf("\n PA B \n");
+	printf("\n LISTA B depoix\n");
 	DEBUG_printlist(listinha_b);
 	printf("\n ---------------------------------- \n");
 	}
