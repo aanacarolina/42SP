@@ -52,6 +52,8 @@ int	main(int argc, char **argv)
 	else
 	{
 
+	//make it work outside args - no arguments to list
+
 	t_node *listinha_a = arguments_to_list(argc, argv);
 	//t_node *listinha_b = NULL; //not a list yet,
 	char *args_b[] = {"./program", "20", "40", "60", };
@@ -61,7 +63,8 @@ int	main(int argc, char **argv)
 	DEBUG_printlist(listinha_a);
 	printf("\n LISTA B antes \n");
 	DEBUG_printlist(listinha_b);
-	rotate_a(&listinha_a, &listinha_b);
+	ra(&listinha_a, &listinha_b);
+	rb(&listinha_a, &listinha_b);
 	printf("\n LISTA A depoix\n");
 	DEBUG_printlist(listinha_a);
 	printf("\n LISTA B depoix\n");
