@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/26 22:14:15 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/26 23:27:28 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -244,21 +244,27 @@ void	rev_rotate_a(t_node **head_a, t_node **head_b)
 	t_node	**llist_a;
 	t_node	**llist_b;
 	t_node	*initial_tail;
+	t_node	*initial_head;
 	t_node	*temp;
 	
 	llist_a = head_a;
 	llist_b = head_b;
 	if (llist_a != NULL && (*llist_a)->next != NULL)
 	{
+	initial_head = (*llist_a); 
 	temp = (*llist_a); 
 		while (temp->next->next != NULL) // looking for original last node
 		{
 			temp = temp->next;
-		} 
+		}
 		initial_tail = temp->next; //saving address of the original last node
 		temp->next = NULL; // setting second to last node as last
-		
-		printf("sera a ultima original %d", *initial_tail);
+		initial_tail = initial_head //hopefully setting as new first node
+		printf("\n cade minha lista %d \n ", *initial_tail);
+		printf("next of initial tail %p \n ", initial_tail);
+		printf("initial head %d \n ", *initial_head);
+		printf("address initial head %p \n ", initial_head);
+		printf("address initial head %p \n ", initial_head);
 	}
 }
 
