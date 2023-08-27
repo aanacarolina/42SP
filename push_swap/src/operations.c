@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/26 23:27:28 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/27 00:39:40 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,14 +156,16 @@ void	rotate_a(t_node **head_a, t_node **head_b)
 	llist_b = head_b;
 	if (llist_a != NULL && (*llist_a)->next != NULL)
 	{
-		initial_head = (*llist_a); // saving address of the original first node
+		initial_head = (*llist_a);    
+			// saving address of the original first node
 		(*llist_a) = (*llist_a)->next; // setting head to 2 node
 		temp = (*llist_a);
 		while (temp->next != NULL) // looking for current last node
 		{
 			temp = temp->next;
 		}
-		temp->next = initial_head; // making current last node point to original first node
+		temp->next = initial_head;
+			// making current last node point to original first node
 		initial_head->next = NULL; // setting first node as last
 	}
 }
@@ -177,16 +179,19 @@ void	rotate_b(t_node **head_a, t_node **head_b)
 
 	llist_a = head_a;
 	llist_b = head_b;
-	if (llist_b != NULL && (*llist_b)->next != NULL) //checks if not empty or just one node
+	if (llist_b != NULL && (*llist_b)->next != NULL)
+		// checks if not empty or just one node
 	{
-		initial_head = (*llist_b); // saving address of the original first node
+		initial_head = (*llist_b);    
+			// saving address of the original first node
 		(*llist_b) = (*llist_b)->next; // setting head to 2 node
 		temp = (*llist_b);
 		while (temp->next != NULL) // looking for current last node
 		{
 			temp = temp->next;
 		}
-		temp->next = initial_head; // making current last node point to original first node
+		temp->next = initial_head;
+			// making current last node point to original first node
 		initial_head->next = NULL; // setting first node as last
 	}
 }
@@ -210,7 +215,6 @@ void	rr(t_node **head_a, t_node **head_b)
 	rotate_a(head_a, head_b);
 	rotate_b(head_a, head_b);
 	ft_putstr_fd("rr\n", 1);
-
 }
 
 void	rev_rotate_b(t_node **head_a, t_node **head_b)
@@ -222,20 +226,20 @@ void	rev_rotate_b(t_node **head_a, t_node **head_b)
 
 	llist_a = head_a;
 	llist_b = head_b;
-	if (llist_a != NULL && (*llist_a)->next != NULL) 
+	if (llist_a != NULL && (*llist_a)->next != NULL)
 	{
-		initial_tail = (*llist_a); // saving address of the original first node
+		initial_tail = (*llist_a);    
+			// saving address of the original first node
 		(*llist_a) = (*llist_a)->next; // setting head to 2 node
 		temp = (*llist_a);
 		while (temp->next != NULL) // looking for current last node
 		{
 			temp = temp->next;
 		}
-		temp->next = initial_tail; // making current last node point to original first node
+		temp->next = initial_tail;
+			// making current last node point to original first node
 		initial_tail->next = NULL; // setting first node as last
-
-		initial_tail = temp; //saving address of original last node
-		
+		initial_tail = temp; // saving address of original last node
 	}
 }
 
@@ -258,15 +262,17 @@ void	rev_rotate_a(t_node **head_a, t_node **head_b)
 			temp = temp->next;
 		}
 		initial_tail = temp->next; //saving address of the original last node
+		*head_a = initial_tail; //hopefully setting as new first node
+		initial_tail->next = initial_head;
 		temp->next = NULL; // setting second to last node as last
-		initial_tail = initial_head //hopefully setting as new first node
-		printf("\n cade minha lista %d \n ", *initial_tail);
-		printf("next of initial tail %p \n ", initial_tail);
-		printf("initial head %d \n ", *initial_head);
-		printf("address initial head %p \n ", initial_head);
-		printf("address initial head %p \n ", initial_head);
+	
 	}
+		printf("\n initial_tail %d \n ", *initial_tail);
+		printf("next of initial tail %p \n ", initial_tail->next);
+		printf("initial head %d \n ", *initial_head);
+		printf("address initial head %p \n ", initial_head->next);
 }
+
 
 
 //**rra (reverse rotate a): Shift down all elements of stack a by 1.**
@@ -291,5 +297,4 @@ void	rrr(t_node **head_a, t_node **head_b)
 	rev_rotate_a(head_a, head_b);
 	rev_rotate_b(head_a, head_b);
 	ft_putstr_fd("rrr\n", 1);
-
 }
