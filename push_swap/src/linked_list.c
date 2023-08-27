@@ -1,60 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   linked_list.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
+/*   Updated: 2023/08/27 03:42:58 by anacaro3         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-
-/*
-Llista encadeada - dynamic size
-Array - fixed size
-
-
-Acessar
-O(n) worst case
-Na lista encadeada, somente acesso sequencial, ou seja,
-	passando de node em node até chegar onde quiser.
-O(1)
-Array por sua vez tem acesso direto, ou seja, informe a posição vá la direto
-
-Inserir/Delete
-
-BEGINNING
-LL - O(1)
-A - O(N) - pq temos que empurrar todos os elementos para a posição seguinte
-
-AT END
-LL - O(N)
-A - O(1)
-
-AT Nth POSITION
-LL - O(N) (proportional to number of elements)
-A - O(N) (proportional to number of elements)
-
-O(n) worst case
-Array
-
--------
-Não é posssível fazer busca binaria em listas encadeadas
-
-*/
-
-/*
-create node
-data = valor da variavel
-next = valor do atual primeiro node
-
-depois mudar o valor de head para o node que acabamos de criar
-
-*/
-
-/*
-create node
-data = valor da variavel
-next = null
-
-depois mudar o valor da anterior, que era NULL,
-	para o node que acabamos de criar
-
-*/
-
-// creates (already allocating memory for) a node -> remember to free after using it
+// TODO: remember to free after using it
+// creates (already allocating memory for) a node
 t_node	*create_node(int data, t_node *next)
 {
 	t_node	*node;
