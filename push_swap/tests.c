@@ -1,8 +1,5 @@
 #include "./push_swap.h"
 #include <assert.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 void	TESTE_create_node(int argc, char **argv)
 {
