@@ -90,6 +90,7 @@ void	DEBUG_printlist(t_node *head)
 			i++;
 		}
 	}
+	printf("\n");
 }
 
 void	TESTE_arguments_to_list(int argc, char **argv)
