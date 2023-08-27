@@ -8,13 +8,9 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		printf("🚪 EXIT at ARG < 2 \n"); // TODO remove at the end
-		exit(1);
-	}
-	if (checker_wrapper(argc, argv) == 0)
-	{
-		ft_putstr_fd("Error\n", 2);
-		printf("🚪 EXIT at checker \n"); // TODO remove at the end
+		ft_putstr_fd("Can't sort empty list\n", 1);
+		printf("🚪 EXIT at only one arg \n"); // TODO remove at the end
+
 		exit(1);
 	}
 	if (argc == 2)
@@ -23,6 +19,13 @@ int	main(int argc, char **argv)
 		printf("🚪 EXIT at only one arg \n"); // TODO remove at the end
 		exit(1);
 	}
+	if (checker_wrapper(argc, argv) == 0)
+	{
+		ft_putstr_fd("Error\n", 2);
+		printf("🚪 EXIT at checker \n"); // TODO remove at the end
+		exit(1);
+	}
+
 	/* else
 	{
 		i = 0;
