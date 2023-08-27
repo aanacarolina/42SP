@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/27 00:39:40 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/27 00:55:57 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,8 +156,8 @@ void	rotate_a(t_node **head_a, t_node **head_b)
 	llist_b = head_b;
 	if (llist_a != NULL && (*llist_a)->next != NULL)
 	{
-		initial_head = (*llist_a);    
-			// saving address of the original first node
+		initial_head = (*llist_a);
+		// saving address of the original first node
 		(*llist_a) = (*llist_a)->next; // setting head to 2 node
 		temp = (*llist_a);
 		while (temp->next != NULL) // looking for current last node
@@ -165,7 +165,7 @@ void	rotate_a(t_node **head_a, t_node **head_b)
 			temp = temp->next;
 		}
 		temp->next = initial_head;
-			// making current last node point to original first node
+		// making current last node point to original first node
 		initial_head->next = NULL; // setting first node as last
 	}
 }
@@ -180,10 +180,10 @@ void	rotate_b(t_node **head_a, t_node **head_b)
 	llist_a = head_a;
 	llist_b = head_b;
 	if (llist_b != NULL && (*llist_b)->next != NULL)
-		// checks if not empty or just one node
+	// checks if not empty or just one node
 	{
-		initial_head = (*llist_b);    
-			// saving address of the original first node
+		initial_head = (*llist_b);
+		// saving address of the original first node
 		(*llist_b) = (*llist_b)->next; // setting head to 2 node
 		temp = (*llist_b);
 		while (temp->next != NULL) // looking for current last node
@@ -191,7 +191,7 @@ void	rotate_b(t_node **head_a, t_node **head_b)
 			temp = temp->next;
 		}
 		temp->next = initial_head;
-			// making current last node point to original first node
+		// making current last node point to original first node
 		initial_head->next = NULL; // setting first node as last
 	}
 }
@@ -228,8 +228,8 @@ void	rev_rotate_b(t_node **head_a, t_node **head_b)
 	llist_b = head_b;
 	if (llist_a != NULL && (*llist_a)->next != NULL)
 	{
-		initial_tail = (*llist_a);    
-			// saving address of the original first node
+		initial_tail = (*llist_a);
+		// saving address of the original first node
 		(*llist_a) = (*llist_a)->next; // setting head to 2 node
 		temp = (*llist_a);
 		while (temp->next != NULL) // looking for current last node
@@ -237,9 +237,9 @@ void	rev_rotate_b(t_node **head_a, t_node **head_b)
 			temp = temp->next;
 		}
 		temp->next = initial_tail;
-			// making current last node point to original first node
+		// making current last node point to original first node
 		initial_tail->next = NULL; // setting first node as last
-		initial_tail = temp; // saving address of original last node
+		initial_tail = temp;       // saving address of original last node
 	}
 }
 
@@ -250,30 +250,24 @@ void	rev_rotate_a(t_node **head_a, t_node **head_b)
 	t_node	*initial_tail;
 	t_node	*initial_head;
 	t_node	*temp;
-	
+
 	llist_a = head_a;
 	llist_b = head_b;
 	if (llist_a != NULL && (*llist_a)->next != NULL)
 	{
-	initial_head = (*llist_a); 
-	temp = (*llist_a); 
+		initial_head = (*llist_a);
+		temp = (*llist_a);
 		while (temp->next->next != NULL) // looking for original last node
+		//!! temp will be set to second to last, so I can keep this to set for last node at the end 
 		{
 			temp = temp->next;
 		}
-		initial_tail = temp->next; //saving address of the original last node
-		*head_a = initial_tail; //hopefully setting as new first node
-		initial_tail->next = initial_head;
+		initial_tail = temp->next; // saving address of the original last node
+		*head_a = initial_tail;    // pointing head to new first node (we had 2 heads)
+		initial_tail->next = initial_head; //setting the new head to the original first
 		temp->next = NULL; // setting second to last node as last
-	
 	}
-		printf("\n initial_tail %d \n ", *initial_tail);
-		printf("next of initial tail %p \n ", initial_tail->next);
-		printf("initial head %d \n ", *initial_head);
-		printf("address initial head %p \n ", initial_head->next);
 }
-
-
 
 //**rra (reverse rotate a): Shift down all elements of stack a by 1.**
 //>The last element becomes the first one.
