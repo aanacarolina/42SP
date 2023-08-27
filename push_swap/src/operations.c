@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/26 22:08:30 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/26 22:14:15 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -255,8 +255,10 @@ void	rev_rotate_a(t_node **head_a, t_node **head_b)
 		{
 			temp = temp->next;
 		} 
-		initial_tail = temp->next->next; //saving address of the original last node
+		initial_tail = temp->next; //saving address of the original last node
 		temp->next = NULL; // setting second to last node as last
+		
+		printf("sera a ultima original %d", *initial_tail);
 	}
 }
 
