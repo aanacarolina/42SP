@@ -152,11 +152,11 @@ void	DEBUG_llist(t_node **head_a, t_node **head_b)
 	temp_head = (*llist_a);
 
 	printf("\n HEAD A [%p]", head_a); 
-	printf("\n HEAD A [%i]", head_a); 
+	//printf("\n HEAD A [%i]", head_a); 
 	printf("\n *HEAD A [%p]", *head_a); 
-	printf("\n *HEAD A [%i]", *head_a); 
-	printf("\n **HEAD A [%p]", **head_a); 
-	printf("\n **HEAD A [%i]", **head_a);
+	//printf("\n *HEAD A [%i]", *head_a); 
+	//printf("\n **HEAD A [%p]", **head_a); 
+	//printf("\n **HEAD A [%i]", **head_a);
 	printf("\n & HEAD A DATA [%p]", &(*head_a)->data);
 	printf("\n HEAD A DATA [%i]", (*head_a)->data);
 	printf("\n HEAD A NEXT [%p]", (*head_a)->next);
