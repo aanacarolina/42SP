@@ -6,18 +6,17 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 16:53:09 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/05 19:54:29 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/27 03:58:39 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
-int *args_array(int argc, char **argv)
+int	*args_array(int argc, char **argv)
 {
-	int i;
-	int j;
-	int *arr_args;
+	int	i;
+	int	j;
+	int	*arr_args;
 
 	arr_args = calloc(argc - 1, sizeof(int));
 	i = 1;
@@ -28,6 +27,5 @@ int *args_array(int argc, char **argv)
 		i++;
 		j++;
 	}
-
 	return (arr_args);
 }
