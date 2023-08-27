@@ -56,6 +56,7 @@ int	main(int argc, char **argv)
 	{
 
 	//TODO: make it work outside args - no arguments to list
+	//TODO: refactor max functions
 	//TODO: norminette
 
 		t_node *listinha_a = arguments_to_list(argc, argv);
