@@ -63,8 +63,7 @@ int	main(int argc, char **argv)
 	DEBUG_printlist(listinha_a);
 	printf("\n LISTA B antes \n");
 	DEBUG_printlist(listinha_b);
-	ra(&listinha_a, &listinha_b);
-	rb(&listinha_a, &listinha_b);
+	rr(&listinha_a, &listinha_b);
 	printf("\n LISTA A depoix\n");
 	DEBUG_printlist(listinha_a);
 	printf("\n LISTA B depoix\n");

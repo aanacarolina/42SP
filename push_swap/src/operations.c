@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/26 20:56:57 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/26 20:59:36 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,6 +205,14 @@ void	rb(t_node **head_a, t_node **head_b)
 }
 
 //**rr : ra and rb at the same time.**
+void	rr(t_node **head_a, t_node **head_b)
+{
+	rotate_a(head_a, head_b);
+	rotate_b(head_a, head_b);
+	ft_putstr_fd("rr\n", 1);
+
+}
+
 
 //**rra (reverse rotate a): Shift down all elements of stack a by 1.**
 //>The last element becomes the first one.
