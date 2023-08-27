@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 		i = 0;
 		// size = sizeof(argv) / sizeof(atoi(argv[0]));
 		size = 5;
-		sortedArr = bubbleSort(array_args, size);
+		sortedArr = bubble_sort(array_args, size);
 		while (i < argc - 1)
 		{
 			printf("SORTED array of args[%d]: %d\n", i, sortedArr[i]);
