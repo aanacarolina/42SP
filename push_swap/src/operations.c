@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/27 01:06:44 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/27 01:10:32 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,32 +217,6 @@ void	rr(t_node **head_a, t_node **head_b)
 	ft_putstr_fd("rr\n", 1);
 }
 
-void	rev_rotate_b(t_node **head_a, t_node **head_b)
-{
-	t_node	**llist_a;
-	t_node	**llist_b;
-	t_node	*initial_tail;
-	t_node	*temp;
-
-	llist_a = head_a;
-	llist_b = head_b;
-	if (llist_a != NULL && (*llist_a)->next != NULL)
-	{
-		initial_tail = (*llist_a);
-		// saving address of the original first node
-		(*llist_a) = (*llist_a)->next; // setting head to 2 node
-		temp = (*llist_a);
-		while (temp->next != NULL) // looking for current last node
-		{
-			temp = temp->next;
-		}
-		temp->next = initial_tail;
-		// making current last node point to original first node
-		initial_tail->next = NULL; // setting first node as last
-		initial_tail = temp;       // saving address of original last node
-	}
-}
-
 void	rev_rotate_a(t_node **head_a, t_node **head_b)
 {
 	t_node	**llist_a;
@@ -253,13 +227,6 @@ void	rev_rotate_a(t_node **head_a, t_node **head_b)
 
 	llist_a = head_a;
 	llist_b = head_b;
-	printf("\n *head_a %d \n ", **head_a);
-	printf("\n *head_a %p \n ", *head_a);
-	printf("\n *llist_a %d \n ", **llist_a);
-	printf("\n *llist_a %p \n ", *llist_a);
-	printf("\n *llist_a->data %d \n ", (*llist_a)->data);
-	printf("\n *llist_a->next %p \n ", (*llist_a)->next);
-	printf("\n *llist_a->next->next %p \n ", (*llist_a)->next->next);
 	if (llist_a != NULL && (*llist_a)->next != NULL)
 	{
 		initial_head = (*llist_a);
@@ -278,15 +245,37 @@ void	rev_rotate_a(t_node **head_a, t_node **head_b)
 		temp->next = NULL;
 		// setting second to last node as last
 	}
-		printf("\n --------------- \n");
+}
 
-	printf("\n *head_a %d \n ", **head_a);
-	printf("\n *head_a %p \n ", *head_a);
-	printf("\n *llist_a %d \n ", **llist_a);
-	printf("\n *llist_a %p \n ", *llist_a);
-	printf("\n *llist_a->data %d \n ", (*llist_a)->data);
-	printf("\n *llist_a->next %p \n ", (*llist_a)->next);
-	printf("\n *llist_a->next->next %p \n ", (*llist_a)->next->next);
+
+void	rev_rotate_b(t_node **head_a, t_node **head_b)
+{
+	t_node	**llist_a;
+	t_node	**llist_b;
+	t_node	*initial_tail;
+	t_node	*initial_head;
+	t_node	*temp;
+
+	llist_a = head_a;
+	llist_b = head_b;
+	if (llist_b != NULL && (*llist_b)->next != NULL)
+	{
+		initial_head = (*llist_b);
+		temp = (*llist_b);
+		while (temp->next->next != NULL) // looking for original last node
+		//!! temp will be set to second to last,so I can keep this to set for last node at the end
+		{
+			temp = temp->next;
+		}
+		initial_tail = temp->next;
+		// saving address of the original last node
+		*llist_b = initial_tail;
+		// redefining head to new first node (we had 2 heads)
+		initial_tail->next = initial_head;
+		// setting the new head to the original first
+		temp->next = NULL;
+		// setting second to last node as last
+	}
 }
 
 //**rra (reverse rotate a): Shift down all elements of stack a by 1.**
