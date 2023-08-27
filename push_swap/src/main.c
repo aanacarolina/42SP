@@ -5,10 +5,6 @@
 
 int	main(int argc, char **argv)
 {
-	int		i;
-	int		*array_args;
-	int		*sortedArr;
-	int		size;	
 
 	if (argc < 2)
 	{
@@ -21,12 +17,12 @@ int	main(int argc, char **argv)
 		printf("🚪 EXIT at checker \n"); // TODO remove at the end
 		exit(1);
 	}
-	if (argc == 2){
+	if (argc == 2)
+	{
 		ft_putstr_fd("List of ONE is already sorted\n", 1);
 		printf("🚪 EXIT at only one arg \n"); // TODO remove at the end
 		exit(1);
 	}
-
 	/* else
 	{
 		i = 0;
@@ -59,17 +55,16 @@ int	main(int argc, char **argv)
 	char *args_b[] = {"./program", "20", "40", "60", };
 	t_node *listinha_b = arguments_to_list(4, args_b);
 	
-	printf("LISTA A antes\n");
-	DEBUG_printlist(listinha_a);
-	printf("\n LISTA B antes \n");
-	DEBUG_printlist(listinha_b);
-	rr(&listinha_a, &listinha_b);
-	printf("\n LISTA A depoix\n");
-	DEBUG_printlist(listinha_a);
-	printf("\n LISTA B depoix\n");
-	DEBUG_printlist(listinha_b);
-	printf("\n ---------------------------------- \n");
-
+		printf("LISTA A antes\n");
+		DEBUG_printlist(listinha_a);
+		printf("\n LISTA B antes \n");
+		DEBUG_printlist(listinha_b);
+		rr(&listinha_a, &listinha_b);
+		printf("\n LISTA A depoix\n");
+		DEBUG_printlist(listinha_a);
+		printf("\n LISTA B depoix\n");
+		DEBUG_printlist(listinha_b);
+		printf("\n ---------------------------------- \n");
 	}
 	/*
 	TESTE_create_node(argc, argv);
