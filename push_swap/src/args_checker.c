@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/27 03:38:38 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/27 04:24:54 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	dups_checker(int argc, char **argv)
 	int		arg_count;
 	int		i;
 	char	*arg;
-	char	*arguments[argc - 1]; //TODO - refactor
+	char	*arguments[argc - 1]; //TODO - refactor because: Error: VLA_FORBIDDEN 
 
 	arg_count = 0;
 	i = 1;
