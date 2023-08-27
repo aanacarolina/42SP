@@ -55,12 +55,12 @@ int	main(int argc, char **argv)
 	else
 	{
 
-	//make it work outside args - no arguments to list
+	//TODO: make it work outside args - no arguments to list
 
-	t_node *listinha_a = arguments_to_list(argc, argv);
-	//t_node *listinha_b = NULL; //not a list yet,
-	char *args_b[] = {"./program", "20", "40", "60", };
-	t_node *listinha_b = arguments_to_list(4, args_b);
+		t_node *listinha_a = arguments_to_list(argc, argv);
+		//t_node *listinha_b = NULL; //not a list yet,
+		char *args_b[] = {"./program", "20", "40"};
+		t_node *listinha_b = arguments_to_list(3, args_b);
 	
 		printf("LISTA A antes\n");
 		DEBUG_printlist(listinha_a);

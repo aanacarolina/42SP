@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/26 21:25:47 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/26 21:28:44 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,7 +215,25 @@ void	rr(t_node **head_a, t_node **head_b)
 
 void	rev_rotate_a(t_node **head_a, t_node **head_b)
 {
-	printf("YYY rev_rotate_a YYY\n");
+	t_node	**llist_a;
+	t_node	**llist_b;
+	t_node	*initial_tail;
+	t_node	*temp;
+
+	llist_a = head_a;
+	llist_b = head_b;
+	if (llist_a != NULL && (*llist_a)->next != NULL)
+	{
+		initial_tail = (*llist_a); // saving address of the original first node
+		(*llist_a) = (*llist_a)->next; // setting head to 2 node
+		temp = (*llist_a);
+		while (temp->next != NULL) // looking for current last node
+		{
+			temp = temp->next;
+		}
+		temp->next = initial_tail; // making current last node point to original first node
+		initial_tail->next = NULL; // setting first node as last
+	}
 }
 
 void	rev_rotate_b(t_node **head_a, t_node **head_b)
