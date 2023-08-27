@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/13 14:43:42 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/27 03:38:38 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,21 @@ int	max_min_int_checker(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		// argv[i] -> atol
-		current = ft_atol(argv[i]); // salva resultado de atol numa var long
-		// verifica se < int-min || > int-max
+		current = ft_atol(argv[i]);
 		if (current < INT_MIN || current > INT_MAX)
-			return (0); // se for fora do range acaba return (0)
+			return (0);
 		else
-			i++; // se nao segue o baile
+			i++;
 	}
-	return (1); // e no final return (1)
+	return (1);
 }
 
-int	isDuplicate(char *args[], int argCount, char *newArg)
+int	is_duplicate(char *args[], int arg_count, char *newArg)
 {
 	int	i;
 
 	i = 0;
-
-	while (i < argCount)
+	while (i < arg_count)
 	{
 		if (ft_strncmp(args[i], newArg, ft_strlen(newArg)) == 0)
 		{
@@ -74,31 +71,26 @@ int	isDuplicate(char *args[], int argCount, char *newArg)
 	}
 	return (0);
 }
-// checks for unique args //TODO check why considers repeated ex.: 3 and 34
+
+// checks for unique args
 // returns 0 in case of error or 1 if everything is fine
 int	dups_checker(int argc, char **argv)
 {
-	int		argCount;
+	int		arg_count;
 	int		i;
 	char	*arg;
-	char	*arguments[argc - 1];
+	char	*arguments[argc - 1]; //TODO - refactor
 
-	argCount = 0;
+	arg_count = 0;
 	i = 1;
 	while (i < argc)
 	{
 		arg = argv[i];
-		if (isDuplicate(arguments, argCount, arg))
-		{
-			// ft_putstr_fd("👯 Duplicate argument found!\n", 2);
-			// ft_putstr_fd("Error \n", 2);
+		if (is_duplicate(arguments, arg_count, arg))
 			return (0);
-		}
-		arguments[argCount++] = arg;
+		arguments[arg_count++] = arg;
 		i++;
 	}
-	// ft_putstr_fd("No duplicate arguments found.\n", 2);
-	// TODO: remove or commment before submission
 	return (1);
 }
 
