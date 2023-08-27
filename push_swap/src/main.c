@@ -8,6 +8,9 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 	{
+
+		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd("Can't sort empty list\n", 1);
 		printf("🚪 EXIT at only one arg \n"); // TODO remove at the end
 
@@ -15,6 +18,7 @@ int	main(int argc, char **argv)
 	}
 	if (argc == 2)
 	{
+		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd("List of ONE is already sorted\n", 1);
 		printf("🚪 EXIT at only one arg \n"); // TODO remove at the end
 		exit(1);
@@ -62,7 +66,8 @@ int	main(int argc, char **argv)
 		DEBUG_printlist(listinha_a);
 		printf("\n LISTA B antes \n");
 		DEBUG_printlist(listinha_b);
-		rr(&listinha_a, &listinha_b);
+		rev_rotate_a(&listinha_a, &listinha_b);
+		rev_rotate_b(&listinha_a, &listinha_b);
 		printf("\n LISTA A depoix\n");
 		DEBUG_printlist(listinha_a);
 		printf("\n LISTA B depoix\n");

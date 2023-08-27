@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/26 20:59:36 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/26 21:25:47 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,11 +213,37 @@ void	rr(t_node **head_a, t_node **head_b)
 
 }
 
+void	rev_rotate_a(t_node **head_a, t_node **head_b)
+{
+	printf("YYY rev_rotate_a YYY\n");
+}
+
+void	rev_rotate_b(t_node **head_a, t_node **head_b)
+{
+	printf("XXX rev_rotate_b XXX\n");
+}
 
 //**rra (reverse rotate a): Shift down all elements of stack a by 1.**
 //>The last element becomes the first one.
+void	rra(t_node **head_a, t_node **head_b)
+{
+	rev_rotate_a(head_a, head_b);
+	ft_putstr_fd("rra\n", 1);
+}
 
 //**rrb (reverse rotate b): Shift down all elements of stack b by 1.**
 //>The last element becomes the first one.
+void	rrb(t_node **head_a, t_node **head_b)
+{
+	rev_rotate_b(head_a, head_b);
+	ft_putstr_fd("rrb\n", 1);
+}
 
 //**rrr : rra and rrb at the same time.**
+void	rrr(t_node **head_a, t_node **head_b)
+{
+	rev_rotate_a(head_a, head_b);
+	rev_rotate_b(head_a, head_b);
+	ft_putstr_fd("rrr\n", 1);
+
+}
