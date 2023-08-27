@@ -56,25 +56,18 @@ int	main(int argc, char **argv)
 	{
 
 	//TODO: make it work outside args - no arguments to list
+	//TODO: norminette
 
 		t_node *listinha_a = arguments_to_list(argc, argv);
-		//t_node *listinha_b = NULL; //not a list yet,
 		char *args_b[] = {"./program", "20", "40", "60", "80", "100"};
 		t_node *listinha_b = arguments_to_list(6, args_b);
+		//t_node *listinha_b = NULL; //not a list yet,
 	
-		printf("LISTA A antes\n");
+		printf("\n* stack a *\n");
 		DEBUG_printlist(listinha_a);
-		printf("\n LISTA B antes \n");
+		printf("\n* stack b *\n");
 		DEBUG_printlist(listinha_b);
-		//rra(&listinha_a, &listinha_b);
-		//rrb(&listinha_a, &listinha_b);
-		rrr(&listinha_a, &listinha_b);
-		//rev_rotate_b(&listinha_a, &listinha_b);
-		printf("\n LISTA A depoix\n");
-		DEBUG_printlist(listinha_a);
-		printf("\n LISTA B depoix\n");
-		DEBUG_printlist(listinha_b);
-		printf("\n ---------------------------------- \n");
+	
 	}
 	/*
 	TESTE_create_node(argc, argv);

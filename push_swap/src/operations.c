@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/27 01:10:32 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/27 01:17:11 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -246,7 +246,6 @@ void	rev_rotate_a(t_node **head_a, t_node **head_b)
 		// setting second to last node as last
 	}
 }
-
 
 void	rev_rotate_b(t_node **head_a, t_node **head_b)
 {
