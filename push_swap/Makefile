@@ -7,12 +7,15 @@ LIBS_DIR = ./libs/
 LIBFT_DIR = $(LIBS_DIR)libft/
 
 SRCS =	./src/main.c\
+		./src/args_checker.c\
 		./src/push_swap.c\
 		./src/linked_list.c\
-		./src/args_checker.c\
+		./src/op_push.c\
+		./src/op_swap.c\
+		./src/op_rotate.c\
+		./src/op_rev_rotate.c\
 		./src/array.c\
 		./src/sort.c\
-		./src/operations.c\
 		tests.c
 
 INC =	push_swap.h

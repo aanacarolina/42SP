@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:34:22 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/10/13 02:10:47 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/08/27 02:47:46 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 long	ft_atol(const char *nptr)
-{	
+{
 	long	result;
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 
 	result = 0;
 	i = 0;
@@ -40,13 +40,15 @@ long	ft_atol(const char *nptr)
 /*
 int main (void)
 {
-	char nums[] = " 24345";
-	char mixed[] = "a2c84m3";
-	
+	char	nums[];
+	char	mixed[];
+
+	nums[] = " 24345";
+	mixed[] = "a2c84m3";
 	printf("ORIGINAL %d\n", atoi(nums));
 	printf("ORIGINAL %d\n", atoi(mixed));
 	printf("%d\n", ft_atoi(nums));
 	printf("%d\n", ft_atoi(mixed));
-	return (0);	
+	return (0);
 }
 */
