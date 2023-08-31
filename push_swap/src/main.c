@@ -42,6 +42,11 @@ int	main(int argc, char **argv)
 		printf("\n* stack b *\n");
 		t_node *listinha_b = arguments_to_list(6, args_b);
 		DEBUG_printlist(listinha_b);
+
+		//max e min antes do movimento e ai sim passa para B com insertion sort
+		//define head as the smallest
+		//think about the circular logic - save original head so last node points to it and null - so we have one reference of an end as well
+
 	}
 	return (0);
 }
