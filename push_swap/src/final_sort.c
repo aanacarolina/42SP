@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 19:34:34 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/02 20:14:40 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,19 @@ void	final_sort_a(t_node **head_a)
 	size = stack_size(llist_a);
 	position = node_position(llist_a, min);
 	list_middle = ft_ceil(size, 2);
-	if (list_middle < position)
+	if (position != 0) // Checks if, by any chance,the MIN value is already at the top, indicating that the list is sorted.
 	{
-		printf("Tô na metade de CIMA, manda RA\n MENOR [%d] METADE [%d]\n", min, list_middle);
+		if (list_middle >= position)
+		{
+			printf("Tô na metade de CIMA,manda RA\n MENOR [%d] POSIÇÃO [%d] METADE [%d]\n",
+				min, position, list_middle);
+		}
+		else
+		{
+			printf("Tô na metade de BAIXO,manda RRA\n MENOR [%d] POSIÇÃO [%d] METADE [%d]\n",
+				min, position, list_middle);
+		}
 	}
 	else
-	{
-		printf("Tô na metade de BAIXO, manda RRA\n MENOR [%d] METADE [%d]\n", min, list_middle);
-	}
+		printf("already the first\n");
 }
