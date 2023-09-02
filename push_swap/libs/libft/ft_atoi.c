@@ -6,14 +6,14 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:34:22 by anacaro3          #+#    #+#             */
-/*   Updated: 2022/10/13 02:10:47 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/02 16:54:56 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int	ft_atoi(const char *nptr)
-{	
+{
 	int	result;
 	int	i;
 	int	sign;
@@ -40,13 +40,15 @@ int	ft_atoi(const char *nptr)
 /*
 int main (void)
 {
-	char nums[] = " 24345";
-	char mixed[] = "a2c84m3";
-	
+	char	nums[];
+	char	mixed[];
+
+	nums[] = " 24345";
+	mixed[] = "a2c84m3";
 	printf("ORIGINAL %d\n", atoi(nums));
 	printf("ORIGINAL %d\n", atoi(mixed));
 	printf("%d\n", ft_atoi(nums));
 	printf("%d\n", ft_atoi(mixed));
-	return (0);	
+	return (0);
 }
 */
