@@ -78,7 +78,8 @@ void	DEBUG_printlist(t_node *head)
 		return;
 	}
 	temp = head;
-	printf("node [%i]: data: [%i]\n", i, temp->data);
+	printf("node [%i]: data: [%i] next: [%p] \n", i, temp->data,
+				temp->next);
 	i++;
 	while (temp != NULL)
 	{
@@ -93,13 +94,17 @@ void	DEBUG_printlist(t_node *head)
 	printf("\n");
 }
 
-
-
+// prints the size of a stack
 void	DEBUG_stack_size(t_node **stack)
 {
-	printf("[SIZE A %d]\n", stack_size(stack));
+	printf("SIZE of stack is [%d]\n", stack_size(stack));
 }
-		
+
+// prints the position of a nodes
+void	DEBUG_node_position(t_node **stack, int node)
+{
+	printf("NODE [%d] is at position [%d]\n", node, node_position(stack, node));
+}
 
 void	TESTE_arguments_to_list(int argc, char **argv)
 {
