@@ -112,6 +112,12 @@ void	DEBUG_last_node(t_node **stack)
 	printf("[%d] is the LAST NODE\n",last_node(stack));
 }
 
+// prints last node of a stack
+void	DEBUG_max_min(t_node **stack)
+{
+	printf("⏫[%d] is the MAX\n",max_num(stack));
+	printf("⏬[%d] is the MIN \n",min_num(stack));
+}
 
 
 void	DEBUG_size_3_checker(t_node **stack){

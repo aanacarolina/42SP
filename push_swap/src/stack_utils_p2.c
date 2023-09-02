@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 18:37:55 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/02 19:10:30 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,50 @@ int	size_3_checker(t_node **stack)
 		return (0);
 }
 
-// find node in stack
+// find MAX number in stack
+int	max_num(t_node **stack)
+{
+	t_node	*temp;
+	int		max;
 
-// find max in stack
+	temp = (*stack);
+	max = (*stack)->data; // first element of stack just to have a comparative
+	{
+		{
+			while (temp->next != NULL)
+			{
+				temp = temp->next;
+				if (temp->data > max)
+				{
+					max = temp->data; //
+						// saves the current/new MAX each times it satifies the condition
+				}
+			}
+			return (max);
+		}
+	}
+}
 
-// find min in stack
+// find MIN number in stack
+int	min_num(t_node **stack)
+{
+	t_node *temp;
+	int min;
+
+	temp = (*stack);
+	min = (*stack)->data; // first element of stack just to have a comparative
+	{
+		{
+			while (temp->next != NULL)
+			{
+				temp = temp->next;
+				if (temp->data < min)
+				{
+					min = temp->data;
+						// saves the current/new min each times it satifies the condition
+				}
+			}
+			return (min);
+		}
+	}
+}

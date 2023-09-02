@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 18:35:51 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/02 19:09:52 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,11 @@ int	main(int argc, char **argv)
 		printf("\n* stack a *\n");
 		t_node *listinha_a = arguments_to_list(argc, argv);
 		DEBUG_printlist(listinha_a);
-		DEBUG_stack_size(&listinha_a);
-		DEBUG_node_position(&listinha_a, 10);
-		DEBUG_last_node(&listinha_a);
-		DEBUG_size_3_checker(&listinha_a);
+		DEBUG_max_min(&listinha_a);
 		printf("\n* stack b *\n");
 		t_node *listinha_b = arguments_to_list(6, args_b);
 		DEBUG_printlist(listinha_b);
-		DEBUG_stack_size(&listinha_b);
-		DEBUG_node_position(&listinha_b, 60);
-		DEBUG_last_node(&listinha_b);
-		DEBUG_size_3_checker(&listinha_b);
+		DEBUG_max_min(&listinha_b);
 	}
 	return (0);
 }
