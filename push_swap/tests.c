@@ -106,6 +106,12 @@ void	DEBUG_node_position(t_node **stack, int node)
 	printf("NODE [%d] is at position [%d]\n", node, node_position(stack, node));
 }
 
+// prints last node of a stack
+void	DEBUG_last_node(t_node **stack)
+{
+	printf("[%d] is the LAST NODE\n",last_node(stack));
+}
+
 void	TESTE_arguments_to_list(int argc, char **argv)
 {
 	t_node *llist = arguments_to_list(argc, argv);

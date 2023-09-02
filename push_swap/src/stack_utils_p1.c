@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 18:09:37 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/02 18:20:24 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,15 @@ int	node_position(t_node **stack, int node)
 	return (i);
 }
 
-// find last
+// find last node
+int	last_node(t_node **stack)
+{
+	t_node	*temp;
+
+	temp = (*stack);
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+	return (temp->data);
+}

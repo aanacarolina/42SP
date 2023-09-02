@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 18:13:46 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/02 18:23:19 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,13 @@ int	main(int argc, char **argv)
 		DEBUG_printlist(listinha_a);
 		DEBUG_stack_size(&listinha_a);
 		DEBUG_node_position(&listinha_a, 10);
+		DEBUG_last_node(&listinha_a);
 		printf("\n* stack b *\n");
 		t_node *listinha_b = arguments_to_list(6, args_b);
 		DEBUG_printlist(listinha_b);
 		DEBUG_stack_size(&listinha_b);
 		DEBUG_node_position(&listinha_b, 60);
+		DEBUG_last_node(&listinha_b);
 		
 	}
 	return (0);
