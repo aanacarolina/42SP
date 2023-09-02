@@ -19,7 +19,8 @@ SRCS =	./src/main.c\
 		./src/op_rev_rotate.c\
 		./src/push_swap.c\
 		./src/stack_b_ops.c\
-		./src/stack_utils.c\
+		./src/stack_utils_p1.c\
+		./src/stack_utils_p2.c\
 		tests.c
 
 INC =	push_swap.h

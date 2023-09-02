@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/27 04:29:17 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:25:56 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
 
-# include"libs/libft/libft.h"
+# include "libs/libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -54,6 +54,7 @@ void				rra(t_node **head_a, t_node **head_b);
 void				rrb(t_node **head_a, t_node **head_b);
 void				rrr(t_node **head_a, t_node **head_b);
 int					push_swap(void);
+int					stack_size(t_node **stack);
 void				TESTE_create_node(int argc, char **argv);
 void				TESTE_arguments_to_list(int argc, char **argv);
 void				TESTE_args_checker(void);
@@ -66,5 +67,6 @@ void				TESTE_push_b(int argc_a, char **list_a, int argc_b,
 						char **list_b);
 void				DEBUG_llist(t_node **head_a, t_node **head_b);
 void				DEBUG_one_item_llist(t_node **head_a, t_node **head_b);
+void				DEBUG_stack_size(t_node **stack);
 
 #endif

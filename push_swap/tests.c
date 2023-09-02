@@ -93,6 +93,14 @@ void	DEBUG_printlist(t_node *head)
 	printf("\n");
 }
 
+
+
+void	DEBUG_stack_size(t_node **stack)
+{
+	printf("[SIZE A %d]\n", stack_size(stack));
+}
+		
+
 void	TESTE_arguments_to_list(int argc, char **argv)
 {
 	t_node *llist = arguments_to_list(argc, argv);

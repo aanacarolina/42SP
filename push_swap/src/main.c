@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/27 05:19:36 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:26:31 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,8 @@ int	main(int argc, char **argv)
 		printf("\n* stack b *\n");
 		t_node *listinha_b = arguments_to_list(6, args_b);
 		DEBUG_printlist(listinha_b);
-
-		//max e min antes do movimento e ai sim passa para B com insertion sort
-		//define head as the smallest
-		//think about the circular logic - save original head so last node points to it and null - so we have one reference of an end as well
+		DEBUG_stack_size(&listinha_a);
+		DEBUG_stack_size(&listinha_b);
 
 	}
 	return (0);
