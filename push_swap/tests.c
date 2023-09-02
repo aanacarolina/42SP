@@ -112,6 +112,21 @@ void	DEBUG_last_node(t_node **stack)
 	printf("[%d] is the LAST NODE\n",last_node(stack));
 }
 
+
+
+void	DEBUG_size_3_checker(t_node **stack){
+		
+		int bool;
+
+		bool = size_3_checker(stack);
+		 
+		if(bool == 1)
+			printf("✅ [TRUE]\n");
+		else
+			printf("❌ [FALSE]\n");
+
+}
+
 void	TESTE_arguments_to_list(int argc, char **argv)
 {
 	t_node *llist = arguments_to_list(argc, argv);
