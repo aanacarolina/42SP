@@ -25,8 +25,8 @@ LIBS =	$(LIBFT_DIR)libft.a
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
 #valgrind --show-leak-kinds=all --leak-check=full --quiet ./push_swap 10 30 50 70 90
-#FLAGS = -Wall -Wextra -Werror -g3
-FLAGS = -g3
+FLAGS = -Wall -Wextra -Werror -g3
+#FLAGS = -g3
 
 #RECIPES
 
