@@ -12,6 +12,7 @@ SRCS =	./src/main.c\
 		./src/array_sort.c\
 		./src/calculations.c\
 		./src/cheaper_ops.c\
+		./src/final_sort.c\
 		./src/linked_list.c\
 		./src/op_push.c\
 		./src/op_swap.c\

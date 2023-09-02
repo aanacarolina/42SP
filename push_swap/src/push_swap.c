@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:02:36 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 16:41:02 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/02 19:15:47 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ int	push_swap(void)
 
 
 // TODOs:
-// create check max
-// create check min
-// create size_3_checker
 // create SORT_3 logic
 // create CHEAPER ops (many)
 // create GCD (Greatest Common Divisor == Máximo Divisor Comum - MDC).
@@ -73,7 +70,7 @@ int	push_swap(void)
 // 2.1 When current_a-- == MAX B --> return
 
 
-//FINAL ARRANGEMENT
+//FINAL SORT
 //Find MIN_A and get its index
 //Calculate CEIL(stack_size / 2 ) 
 //if result > node_index (means it's on top half) - 
