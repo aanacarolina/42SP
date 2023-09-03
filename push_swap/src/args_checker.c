@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/27 04:24:54 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/03 17:36:33 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 // checks if arg is nothing other than INT
-// returns 0 in case of error or 1 if everything is fine
+// returns: [0] false / [1] TRUE
 int	non_int_checker(int argc, char **argv)
 {
 	int	i;
@@ -39,6 +39,7 @@ int	non_int_checker(int argc, char **argv)
 }
 
 // checks if numbers are between MAX AND MIN (range)
+// returns: [0] false / [1] TRUE
 int	max_min_int_checker(int argc, char **argv)
 {
 	int		i;
@@ -73,7 +74,7 @@ int	is_duplicate(char *args[], int arg_count, char *newArg)
 }
 
 // checks for unique args
-// returns 0 in case of error or 1 if everything is fine
+// returns: [0] false / [1] TRUE
 int	dups_checker(int argc, char **argv)
 {
 	int		arg_count;

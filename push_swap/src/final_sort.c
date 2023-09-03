@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 20:14:40 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/03 17:49:22 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,50 @@
 // RRA until MIN_A on top
 // else RA until MIN_A on top
 
+// Checks if the stack is sorted.
+// returns: [0] false / [1] TRUE
+int	is_sorted(t_node **head_a)
+{
+	t_node	*llist_a;
+	int		i;
+
+	llist_a = *head_a;
+	i = INT_MIN;
+	while (llist_a != NULL)
+	{
+		if (llist_a->data < i)
+		{
+			printf("NOT sorted\n");
+			return (0);
+		}
+		else
+		{
+			i = llist_a->data;
+			llist_a = llist_a->next;
+		}
+	}
+	printf("sorted\n");
+	return (1);
+}
+
 void	final_sort_a(t_node **head_a)
 {
 	t_node	**llist_a;
 	int		min;
+	int		max;
 	int		size;
 	int		position;
 	int		list_middle;
 
 	llist_a = head_a;
 	min = min_num(llist_a);
+	max = max_num(llist_a);
 	size = stack_size(llist_a);
 	position = node_position(llist_a, min);
 	list_middle = ft_ceil(size, 2);
-	if (position != 0) // Checks if, by any chance,the MIN value is already at the top, indicating that the list is sorted.
+	if (position != 0) /* Checks if,
+		by any chance,the MIN value is already at the top,
+		indicating that the list is sorted. TODO: Change for already sorted*/
 	{
 		if (list_middle >= position)
 		{

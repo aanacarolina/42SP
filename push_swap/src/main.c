@@ -6,13 +6,13 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 21:01:48 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/03 17:50:09 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//TODO: duplicate bug is back
+//TODO: duplicate bug is back 🤡
 //TODO: norminette - mostly DONE
 //TODO: refactor max functions - mostly DONE
 //TODO: make it work outside args - no arguments to list
@@ -37,14 +37,14 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		char	*args_b[] = {"./program", "20", "40", "60", "80", "100"};
+		char	*args_b[] = {"./program", "20", "800", "60", "80", "100"};
 		printf("\n* stack a *\n");
 		t_node *listinha_a = arguments_to_list(argc, argv);
-		final_sort_a(&listinha_a);
+		is_sorted(&listinha_a);
 		DEBUG_printlist(listinha_a);
 		printf("\n* stack b *\n");
 		t_node *listinha_b = arguments_to_list(6, args_b);
-		final_sort_a(&listinha_b);
+		is_sorted(&listinha_b);
 		DEBUG_printlist(listinha_b);
 	}
 	return (0);

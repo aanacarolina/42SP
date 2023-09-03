@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 21:13:55 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/03 17:17:32 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,13 @@ int	size_3_checker(t_node **stack)
 {
 
 	//check already sorted
-	//if MIN position  == 0 && MAX position == 2 
+	//if MIN position  == 0 && MAX position == 2
 	//RRA 2X
 	//else
 	//1 move:
-	//1.1 - MAX position == 2 -> 
-	//1.2 - MIN position == 0 -> 
-
+	//1.1 - MAX position == 2 ->
+	//1.2 - MIN position == 0 ->
 }*/
-
 /*
 OPTIONS
 1, 2, 3 -> already sorted - do nothing
@@ -50,8 +48,6 @@ OPTIONS
 2, 3, 1 -> else ()
 2, 1, 3 -> else ()
 */
-
-
 // find MAX number in stack
 int	max_num(t_node **stack)
 {
