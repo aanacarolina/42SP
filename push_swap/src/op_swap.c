@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/27 04:10:51 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 15:29:22 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	swap_aux(t_node **head)
 	t_node	*temp;
 	t_node	*temp2;
 
-	if (head == NULL && (*head)->next == NULL)
+	if (head != NULL && (*head)->next != NULL)
 	{
 		// TODO: temp = calloc(1, sizeof(t_node));
 		llist = head;

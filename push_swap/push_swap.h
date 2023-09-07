@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/03 17:32:31 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:56:06 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void				rev_rotate_b(t_node **head_a, t_node **head_b);
 void				rra(t_node **head_a, t_node **head_b);
 void				rrb(t_node **head_a, t_node **head_b);
 void				rrr(t_node **head_a, t_node **head_b);
-void				push_swap(void);
+void				push_swap(t_node **head_a);
 int					stack_size(t_node **stack);
 int					node_position(t_node **stack, int node);
 int					last_node(t_node **stack);
@@ -61,6 +61,7 @@ int					size_3_checker(t_node **stack);
 int					max_num(t_node **stack);
 int					min_num(t_node **stack);
 int					is_sorted(t_node **head_a);
+void				sort_three(t_node **stack);
 void				final_sort_a(t_node **head_a);
 void				TESTE_create_node(int argc, char **argv);
 void				TESTE_arguments_to_list(int argc, char **argv);

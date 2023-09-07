@@ -6,21 +6,34 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:02:36 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/03 18:19:09 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 14:56:17 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	push_swap(void)
+void	push_swap(t_node **head_a)
 {
-	/*if(size_3_checker(head_a) == 1){
-	}*/
-	printf("\n* TODO *\n");
+	t_node	**llist_a;
+	int sorted;
+	
+	llist_a = head_a;
+	
+	sorted = is_sorted(llist_a);
+	
+	if (size_3_checker(llist_a) == 1 && sorted != 1)
+	{
+		sort_three(llist_a);
+	}
+	else
+	{
+		printf("\n* NOT 3 *\n");
+	}
 }
 
 // GENERAL LOGIC
-// 1- Check if there are 3 elements in A (also condition to stop executing turk)
+// 1- Check if there are 3 elements in A 
+//(also condition to stop checking cheapest turk)
 // 1.1 - if TRUE:
 // 1.1.1 - do not push anything to B
 // 1.1.2 - call SORT_3 logic in A
@@ -43,7 +56,8 @@ void	push_swap(void)
 // create already sorted
 
 // Mechanical Turk Algorithm
-// Our aim is to move itens from A to B, in a way that B will always be "circularly ordered".
+// Our aim is to move itens from A to B,
+// in a way that B will always be "circularly ordered".
 // This is achieved by using the CHEAPEST movement calculations
 
 // CHEAPEST
@@ -58,10 +72,11 @@ void	push_swap(void)
 // but the next bigger in relation to max of B)
 
 // ELSE (means we can't send a number from A to top of B immediatelly,
-//because it will mess with the circular order)
+// because it will mess with the circular order)
 // 1 - CALCULATIONS to check qty of moves
 // 1.2 - CURRENT_MAX_A
-// 1.2.1 - Loop over stack A to find the next number to send by making this caclulation:
+// 1.2.1 - Loop over stack A to find the next number to send
+// by making this caclulation:
 // 1.2.2 - When current_a-- == MAX B --> return
 
 // FINAL SORT

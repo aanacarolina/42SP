@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/03 18:08:10 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 12:56:14 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 // else RA until MIN_A on top
 
 // Checks if the stack is sorted.
-// returns: [0] false / [1] TRUE
+// returns: [0] FALSE / [1] TRUE
 int	is_sorted(t_node **head_a)
 {
 	t_node	*llist_a;
