@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 18:00:32 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 18:04:39 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	min_a_smaller_min_b(t_node **head_a, t_node **head_b)
 	min_b = min_num(head_b);
 	if (min_a < min_b)
 	{
-		printf("\nmin_a [%d] < min_b [%d]\n", min_a, min_b);
+		//printf("\nmin_a [%d] < min_b [%d]\n", min_a, min_b);
 		return (1);
 	}
 	else
@@ -37,7 +37,7 @@ int	max_a_bigger_max_b(t_node **head_a, t_node **head_b)
 	max_b = max_num(head_b);
 	if (max_a > max_b)
 	{
-		printf("\nmax_a [%d] > max_b [%d]\n", max_a, max_b);
+		//printf("\nmax_a [%d] > max_b [%d]\n", max_a, max_b);
 		return (1);
 	}
 	else
