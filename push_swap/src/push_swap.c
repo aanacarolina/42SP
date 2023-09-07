@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:02:36 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 17:03:25 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:19:59 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,15 @@ void	push_swap(t_node **head_a, t_node **head_b)
 	{
 		sort_three(llist_a);
 		exit(1);
+		//free(llist_a);
 	}
 	else
 	{
 		printf("\n* NOT 3 *\n");
+		//llist_b = NULL;
 		pb(llist_a, llist_b);
 		pb(llist_a, llist_b);
+		//mech
 	}
 }
 

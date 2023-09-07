@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/08/27 03:46:19 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:18:07 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	push_b(t_node **head_a, t_node **head_b)
 			(*llist_b)->next = temp_b;
 		}
 	}
+	head_a = llist_a;
+	head_b = llist_b;
 }
 
 void	push_a(t_node **head_a, t_node **head_b)
