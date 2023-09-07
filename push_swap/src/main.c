@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 17:59:08 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 18:18:45 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ int	main(int argc, char **argv)
 		printf("\n* ANTES stack b *\n");
 		DEBUG_printlist(stack_b);
 		push_swap(&stack_a, &stack_b);
-		min_a_smaller_min_b(&stack_a, &stack_b);
-		max_a_bigger_max_b(&stack_a, &stack_b);
+		current_max_a(&stack_a, &stack_b);
 		printf("\n* DEPOIS stack a *\n");
 		DEBUG_printlist(stack_a);
 		printf("\n* DEPOIS stack b *\n");
