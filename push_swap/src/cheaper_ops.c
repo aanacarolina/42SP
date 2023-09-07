@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 19:22:23 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 19:37:26 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,20 @@ int	max_a_bigger_max_b(t_node **head_a, t_node **head_b)
 		return (0);
 }
 
-
 // biggest of B on top
-
 
 // the next bigger from A to max of B
 int	current_max_a(t_node **head_a, t_node **head_b)
 {
-			printf("\n* TODO *\n");
-			return (0);
+	t_node	**llist_a;
+	t_node	**llist_b;
 
+	llist_a = head_a;
+	llist_b = head_b;
+	printf("\n* TODO *\n");
+	return (0);
 }
-/* frustrated attempt 
+/* frustrated attempt
 int	current_max_a(t_node **head_a, t_node **head_b)
 {
 	int		min_a;
@@ -72,7 +74,7 @@ int	current_max_a(t_node **head_a, t_node **head_b)
 		temp = temp->next;
 		temp->data > max_b
 	}
-	
+
 	return (current_max_a);
 }*/
 

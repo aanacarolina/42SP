@@ -280,7 +280,7 @@ void	TESTE_rotate_a(int argc, char **argv)
 	DEBUG_printlist(listinha_a);
 	printf("\n LISTA B antes \n");
 	DEBUG_printlist(listinha_b);
-	rotate_a(&listinha_a, &listinha_b);
+	rotate_a(&listinha_a);
 	printf("\n LISTA A depoix\n");
 	DEBUG_printlist(listinha_a);
 	printf("\n LISTA B depoix\n");

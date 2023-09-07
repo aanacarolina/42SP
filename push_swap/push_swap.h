@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 19:29:31 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 19:35:20 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ void				push_a(t_node **head_a, t_node **head_b);
 void				push_b(t_node **head_a, t_node **head_b);
 void				pa(t_node **head_a, t_node **head_b);
 void				pb(t_node **head_a, t_node **head_b);
-void				rotate_a(t_node **head_a, t_node **head_b);
-void				rotate_b(t_node **head_a, t_node **head_b);
-void				ra(t_node **head_a, t_node **head_b);
-void				rb(t_node **head_a, t_node **head_b);
+void				rotate_a(t_node **head_a);
+void				rotate_b(t_node **head_b);
+void				ra(t_node **head_a);
+void				rb(t_node **head_b);
 void				rr(t_node **head_a, t_node **head_b);
-void				rev_rotate_a(t_node **head_a, t_node **head_b);
-void				rev_rotate_b(t_node **head_a, t_node **head_b);
-void				rra(t_node **head_a, t_node **head_b);
-void				rrb(t_node **head_a, t_node **head_b);
+void				rev_rotate_a(t_node **head_a);
+void				rev_rotate_b(t_node **head_b);
+void				rra(t_node **head_a);
+void				rrb(t_node **head_b);
 void				rrr(t_node **head_a, t_node **head_b);
 void				push_swap(t_node **head_a, t_node **head_b);
 int					stack_size(t_node **stack);

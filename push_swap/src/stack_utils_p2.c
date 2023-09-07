@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 17:50:16 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 19:38:22 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,16 @@ void	sort_three(t_node **stack)
 		if (min_position == 0)
 		{
 			sa(llist_a);
-			ra(llist_a, llist_b);
+			ra(llist_a);
 		}
 		else if (max_position == 0)
 		{
-			ra(llist_a, llist_b);
+			ra(llist_a);
 			if (!is_sorted(llist_a))
 				sa(llist_a);
 		}
 		else if (min_position == 2)
-			rra(llist_a, llist_b);
+			rra(llist_a);
 		else 
 			sa(llist_a);
 		break;
