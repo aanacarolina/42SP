@@ -6,39 +6,43 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:02:36 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 14:56:17 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:03:25 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	push_swap(t_node **head_a)
+void	push_swap(t_node **head_a, t_node **head_b)
 {
 	t_node	**llist_a;
-	int sorted;
-	
+	t_node	**llist_b;
 	llist_a = head_a;
-	
-	sorted = is_sorted(llist_a);
-	
-	if (size_3_checker(llist_a) == 1 && sorted != 1)
+	llist_b = head_b;
+
+	if (size_3_checker(llist_a) == 1 && is_sorted(llist_a) != 1)
 	{
 		sort_three(llist_a);
+		exit(1);
 	}
 	else
 	{
 		printf("\n* NOT 3 *\n");
+		pb(llist_a, llist_b);
+		pb(llist_a, llist_b);
 	}
 }
 
 // GENERAL LOGIC
-// 1- Check if there are 3 elements in A 
+// 1- Check if there are 3 elements in A
 //(also condition to stop checking cheapest turk)
 // 1.1 - if TRUE:
 // 1.1.1 - do not push anything to B
 // 1.1.2 - call SORT_3 logic in A
 // 1.1.3 - end the program
-// 2 - ELSE - push first 2 itens of A to B (PB 2x)
+
+// 2 - ELSE - 
+// create stack B  
+//push first 2 itens of A to B (PB 2x)
 // execute Mechanical Turk Algorithm
 // until 3 elements left in A
 // 3 - call SORT_3 logic in A
@@ -46,9 +50,7 @@ void	push_swap(t_node **head_a)
 // 5 - Make FINAL ARRANGEMENT in A
 
 // TODOs:
-// create SORT_3 logic
 // create CHEAPER ops (many)
-// create GCD (Greatest Common Divisor == Máximo Divisor Comum - MDC).
 // create A smaller than min of B
 // create A bigger than max of B
 // create biggest_b_on_top
