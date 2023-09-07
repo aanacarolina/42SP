@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 18:19:48 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 19:22:23 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,30 +44,38 @@ int	max_a_bigger_max_b(t_node **head_a, t_node **head_b)
 		return (0);
 }
 
+
 // biggest of B on top
 
+
+// the next bigger from A to max of B
 int	current_max_a(t_node **head_a, t_node **head_b)
 {
-	int	current_max_a;
-	int	max_a;
-	int	max_b;
+			printf("\n* TODO *\n");
+			return (0);
 
-	max_a = max_num(head_a);
-	max_b = max_num(head_b);
-	current_max_a = max_a--;
-	if (current_max_a == max_b)
-		return (current_max_a);
-	else
-	{
-		while (current_max_a != max_b)
-		{
-			current_max_a--;
-			printf("\ncurrent max A [%d] \n max B [%d]\n", current_max_a,
-				max_b);
-		}
-	}
-	return (current_max_a);
 }
+/* frustrated attempt 
+int	current_max_a(t_node **head_a, t_node **head_b)
+{
+	int		min_a;
+	int		current_max_a;
+	int		max_b;
+	t_node	*temp;
+
+	min_a = min_num(head_a);
+	current_max_a = min_a--;
+	max_b = max_num(head_b);
+	temp = (*head_a)->next;
+	while (current_max_a == max_b || temp->next != NULL)
+	{
+		temp = temp->next;
+		temp->data > max_b
+	}
+	
+	return (current_max_a);
+}*/
+
 // CHEAPEST
 // 1 - Find MAX e MIN of B
 // 1.1 - Loop over stack A to check IF there is a number either:
