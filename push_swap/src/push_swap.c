@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:02:36 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 17:19:59 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 18:01:11 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,23 @@ void	push_swap(t_node **head_a, t_node **head_b)
 {
 	t_node	**llist_a;
 	t_node	**llist_b;
+
 	llist_a = head_a;
 	llist_b = head_b;
-
 	if (size_3_checker(llist_a) == 1 && is_sorted(llist_a) != 1)
 	{
 		sort_three(llist_a);
 		exit(1);
-		//free(llist_a);
+		// free(llist_a);
 	}
 	else
 	{
-		printf("\n* NOT 3 *\n");
-		//llist_b = NULL;
 		pb(llist_a, llist_b);
 		pb(llist_a, llist_b);
-		//mech
+		/*if (min_a_smaller_min_b == 1 || max_a_bigger_max_b == 1)
+		{
+		}*/
+		printf("\nHora de chamar biggest_b_on_top\n");
 	}
 }
 
@@ -43,9 +44,9 @@ void	push_swap(t_node **head_a, t_node **head_b)
 // 1.1.2 - call SORT_3 logic in A
 // 1.1.3 - end the program
 
-// 2 - ELSE - 
-// create stack B  
-//push first 2 itens of A to B (PB 2x)
+// 2 - ELSE -
+// create stack B
+// push first 2 itens of A to B (PB 2x)
 // execute Mechanical Turk Algorithm
 // until 3 elements left in A
 // 3 - call SORT_3 logic in A

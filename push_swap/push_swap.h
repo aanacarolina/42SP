@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 17:03:44 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:41:48 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ int					last_node(t_node **stack);
 int					size_3_checker(t_node **stack);
 int					max_num(t_node **stack);
 int					min_num(t_node **stack);
+int					min_a_smaller_min_b(t_node **head_a, t_node **head_b);
+int					max_a_bigger_max_b(t_node **head_a, t_node **head_b);
+int					current_max_a(t_node **head_a, t_node **head_b);
 int					is_sorted(t_node **head_a);
 void				sort_three(t_node **stack);
 void				final_sort_a(t_node **head_a);

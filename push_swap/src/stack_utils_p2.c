@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 16:12:11 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:50:16 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	sort_three(t_node **stack)
 	// 1.2 - MIN position == 0 ->
 	// find MAX number in stack
 
-	int max_num(t_node * *stack)
+	int max_num(t_node **stack)
 	{
 		t_node *temp;
 		int max;
@@ -114,7 +114,7 @@ void	sort_three(t_node **stack)
 	}
 
 	// find MIN number in stack
-	int min_num(t_node * *stack)
+	int min_num(t_node **stack)
 	{
 		t_node *temp;
 		int min;
