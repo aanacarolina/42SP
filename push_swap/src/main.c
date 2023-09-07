@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/03 18:06:20 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/03 18:17:25 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 //TODO: norminette - mostly DONE
 //TODO: refactor max functions - mostly DONE
 //TODO: make it work outside args - no arguments to list
-//TODO: check if ARGS are inputed already sorted (if TRUE exit)
 
 int	main(int argc, char **argv)
 {

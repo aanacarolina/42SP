@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 18:20:24 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/03 18:25:11 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	stack_size(t_node **stack)
 	return (i);
 }
 
-// Finds the position of a given node in a stack (node is int because == node->data)
+// Finds the position (index) of a given node in a stack (node is int because == node->data)
 int	node_position(t_node **stack, int node)
 {
 	int		i;
