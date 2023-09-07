@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 19:33:33 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 20:16:18 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	rotate_a(t_node **head_a)
 		temp->next = initial_head;
 		initial_head->next = NULL;
 	}
+	head_a = llist_a;
 }
 
 void	rotate_b(t_node **head_b)
@@ -52,6 +53,7 @@ void	rotate_b(t_node **head_b)
 		temp->next = initial_head;
 		initial_head->next = NULL;
 	}
+	head_b = llist_b;
 }
 
 //**ra (rotate a): Shift up all elements of stack a by 1.**

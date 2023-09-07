@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 19:28:48 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 20:36:07 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,89 @@ int	main(int argc, char **argv)
 	{
 		stack_a = arguments_to_list(argc, argv);
 		stack_b = NULL;
-		printf("\n* ANTES stack a *\n");
-		DEBUG_printlist(stack_a);
-		printf("\n* ANTES stack b *\n");
-		DEBUG_printlist(stack_b);
 		push_swap(&stack_a, &stack_b);
-		current_max_a(&stack_a, &stack_b);
-		printf("\n* DEPOIS stack a *\n");
-		DEBUG_printlist(stack_a);
-		printf("\n* DEPOIS stack b *\n");
-		DEBUG_printlist(stack_b);
+		
+	printf("\n SA \n");
+	DEBUG_printlist(stack_a);
+	sa(&stack_a);
+	DEBUG_printlist(stack_a);
+	printf("\n ---------------------------------- \n");
+
+	printf("\n PA \n");
+	DEBUG_printlist(stack_a);
+	DEBUG_printlist(stack_b);
+	pa(&stack_a, &stack_b);
+	DEBUG_printlist(stack_a);
+	DEBUG_printlist(stack_b);
+	printf("\n ---------------------------------- \n");
+
+	printf("\n RA \n");
+	DEBUG_printlist(stack_a);
+	ra(&stack_a);
+	DEBUG_printlist(stack_a);
+	printf("\n ---------------------------------- \n");
+
+	printf("\n RRA \n");
+	DEBUG_printlist(stack_a);
+	rra(&stack_a);
+	DEBUG_printlist(stack_a);
+	printf("\n ---------------------------------- \n");
+
+	printf("\n SB \n");
+	DEBUG_printlist(stack_b);
+	sb(&stack_b);
+	DEBUG_printlist(stack_b);
+	printf("\n ---------------------------------- \n");
+
+	
+	printf("\n PB \n");
+	DEBUG_printlist(stack_a);
+	DEBUG_printlist(stack_b);
+	pb(&stack_a, &stack_b);
+	DEBUG_printlist(stack_a);
+	DEBUG_printlist(stack_b);
+	printf("\n ---------------------------------- \n");
+	
+
+	printf("\n RB \n");
+	DEBUG_printlist(stack_b);
+	rb(&stack_b);
+	DEBUG_printlist(stack_b);
+	printf("\n ---------------------------------- \n");
+
+
+	printf("\n RRB \n");
+	DEBUG_printlist(stack_b);
+	rrb(&stack_b);
+	DEBUG_printlist(stack_b);
+	printf("\n ---------------------------------- \n");
+
+
+	printf("\n SS \n");
+	DEBUG_printlist(stack_a);
+	DEBUG_printlist(stack_b);
+	ss(&stack_a, &stack_b);
+	DEBUG_printlist(stack_a);
+	DEBUG_printlist(stack_b);
+	printf("\n ---------------------------------- \n");
+
+
+	printf("\n RR \n");
+	DEBUG_printlist(stack_a);
+	DEBUG_printlist(stack_b);
+	rr(&stack_a, &stack_b);
+	DEBUG_printlist(stack_a);
+	DEBUG_printlist(stack_b);
+	printf("\n ---------------------------------- \n");
+
+	printf("\n RRR \n");
+	DEBUG_printlist(stack_a);
+	DEBUG_printlist(stack_b);
+	rrr(&stack_a, &stack_b);
+	DEBUG_printlist(stack_a);
+	DEBUG_printlist(stack_b);
+	printf("\n ---------------------------------- \n");
+	
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 17:18:07 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 20:14:52 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	push_a(t_node **head_a, t_node **head_b)
 			(*llist_a)->next = temp_a;
 		}
 	}
+	head_a = llist_a;
+	head_b = llist_b;
 }
 
 //pa Take the first element at the top of b and put it at the top of a

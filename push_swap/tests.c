@@ -289,5 +289,45 @@ void	TESTE_rotate_a(int argc, char **argv)
 
 	}
 
+/*void TESTE_all_moves(t_node **head_a, t_node **head_b)
+{
+	sa(head_a);
+	DEBUG_printlist(head_a);
+
+	pa(head_a, head_b);
+	DEBUG_printlist(head_a);
+	DEBUG_printlist(head_b);
+
+	ra(head_a);
+	DEBUG_printlist(head_a);
+
+	rra(head_a);
+	DEBUG_printlist(head_a);
+
+	sb(head_b);
+	DEBUG_printlist(head_b);
+
+	pb(head_b, head_b);
+
+	rb(head_b);
+	DEBUG_printlist(head_b);
+
+	rrb(head_b);
+	DEBUG_printlist(head_b);
+
+	ss(head_a, head_b);
+	DEBUG_printlist(head_a);
+	DEBUG_printlist(head_b);
+
+	rr(head_a, head_b);
+	DEBUG_printlist(head_a);
+	DEBUG_printlist(head_b);
+
+	rrr(head_a, head_b);
+	DEBUG_printlist(head_a);
+	DEBUG_printlist(head_b);
+}
+*/
+
 //**HEAD com 2 asteriscos é o ponteiro para a lista
 //*HEAD com 1 asteriscos é o ponteiro para o primeiro node da lista  
