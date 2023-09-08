@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:57:13 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/02 16:44:08 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:54:15 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	*bubble_sort(int *arr, int size)
 	while (i < size)
 	{
 		j = 0;
-		printf("size - %i\n", size);
-		printf("arr[i] > %d\n", arr[i]);
+		//printf("size - %i\n", size);
+		//printf("arr[i] > %d\n", arr[i]);
 		while (j < size - 1)
 		{
 			if (arr[j] > arr[j + 1])

@@ -21,8 +21,7 @@ SRCS =	./src/main.c\
 		./src/push_swap.c\
 		./src/stack_b_ops.c\
 		./src/stack_utils_p1.c\
-		./src/stack_utils_p2.c\
-		tests.c
+		./src/stack_utils_p2.c
 
 INC =	push_swap.h
 
@@ -31,8 +30,10 @@ LIBS =	$(LIBFT_DIR)libft.a
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
 #valgrind --show-leak-kinds=all --leak-check=full --quiet ./push_swap 10 30 50 70 90
-FLAGS = -Wall -Wextra -Werror -g3
+#ARG="1 5 2"; ./push_swap $ARG | ./checker_linux $ARG 
+#ARG=$(seq -250 249 | shuf); valgrind --leak-check=full ./push_swap $ARG
 #FLAGS = -g3
+FLAGS = -Wall -Wextra -Werror -g3
 
 #RECIPES
 
