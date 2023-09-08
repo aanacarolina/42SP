@@ -1,4 +1,4 @@
- GENERAL LOGIC
+ # GENERAL LOGIC
  
  1- Check if there are 3 elements in A
  
@@ -12,8 +12,8 @@
  create stack B<br>
  push first 2 itens of A to B (PB 2x)<br>
  execute Mechanical Turk Algorithm<br>
- until 3 elements left in A<br>
- 3 - call SORT_3 logic in A<br>
+ until 3 elements left in A (or til A is sorted)<br> 
+ 3 - if only -> call SORT_3 logic in A<br>
  4 - Push B to A until B empty<br>
  5 - Make FINAL ARRANGEMENT in A<br>
 
@@ -26,12 +26,12 @@
  create current_max_a<br>
  create already sorted<br>
 
- Mechanical Turk Algorithm
+ ## Mechanical Turk Algorithm
  
  Our aim is to move itens from A to B, in a way that B will always be "circularly ordered". <br>
  This is achieved by using the CHEAPEST movement calculations <br>
 
- CHEAPEST
+## CHEAPEST
  
  1 - Find MAX e MIN of B<br>
  1.1 - Loop over stack A to check IF there is a number either:<br>
@@ -53,7 +53,7 @@
  by making this caclulation: <br>
  1.2.2 - When current_a-- == MAX B --> return <br>
 
- FINAL SORT
+ ## FINAL Arrangement
  
  Find MIN_A and get its index <br>
  Calculate CEIL(stack_size / 2 )<br>
