@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 23:47:56 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/08 00:20:27 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,15 @@ int	non_int_checker(int argc, char **argv)
 	return (1);
 }
 
-//TODO - parse_args_quoted 
+// TODO - check_and_parse_args
+// checking if args are not all in one
+// ex = {"./program", "20 40 60 80 100"};
+// return (*argv[] = {"./program", "20", "40", "60", "80", "100"});
+char**	check_and_parse_argv(char **argv)
+{
+	char **new_argv = {"./program", "20", "40", "60", "80", "100"};
+	return (new_argv);
+}
 
 // checks if numbers are between MAX AND MIN (range)
 // returns: [0] false / [1] TRUE
@@ -75,7 +83,6 @@ int	is_duplicate(char *args[], int arg_count, char *newArg)
 	return (0);
 }
 
- 
 // checks for unique args
 // returns: [0] false / [1] TRUE
 // TODO - refactor because: Error: VLA_FORBIDDEN

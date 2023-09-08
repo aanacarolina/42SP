@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 23:32:07 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/08 00:19:03 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
+	char **new_argv;
 
 	if (argc < 2)
 	{
@@ -30,10 +31,11 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
+		if (argc == 2)
+			new_argv = check_and_parse_argv(argv);
 		stack_a = arguments_to_list(argc, argv);
 		stack_b = NULL;
-		if (stack_size(&stack_a) == 2)
-			size_2_checker(&stack_a);
+		// if(!dups_checker(&stack_a))
 		push_swap(&stack_a, &stack_b);
 	}
 	return (0);

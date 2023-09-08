@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 22:45:28 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/08 00:16:44 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void				insert_tail(t_node *head, t_node *new_last_node);
 int					dups_checker(int argc, char **argv);
 int					non_int_checker(int argc, char **argv);
 int					max_min_int_checker(int argc, char **argv);
+char**				check_and_parse_argv(char **argv);
 int					checker_wrapper(int argc, char **argv);
 int					*args_array(int argc, char **argv);
 int					*bubble_sort(int *arr, int size);
