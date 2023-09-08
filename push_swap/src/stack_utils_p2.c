@@ -6,11 +6,25 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 22:18:55 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:50:12 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	size_2_checker(t_node **stack)
+{
+	int	size;
+
+	size = stack_size(stack);
+	if (size == 2 && is_sorted(stack))
+		exit(1);
+	else
+	{
+		sa(stack);
+		return (0);
+	}
+}
 
 // Check if there are 3 elements
 // returns: [0] false / [1] TRUE

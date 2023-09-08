@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 22:10:07 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:49:50 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ int	main(int argc, char **argv)
 		ft_putstr("Error\n");
 		exit(1);
 	}
-	if (argc == 2)
-	{
-		// ft_putstr("Error\n");
-		exit(1);
-	}
 	if (checker_wrapper(argc, argv) == 0)
 	{
 		ft_putstr("Error\n");
@@ -41,6 +36,8 @@ int	main(int argc, char **argv)
 	{
 		stack_a = arguments_to_list(argc, argv);
 		stack_b = NULL;
+		if (stack_size(&stack_a) == 2)
+			size_2_checker(&stack_a);
 		push_swap(&stack_a, &stack_b);
 	}
 	return (0);

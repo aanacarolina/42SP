@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 19:59:35 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:45:28 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void				push_swap(t_node **head_a, t_node **head_b);
 int					stack_size(t_node **stack);
 int					node_position(t_node **stack, int node);
 int					last_node(t_node **stack);
+int					size_2_checker(t_node **stack);
 int					size_3_checker(t_node **stack);
 int					max_num(t_node **stack);
 int					min_num(t_node **stack);
