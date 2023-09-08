@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 21:54:20 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:09:54 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	current_max_a(t_node **head_a, t_node **head_b)
 
 	llist_a = head_a;
 	llist_b = head_b;
-	//printf("\n* TODO *\n");
 	return (0);
 }
 /* frustrated attempt

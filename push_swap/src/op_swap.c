@@ -6,13 +6,14 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:29:15 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 20:20:46 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:09:22 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 //**sa (swap a): Swap the first 2 elements at the top of stack a.**
+// TODO: temp = calloc(1, sizeof(t_node));
 void	swap_aux(t_node **head)
 {
 	t_node	**llist;
@@ -22,7 +23,6 @@ void	swap_aux(t_node **head)
 	llist = head;
 	if (head != NULL && (*head)->next != NULL)
 	{
-		// TODO: temp = calloc(1, sizeof(t_node));
 		temp2 = (*llist)->next->next;
 		temp = (*llist)->next;
 		temp->next = (*llist);

@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 22:02:35 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:10:07 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 int	main(int argc, char **argv)
 {
-		t_node *stack_a;
-		t_node *stack_b;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
 	if (argc < 2)
 	{
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	}
 	if (argc == 2)
 	{
-		//ft_putstr("Error\n");
+		// ft_putstr("Error\n");
 		exit(1);
 	}
 	if (checker_wrapper(argc, argv) == 0)
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	{
 		stack_a = arguments_to_list(argc, argv);
 		stack_b = NULL;
-		push_swap(&stack_a, &stack_b);	
+		push_swap(&stack_a, &stack_b);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 19:38:22 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:18:55 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,13 @@ int	size_3_checker(t_node **stack)
 // if the stack size is three,you only need one operation to sort the stack.
 // Except numbers are in descending sorted order (such as 3–2–1).
 // In this case would require two operations
-void	sort_three(t_node **stack)
+void	sort_three(t_node **llist_a)
 {
-	t_node **llist_a;
-	t_node **llist_b;
-	int min;
-	int max;
-	int max_position;
-	int min_position;
+	int	max_position;
+	int	min_position;
 
-	llist_a = stack;
-	llist_b = NULL;
-	min = min_num(llist_a);
-	max = max_num(llist_a);
-	max_position = node_position(llist_a, max);
-	min_position = node_position(llist_a, min);
+	max_position = node_position(llist_a, max_num(llist_a));
+	min_position = node_position(llist_a, min_num(llist_a));
 	while (!is_sorted(llist_a))
 	{
 		if (min_position == 0)
@@ -58,82 +50,78 @@ void	sort_three(t_node **stack)
 		}
 		else if (min_position == 2)
 			rra(llist_a);
-		else 
+		else
 			sa(llist_a);
-		break;
+		break ;
 	}
 }
-	/*
-	OPTIONS
-	ok - 1, 2, 3 -> already sorted - break while
-	ok 3, 2, 1 -> max == 0 () -
-	OK 1, 3, 2->  min == 0 ()
-	ok 2, 3, 1 -> min == 2 ()
+/*
+OPTIONS
+ok - 1, 2, 3 -> already sorted - break while
+ok 3, 2, 1 -> max == 0 () -
+OK 1, 3, 2->  min == 0 ()
+ok 2, 3, 1 -> min == 2 ()
 
-	2, 1, 3 ->
-	SA
-	3, 1, 2 ->
-	RA
-
-
+2, 1, 3 ->
+SA
+3, 1, 2 ->
+RA
 
 
 
-	*/
-	// check already sorted
-	// if MIN position  == 2 && MAX position == 0
-	// RRA 2X
-	// else
-	// 1 move:
-	// 1.1 - MAX position == 2 ->
-	// 1.2 - MIN position == 0 ->
-	// find MAX number in stack
 
-	int max_num(t_node **stack)
+
+*/
+// check already sorted
+// if MIN position  == 2 && MAX position == 0
+// RRA 2X
+// else
+// 1 move:
+// 1.1 - MAX position == 2 ->
+// 1.2 - MIN position == 0 ->
+// find MAX number in stack
+
+int	max_num(t_node **stack)
+{
+	t_node	*temp;
+	int		max;
+
+	temp = (*stack);
+	max = (*stack)->data;
 	{
-		t_node *temp;
-		int max;
-
-		temp = (*stack);
-		max = (*stack)->data;
-			// first element of stack just to have a comparative
 		{
+			while (temp->next != NULL)
 			{
-				while (temp->next != NULL)
+				temp = temp->next;
+				if (temp->data > max)
 				{
-					temp = temp->next;
-					if (temp->data > max)
-					{
-						max = temp->data; //
-											// saves the current/new MAX each times it satifies the condition
-					}
+					max = temp->data;
 				}
-				return (max);
 			}
+			return (max);
 		}
 	}
+}
 
-	// find MIN number in stack
-	int min_num(t_node **stack)
+// find MIN number in stack
+int	min_num(t_node **stack)
+{
+	t_node	*temp;
+	int		min;
+
+	temp = (*stack);
+	min = (*stack)->data;
 	{
-		t_node *temp;
-		int min;
-
-		temp = (*stack);
-		min = (*stack)->data;
-			// first element of stack just to have a comparative
 		{
+			while (temp->next != NULL)
 			{
-				while (temp->next != NULL)
+				temp = temp->next;
+				if (temp->data < min)
 				{
-					temp = temp->next;
-					if (temp->data < min)
-					{
-						min = temp->data;
-						// saves the current/new min each times it satifies the condition
-					}
+					min = temp->data;
 				}
-				return (min);
 			}
+			return (min);
 		}
 	}
+}

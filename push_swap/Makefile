@@ -43,7 +43,6 @@ $(NAME) : $(OBJS)
 	cc $(OBJS) $(LIBS) $(FLAGS) -o $(NAME) -I $(INC)
 	@echo "\033[44mREADY\033[0m"
 
-#valgrind --show-leak-kinds=all --leak-check=full --quiet ./push_swap
 #norminette  libs/libft src
 
 %.o : %.c 
