@@ -6,17 +6,13 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 22:49:50 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:57:37 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// TODO: duplicate bug is back 🤡
 // TODO: norminette - mostly DONE
-// TODO: refactor max functions - mostly DONE
-// TODO: make it work outside args - no arguments to list
-
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;

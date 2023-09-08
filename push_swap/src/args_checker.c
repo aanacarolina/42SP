@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 22:08:00 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:58:04 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int	is_duplicate(char *args[], int arg_count, char *newArg)
 
 // checks for unique args
 // returns: [0] false / [1] TRUE
-//TODO - refactor because: Error: VLA_FORBIDDEN 
+//TODO - refactor because: Error: VLA_FORBIDDEN
+//TODO: duplicate bug is back 🤡
 int	dups_checker(int argc, char **argv)
 {
 	int		arg_count;

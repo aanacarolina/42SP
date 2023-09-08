@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 22:50:12 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:56:28 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,7 @@ int	size_3_checker(t_node **stack)
 		return (0);
 }
 
-// if the stack size is three,you only need one operation to sort the stack.
-// Except numbers are in descending sorted order (such as 3–2–1).
-// In this case would require two operations
+// if the stack size is 3,you only need make max 2 ops
 void	sort_three(t_node **llist_a)
 {
 	int	max_position;
@@ -69,32 +67,8 @@ void	sort_three(t_node **llist_a)
 		break ;
 	}
 }
-/*
-OPTIONS
-ok - 1, 2, 3 -> already sorted - break while
-ok 3, 2, 1 -> max == 0 () -
-OK 1, 3, 2->  min == 0 ()
-ok 2, 3, 1 -> min == 2 ()
 
-2, 1, 3 ->
-SA
-3, 1, 2 ->
-RA
-
-
-
-
-
-*/
-// check already sorted
-// if MIN position  == 2 && MAX position == 0
-// RRA 2X
-// else
-// 1 move:
-// 1.1 - MAX position == 2 ->
-// 1.2 - MIN position == 0 ->
 // find MAX number in stack
-
 int	max_num(t_node **stack)
 {
 	t_node	*temp;
