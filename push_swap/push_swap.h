@@ -35,6 +35,8 @@ int					max_min_int_checker(int argc, char **argv);
 char**				check_and_parse_argv(char **argv);
 int					checker_wrapper(int argc, char **argv);
 int					*args_array(int argc, char **argv);
+void				swap(int *a, int *b);
+int					dups_checker_array(int argc, char **argv);
 int					*bubble_sort(int *arr, int size);
 void				swap_aux(t_node **head);
 void				sa(t_node **head_a);

@@ -44,8 +44,16 @@ int	non_int_checker(int argc, char **argv)
 // return (*argv[] = {"./program", "20", "40", "60", "80", "100"});
 char**	check_and_parse_argv(char **argv)
 {
-	char **new_argv = {"./program", "20", "40", "60", "80", "100"};
-	return (new_argv);
+	char **new_argv = malloc(6 * sizeof(char*));	
+	printf("%d", ft_atoi(argv[1]));
+	new_argv[0] = "./program";
+    new_argv[1] = "20";
+    new_argv[2] = "40";
+    new_argv[3] = "60";
+    new_argv[4] = "80";
+    new_argv[5] = "100";
+    
+    return new_argv;
 }
 
 // checks if numbers are between MAX AND MIN (range)

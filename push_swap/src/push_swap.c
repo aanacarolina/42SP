@@ -21,8 +21,8 @@ void	push_swap(t_node **head_a, t_node **head_b)
 	llist_b = head_b;
 	if (is_sorted(llist_a) == 1)
 		exit(1);
-	if (stack_size(&llist_a) == 2)
-		size_2_checker(&llist_a);
+	if (stack_size(llist_a) == 2)
+		size_2_checker(llist_a);
 	if (size_3_checker(llist_a) == 1 && is_sorted(llist_a) != 1)
 	{
 		sort_three(llist_a);

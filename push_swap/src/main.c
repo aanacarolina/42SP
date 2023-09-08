@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
-	char **new_argv;
+	//char **new_argv;
 
 	if (argc < 2)
 	{
@@ -31,8 +31,13 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		if (argc == 2)
-			new_argv = check_and_parse_argv(argv);
+		if (dups_checker_array(argc, argv) == 1)
+			ft_putstr("no dup\n");
+		else		
+			ft_putstr("dup\n");
+
+		//if (argc == 2)
+		//	new_argv = check_and_parse_argv(argv);
 		stack_a = arguments_to_list(argc, argv);
 		stack_b = NULL;
 		// if(!dups_checker(&stack_a))

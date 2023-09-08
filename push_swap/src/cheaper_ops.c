@@ -54,6 +54,7 @@ int	current_max_a(t_node **head_a, t_node **head_b)
 
 	llist_a = head_a;
 	llist_b = head_b;
+	printf("\n %p %p \n", llist_a, llist_b);
 	return (0);
 }
 /* frustrated attempt
