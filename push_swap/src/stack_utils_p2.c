@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 22:56:28 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 23:48:52 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ int	size_2_checker(t_node **stack)
 	else
 	{
 		sa(stack);
-		return (0);
+		exit(0);
 	}
 }
-
 // Check if there are 3 elements
 // returns: [0] false / [1] TRUE
 int	size_3_checker(t_node **stack)
