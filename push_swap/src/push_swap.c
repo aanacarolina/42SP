@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:02:36 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 20:32:56 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/07 20:44:41 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	push_swap(t_node **head_a, t_node **head_b)
 	}
 	else
 	{
-		pb(llist_a, llist_b);
-		pb(llist_a, llist_b);
 		pb(llist_a, llist_b);
 		pb(llist_a, llist_b);
 		
