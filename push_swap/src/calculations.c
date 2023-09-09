@@ -6,11 +6,13 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 22:12:13 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/09 15:13:11 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//smaller than min of B
-//bigger than max of B
+//qty of moves based on position and stack size
+
+
+

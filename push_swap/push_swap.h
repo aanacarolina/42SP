@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/08 00:16:44 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/09 15:57:57 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,28 +64,10 @@ int					size_2_checker(t_node **stack);
 int					size_3_checker(t_node **stack);
 int					max_num(t_node **stack);
 int					min_num(t_node **stack);
-int					min_a_smaller_min_b(t_node **head_a, t_node **head_b);
-int					max_a_bigger_max_b(t_node **head_a, t_node **head_b);
-int					current_max_a(t_node **head_a, t_node **head_b);
+int					position_min_b(int data, t_node **head_b);	
 int					is_sorted(t_node **head_a);
 void				sort_three(t_node **stack);
 void				final_sort_a(t_node **head_a);
-void				TESTE_create_node(int argc, char **argv);
-void				TESTE_arguments_to_list(int argc, char **argv);
-void				TESTE_args_checker(void);
-void				TESTE_non_int_checker(void);
-void				TESTE_max_min_int_checker(void);
 void				DEBUG_printlist(t_node *head);
-void				TESTE_push_a(int argc_a, char **list_a, int argc_b,
-						char **list_b);
-void				TESTE_push_b(int argc_a, char **list_a, int argc_b,
-						char **list_b);
-void				DEBUG_llist(t_node **head_a, t_node **head_b);
-void				DEBUG_one_item_llist(t_node **head_a, t_node **head_b);
-void				DEBUG_stack_size(t_node **stack);
-void				DEBUG_node_position(t_node **stack, int node);
-void				DEBUG_last_node(t_node **stack);
-void				DEBUG_size_3_checker(t_node **stack);
-void				DEBUG_max_min(t_node **stack);
 
 #endif

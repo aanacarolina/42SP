@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 23:37:56 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/09 15:34:13 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	stack_size(t_node **stack)
 	return (i);
 }
 
-// Finds the position (index) of a given node in a stack 
+// Finds the position (index) of a given node in a stack
 //(node is int because == node->data)
 int	node_position(t_node **stack, int node)
 {
@@ -37,12 +37,17 @@ int	node_position(t_node **stack, int node)
 
 	i = 0;
 	temp = (*stack);
-	while (temp->data != node)
+	while (temp != NULL)
 	{
-		temp = temp->next;
-		i++;
+		if (temp->data == node)
+			return (i);
+		else
+		{
+			temp = temp->next;
+			i++;
+		}
 	}
-	return (i);
+	return (-1);
 }
 
 // finds last node
@@ -57,5 +62,3 @@ int	last_node(t_node **stack)
 	}
 	return (temp->data);
 }
-
-
