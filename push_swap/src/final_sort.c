@@ -6,18 +6,19 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 22:26:09 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/09 17:18:16 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 // FINAL SORT
-// Find MIN_A and get its index
-// Calculate CEIL(stack_size / 2 )
-// if result > node_index (means it's on top half) -
-// RRA until MIN_A on top
-// else RA until MIN_A on top
+// Find MIN_A 
+// Put on MIN_A on top
+// send all from B to A (until B null)
+// free B
+// free A
+// exit 
 
 // Checks if the stack is sorted.
 // returns: [0] FALSE / [1] TRUE
@@ -43,28 +44,4 @@ int	is_sorted(t_node **head_a)
 	return (1);
 }
 
-void	final_sort_a(t_node **head_a)
-{
-	int		min;
-	int		position;
-	int		list_middle;
 
-	min = min_num(head_a);
-	position = node_position(head_a, min);
-	list_middle = ft_ceil(stack_size(head_a), 2);
-	if (!is_sorted(head_a))
-	{
-		if (list_middle >= position)
-		{
-			printf("Tô na metade de CIMA,manda RA\n MENOR [%d] POSIÇÃO [%d] METADE [%d]\n",
-				min, position, list_middle);
-		}
-		else
-		{
-			printf("Tô na metade de BAIXO,manda RRA\n MENOR [%d] POSIÇÃO [%d] METADE [%d]\n",
-			min, position, list_middle);
-		}
-	}
-	else
-		printf("already the first\n");
-}

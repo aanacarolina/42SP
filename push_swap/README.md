@@ -38,25 +38,35 @@
  1.1.1 - smaller than min of B<br>
  1.1.2 - bigger than max of B<br>
 
+If any TRUE, do: <br>
+ return position do MIN de B <br>
+Else ()<br>
+  return the position of the number in B that is equal to value of the min of B <br>
+  (not the smallest of A but the next smaller in relation to min of B) <br>
 
- If any TRUE, do: <br>
- Place biggest of B on top (if not already)<br>
- Then push "CURRENT A MAX" (not the biggest of A<br>
- but the next bigger in relation to max of B)<br>
+ Then push "CURRENT A MAX" <br>
+ 
 
-
+means we can't send a number from A to top of B immediatelly, because it will mess with the circular order
  ELSE 
- (means we can't send a number from A to top of B immediatelly, because it will mess with the circular order)<br>
- 1 - CALCULATIONS to check qty of moves <br>
- 1.2 - CURRENT_MAX_A <br>
+ <br>
+
+ CALCULATIONS to check qty of moves <br>
+ 1 - Find MIN_A and get its index <br>
+ Calculate CEIL(stack_size / 2 )<br>
+ if result > node_index (means it's on top half)<br>
+ RRA until MIN_A on top<br>
+ else RA until MIN_A on top<br>
+ 
+  <br>
  1.2.1 - Loop over stack A to find the next number to send <br>
  by making this caclulation: <br>
  1.2.2 - When current_a-- == MAX B --> return <br>
 
  ## FINAL Arrangement
- 
- Find MIN_A and get its index <br>
- Calculate CEIL(stack_size / 2 )<br>
- if result > node_index (means it's on top half)<br>
- RRA until MIN_A on top<br>
- else RA until MIN_A on top<br>
+// Find MIN_A 
+// Put on top
+// send all from B to A (until B null)
+// free B
+// free A
+// exit 

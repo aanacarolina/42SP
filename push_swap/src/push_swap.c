@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:02:36 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/09 16:15:27 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/09 16:55:16 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	push_swap(t_node **head_a, t_node **head_b)
 	{
 		pb(llist_a, llist_b);
 		pb(llist_a, llist_b);
-		final_sort_a(llist_a);
+		//final_sort_a(llist_a);
 		/*if (min_a_smaller_min_b(llist_a, llist_b) == 1
 			|| max_a_bigger_max_b(llist_a, llist_b) == 1)
 		{
