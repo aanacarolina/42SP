@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/07 16:52:21 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/09 16:10:43 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,27 @@ t_node	*arguments_to_list(int argc, char **argv)
 		i++;
 	}
 	return (head);
+}
+
+// This function frees the stack.
+void	free_stack(t_node **stack)
+{
+	t_node	*tmp;
+
+	if (!stack)
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		(*stack)->data = 0;
+		free(*stack);
+		*stack = tmp;
+	}
+}
+
+// free and exit program
+void	exit_free(t_node **stack)
+{
+	free_stack(stack);
+	exit(1);
 }
