@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils_p2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 11:05:43 by carolina.si      ###   ########.fr       */
+/*   Updated: 2023/09/10 13:28:09 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 // Check if there are 3 elements
 // returns: [0] false / [1] TRUE
@@ -25,8 +24,6 @@ int	size_3_checker(t_node **stack)
 	else
 		return (0);
 }
-
-
 
 // find MAX number in stack
 int	max_num(t_node **stack)

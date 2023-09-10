@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 11:49:43 by carolina.si      ###   ########.fr       */
+/*   Updated: 2023/09/10 13:32:58 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 // FINAL SORT
-// Find MIN_A 
+// Find MIN_A
 // Put on MIN_A on top
 // send all from B to A (until B null)
 // free B
 // free A
-// exit 
+// exit
 
 // Checks if the stack is sorted.
 // returns: [0] FALSE / [1] TRUE
@@ -105,4 +105,3 @@ void	sort_four_and_five(t_node **llist_a, t_node **llist_b)
 	while (*llist_b)
 		pa(llist_b, llist_a);
 }
-

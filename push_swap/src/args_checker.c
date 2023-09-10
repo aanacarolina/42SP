@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   args_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 11:24:57 by carolina.si      ###   ########.fr       */
+/*   Updated: 2023/09/10 13:31:31 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,6 @@ int	non_int_checker(int argc, char **argv)
 	return (1);
 }
 
-// TODO - check_and_parse_args
-// checking if args are not all in one
-// ex = {"./program", "20 40 60 80 100"};
-// return (*argv[] = {"./program", "20", "40", "60", "80", "100"});
-char**	check_and_parse_argv(char **argv)
-{
-	char **new_argv = malloc(6 * sizeof(char*));	
-	printf("%d", ft_atoi(argv[1]));
-	new_argv[0] = "./program";
-    new_argv[1] = "20";
-    new_argv[2] = "40";
-    new_argv[3] = "60";
-    new_argv[4] = "80";
-    new_argv[5] = "100";
-    
-    return new_argv;
-}
-
 // checks if numbers are between MAX AND MIN (range)
 // returns: [0] false / [1] TRUE
 int	max_min_int_checker(int argc, char **argv)
@@ -77,27 +59,24 @@ int	max_min_int_checker(int argc, char **argv)
 
 // checks for unique args
 // returns: [0] false / [1] TRUE
-// TODO - refactor because: Error: VLA_FORBIDDEN
-// TODO: duplicate bug is back 🤡
 int	dups_checker(int argc, char **argv)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    while (++i < argc)
-    {
-        j = i;
-        while (++j < argc)
-        {
-            if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-            {
-                return (0); 
-            }
-        }
-    }
-
-    return (1);
+	i = 0;
+	while (++i < argc)
+	{
+		j = i;
+		while (++j < argc)
+		{
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			{
+				return (0);
+			}
+		}
+	}
+	return (1);
 }
 
 // if any checker function returns 0 means some arg is invalid;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils_p1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 11:50:18 by carolina.si      ###   ########.fr       */
+/*   Updated: 2023/09/10 13:30:58 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int	find_node(t_node **stack, int node)
 			temp = temp->next;
 		}
 		return (temp->data);
-
 	}
 	return (-1);
 }
@@ -89,6 +88,7 @@ void	get_index(t_node *stack)
 		stack = stack->next;
 	}
 }
+
 // finds last node
 int	last_node(t_node **stack)
 {
