@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 13:30:32 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/10 14:47:57 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ int	main(int argc, char **argv)
 	t_node	*stack_b;
 
 	if (argc < 2)
-	{
-		ft_putstr_fd("Error\n", 2);
 		exit(1);
-	}
 	if (checker_wrapper(argc, argv) == 0)
 	{
 		ft_putstr_fd("Error\n", 2);
