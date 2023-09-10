@@ -26,10 +26,8 @@ LIBS =	$(LIBFT_DIR)libft.a
 
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
-#valgrind --show-leak-kinds=all --leak-check=full --quiet ./push_swap 10 30 50 70 90
 #ARG="1 5 2"; ./push_swap $ARG | ./checker_linux $ARG 
-#ARG=$(seq -250 249 | shuf); valgrind --leak-check=full ./push_swap $ARG
-#FLAGS = -g3
+#ARG=$(seq -250 249 | shuf); valgrind --show-leak-kinds=all --leak-check=full --quiet ./push_swap $ARG
 FLAGS = -Wall -Wextra -Werror -g3
 
 #RECIPES
