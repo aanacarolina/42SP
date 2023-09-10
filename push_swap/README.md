@@ -41,8 +41,12 @@
 If any TRUE, do: <br>
  return position do MIN de B <br>
 Else ()<br>
-  return the position of the number in B that is equal to value of the min of B <br>
-  (not the smallest of A but the next smaller in relation to min of B) <br>
+ calculate moves to top A <br>
+ calculate moves to top B <br>
+
+
+
+//
 
  Then push "CURRENT A MAX" <br>
  
@@ -64,9 +68,9 @@ means we can't send a number from A to top of B immediatelly, because it will me
  1.2.2 - When current_a-- == MAX B --> return <br>
 
  ## FINAL Arrangement
+// send all from B to A (until B null)
 // Find MIN_A 
 // Put on top
-// send all from B to A (until B null)
 // free B
 // free A
 // exit 

@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:02:36 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/09 16:55:16 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/09 19:22:24 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	push_swap(t_node **head_a, t_node **head_b)
 	llist_a = head_a;
 	llist_b = head_b;
 	if (is_sorted(llist_a) == 1)
-		exit_free(llist_a); //OU HEAD?
+		exit_free(llist_a); //OU HEAD?  
 	if (stack_size(llist_a) == 2)
 		size_2_checker(llist_a);
 	if (size_3_checker(llist_a) == 1 && is_sorted(llist_a) != 1)
@@ -32,11 +32,6 @@ void	push_swap(t_node **head_a, t_node **head_b)
 	{
 		pb(llist_a, llist_b);
 		pb(llist_a, llist_b);
-		//final_sort_a(llist_a);
-		/*if (min_a_smaller_min_b(llist_a, llist_b) == 1
-			|| max_a_bigger_max_b(llist_a, llist_b) == 1)
-		{
-		//printf("\nHora de chamar biggest_b_on_top\n");
-		}*/
+		//operations
 	}
 }

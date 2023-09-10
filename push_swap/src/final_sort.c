@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/09 17:18:16 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/09 19:20:58 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,7 @@ int	is_sorted(t_node **head_a)
 	return (1);
 }
 
+
+//TODO is sorted_a (crescente)
+//TODO is sorted_b (descrescente)  == is sorted
 

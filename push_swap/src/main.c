@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 04:01:07 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/09 17:36:06 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/09 21:04:21 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,16 @@ int	main(int argc, char **argv)
 		stack_b = NULL;
 		// if(!dups_checker(&stack_a))
 		// prints a linked list with its nodes
-		DEBUG_printlist(stack_a);
-		moves_to_top_a(&stack_a, 6 , 20); //400 99 44 7 80 3 20 5 1
+		//DEBUG_printlist(stack_a);
+		//moves_to_top_a(&stack_a, 6 , 20); //400 99 44 7 80 3 20 5 1
 		//moves_to_top(&stack_a, 2 , 20); //400 99 20 44 7 80 3 5 1
 		//moves_to_top(&stack_a, 2 , 20); //400 99 20 7 80 
+		printf("\n**[%d]**\n", position_in_b(4, &stack_a));
+		// prints a linked list with its nodes
 		DEBUG_printlist(stack_a);
-
-		// push_swap(&stack_a, &stack_b);
+		//push_swap(&stack_a, &stack_b);
+		
+		
 	}
 	return (0);
 }
