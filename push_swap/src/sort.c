@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 14:42:27 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/10 14:56:04 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,24 @@
 
 // Checks if the stack is sorted.
 // returns: [0] FALSE / [1] TRUE
-int	is_sorted(t_node **head)
+int	is_sorted(t_node **head_a)
 {
-	t_node	*llist;
+	t_node	*llist_a;
+	int		i;
 
-	llist = *head;
-	while (llist != NULL)
+	llist_a = *head_a;
+	i = INT_MIN;
+	while (llist_a != NULL)
 	{
-		if (llist->data > llist->next->data)
+		if (llist_a->data < i)
+		{
 			return (0);
-		llist = llist->next;
+		}
+		else
+		{
+			i = llist_a->data;
+			llist_a = llist_a->next;
+		}
 	}
 	return (1);
 }
