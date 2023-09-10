@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils_p1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 00:09:17 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/10 11:50:18 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,8 @@ int	node_position(t_node **stack, int node)
 
 int	find_node(t_node **stack, int node)
 {
-	int		i;
 	t_node	*temp;
 
-	i = 0;
 	temp = (*stack);
 	while (temp != NULL)
 	{
@@ -71,34 +69,26 @@ int	find_node(t_node **stack, int node)
 	return (-1);
 }
 
-/* 
-	get args (args array)
-	create array from args
-	sort array
-	get list
-	iterate over array
-	get the first element 
-	find the array element in list (find_node)  
-	i =  is index of element in array
-	assing i to node->index 
-	i++;	
-	*/
-
-void	assign_node_index(t_node **stack, int argc, char **argv)
+// adds index to struct - radix needs to treat negative numbers
+void	get_index(t_node *stack)
 {
-	int	i;
-	int	j;
-	
-	i = 1;
-	j = 0;
-	while (i < (argc - 1))
+	t_node	*start_stack;
+	t_node	*temp;
+
+	start_stack = stack;
+	while (stack)
 	{
-		find_node(stack, argv[i]);
-		(*stack)->index = j;
-		j++;
+		stack->index = 0;
+		temp = start_stack;
+		while (temp)
+		{
+			if (stack->data > temp->data)
+				(stack->index)++;
+			temp = temp->next;
+		}
+		stack = stack->next;
 	}
 }
-
 // finds last node
 int	last_node(t_node **stack)
 {

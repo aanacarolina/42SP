@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/09 22:48:09 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/10 11:36:48 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_node
 t_node				*create_node(int data, t_node *next);
 t_node				*arguments_to_list(int argc, char **argv);
 void				insert_tail(t_node *head, t_node *new_last_node);
+void				get_index(t_node *stack);
 int					dups_checker(int argc, char **argv);
 int					non_int_checker(int argc, char **argv);
 int					max_min_int_checker(int argc, char **argv);
@@ -61,11 +62,11 @@ void				push_swap(t_node **head_a, t_node **head_b);
 int					stack_size(t_node **stack);
 int					node_position(t_node **stack, int node);
 int					last_node(t_node **stack);
-void				size_2_checker(t_node **stack);
+void				sort_two(t_node **stack);
 int					size_3_checker(t_node **stack);
 int					max_num(t_node **stack);
 int					min_num(t_node **stack);
-int					is_sorted(t_node **head_a);
+int					is_sorted(t_node **head);
 void				sort_three(t_node **stack);
 int					position_min_b(int data, t_node **head_b);
 int					position_in_b(int data, t_node **head_b);

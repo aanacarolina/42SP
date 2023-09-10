@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   args_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/08 00:20:27 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/10 11:24:57 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,44 +75,29 @@ int	max_min_int_checker(int argc, char **argv)
 	return (1);
 }
 
-int	is_duplicate(char *args[], int arg_count, char *newArg)
-{
-	int	i;
-
-	i = 0;
-	while (i < arg_count)
-	{
-		if (ft_strncmp(args[i], newArg, ft_strlen(newArg)) == 0)
-		{
-			return (1);
-		}
-		i++;
-	}
-	return (0);
-}
-
 // checks for unique args
 // returns: [0] false / [1] TRUE
 // TODO - refactor because: Error: VLA_FORBIDDEN
 // TODO: duplicate bug is back 🤡
 int	dups_checker(int argc, char **argv)
 {
-	int		arg_count;
-	int		i;
-	char	*arg;
-	char	*arguments[argc - 1];
+    int i;
+    int j;
 
-	arg_count = 0;
-	i = 1;
-	while (i < argc)
-	{
-		arg = argv[i];
-		if (is_duplicate(arguments, arg_count, arg))
-			return (0);
-		arguments[arg_count++] = arg;
-		i++;
-	}
-	return (1);
+    i = 0;
+    while (++i < argc)
+    {
+        j = i;
+        while (++j < argc)
+        {
+            if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+            {
+                return (0); 
+            }
+        }
+    }
+
+    return (1);
 }
 
 // if any checker function returns 0 means some arg is invalid;

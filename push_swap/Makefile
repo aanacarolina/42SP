@@ -7,19 +7,15 @@ LIBS_DIR = ./libs/
 LIBFT_DIR = $(LIBS_DIR)libft/
 
 SRCS =	./src/main.c\
-		./src/args_array.c\
 		./src/args_checker.c\
-		./src/array_sort.c\
-		./src/calculations.c\
-		./src/cheaper_ops.c\
-		./src/final_sort.c\
 		./src/linked_list.c\
 		./src/op_push.c\
 		./src/op_swap.c\
 		./src/op_rotate.c\
 		./src/op_rev_rotate.c\
 		./src/push_swap.c\
-		./src/stack_b_ops.c\
+		./src/radix.c\
+		./src/sort.c\
 		./src/stack_utils_p1.c\
 		./src/stack_utils_p2.c
 
