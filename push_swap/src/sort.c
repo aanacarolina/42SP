@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 03:41:02 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 14:56:04 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/10 16:21:40 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ int	is_sorted(t_node **head_a)
 	return (1);
 }
 
-void	sort_two(t_node **stack)
+void	sort_two(t_node **llist_a)
 {
 	int	size;
 
-	size = stack_size(stack);
-	if (size == 2 && is_sorted(stack))
-		exit_free(stack);
+	size = stack_size(llist_a);
+	if (size == 2 && is_sorted(llist_a))
+		exit_free(llist_a);
 	else
 	{
-		sa(stack);
-		exit_free(stack);
+		sa(llist_a);
+		exit_free(llist_a);
 	}
 }
 
@@ -77,31 +77,4 @@ void	sort_three(t_node **llist_a)
 			sa(llist_a);
 		break ;
 	}
-}
-
-void	sort_four_and_five(t_node **llist_a, t_node **llist_b)
-{
-	int	i;
-	int	size;
-
-	if (is_sorted(llist_a))
-		return ;
-	i = 0;
-	size = stack_size(llist_a);
-	while (i < size)
-	{
-		if ((*llist_a)->index <= 1)
-			pb(llist_a, llist_b);
-		else
-			ra(llist_a);
-		i++;
-	}
-	if (size == 4)
-		sort_two(llist_a);
-	else
-		sort_three(llist_a);
-	if ((*llist_b)->index < (*llist_b)->next->index)
-		sb(llist_b);
-	while (*llist_b)
-		pa(llist_b, llist_a);
 }

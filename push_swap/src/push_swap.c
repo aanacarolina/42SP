@@ -6,7 +6,7 @@
 /*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 14:02:36 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 14:41:44 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/10 16:20:14 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ void	push_swap(t_node **head_a, t_node **head_b)
 		sort_three(llist_a);
 		exit_free(llist_a);
 	}
-	if (stack_size(llist_a) >= 4 && stack_size(llist_a) <= 5)
-		sort_four_and_five(llist_a, llist_b);
+	if (stack_size(llist_a) == 4)
+		sort_four(llist_a, llist_b);
+	if (stack_size(llist_a) == 5)
+		sort_five(llist_a, llist_b);
 	else
 	{
 		radix(llist_a, llist_b);

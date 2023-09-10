@@ -16,6 +16,7 @@ SRCS =	./src/main.c\
 		./src/push_swap.c\
 		./src/radix.c\
 		./src/sort.c\
+		./src/sort_p2.c\
 		./src/stack_utils_p1.c\
 		./src/stack_utils_p2.c
 

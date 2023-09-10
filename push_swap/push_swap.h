@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
+/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 12:12:43 by carolina.si      ###   ########.fr       */
+/*   Updated: 2023/09/10 16:22:24 by anacaro3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,13 @@ void				push_swap(t_node **head_a, t_node **head_b);
 int					stack_size(t_node **stack);
 int					node_position(t_node **stack, int node);
 int					last_node(t_node **stack);
-void				sort_two(t_node **stack);
+void				sort_two(t_node **llist_a);
 int					size_3_checker(t_node **stack);
-void				sort_four_and_five(t_node **llist_a, t_node **llist_b);
+int					position_list(t_node **llist);
+void				moves_five(t_node **llist_a, t_node **llist_b, int i);
+void				moves_four(t_node **llist_a, t_node **llist_b, int i);
+void				sort_five(t_node **llist_a, t_node **llist_b);
+void				sort_four(t_node **llist_a, t_node **llist_b);
 int					max_num(t_node **stack);
 int					min_num(t_node **stack);
 int					is_sorted(t_node **head);
@@ -70,6 +74,5 @@ void				sort_radix(t_node **stack_a, t_node **stack_b, int i);
 void				radix(t_node **stack_a, t_node **stack_b);
 void				free_stack(t_node **stack);
 void				exit_free(t_node **stack);
-void				DEBUG_printlist(t_node *head);
 
 #endif
