@@ -6,13 +6,13 @@
 /*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 10:40:26 by carolina.si       #+#    #+#             */
-/*   Updated: 2023/09/10 11:45:38 by carolina.si      ###   ########.fr       */
+/*   Updated: 2023/09/10 12:11:31 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	get_max_bit(t_node *stack)
+int	get_max_bit(t_node *stack)
 {
 	int	max_index;
 	int	max_bit;
@@ -34,7 +34,7 @@ static int	get_max_bit(t_node *stack)
 	return (max_bit);
 }
 
-static void	sort_radix(t_node **stack_a, t_node **stack_b, int i)
+void	sort_radix(t_node **stack_a, t_node **stack_b, int i)
 {
 	int	size;
 

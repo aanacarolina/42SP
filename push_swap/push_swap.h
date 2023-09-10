@@ -6,7 +6,7 @@
 /*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 13:29:39 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 11:36:48 by carolina.si      ###   ########.fr       */
+/*   Updated: 2023/09/10 12:12:43 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,6 @@ int					non_int_checker(int argc, char **argv);
 int					max_min_int_checker(int argc, char **argv);
 char				**check_and_parse_argv(char **argv);
 int					checker_wrapper(int argc, char **argv);
-int					*args_array(int argc, char **argv);
-void				swap(int *a, int *b);
-int					dups_checker_array(int argc, char **argv);
-int					*bubble_sort(int *arr, int size);
 void				swap_aux(t_node **head);
 void				sa(t_node **head_a);
 void				sb(t_node **head_b);
@@ -64,17 +60,14 @@ int					node_position(t_node **stack, int node);
 int					last_node(t_node **stack);
 void				sort_two(t_node **stack);
 int					size_3_checker(t_node **stack);
+void				sort_four_and_five(t_node **llist_a, t_node **llist_b);
 int					max_num(t_node **stack);
 int					min_num(t_node **stack);
 int					is_sorted(t_node **head);
 void				sort_three(t_node **stack);
-int					position_min_b(int data, t_node **head_b);
-int					position_in_b(int data, t_node **head_b);
-int					current_min_a(t_node **head_a, t_node **head_b);
-int					moves_to_top_a(t_node **head, int initial_position,
-						int data);
-int					moves_to_top_b(t_node **head, int initial_position,
-						int data);
+int					get_max_bit(t_node *stack);
+void				sort_radix(t_node **stack_a, t_node **stack_b, int i);
+void				radix(t_node **stack_a, t_node **stack_b);
 void				free_stack(t_node **stack);
 void				exit_free(t_node **stack);
 void				DEBUG_printlist(t_node *head);
