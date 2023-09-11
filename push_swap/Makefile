@@ -27,8 +27,9 @@ LIBS =	$(LIBFT_DIR)libft.a
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 
 #ARG="1 5 2"; ./push_swap $ARG | ./checker_linux $ARG 
+#ARG="5185641 54545 8888 99151 -8"; ./push_swap $ARG | wc -l
 #ARG=$(seq -250 249 | shuf); valgrind --show-leak-kinds=all --leak-check=full --quiet ./push_swap $ARG
-FLAGS = -Wall -Wextra -Werror -g3
+FLAGS = -O3 -Wall -Wextra -Werror -g3
 
 #RECIPES
 
