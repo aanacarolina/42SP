@@ -1,3 +1,6 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 /* Assignment name  : add_prime_sum
 Expected files   : add_prime_sum.c
 Allowed functions: write, exit
@@ -23,16 +26,27 @@ $> */
 
 int is_prime(int n)
 {
+    int i = --n;
+
     if(n > 1)
     {
-        
+       while(i > 1)
+       {
+            if(n % i != 0)
+            {
+                printf("if");
+                i--;
+            }
+            else
+            return (0);
+       } 
     }
+    return(1);
 }
 
-#include <unistd.h>
 int main(int argc, char **argv)
 {
-    int acc;
+    /*int acc;
     int i;
     int n;
     acc = 0;
@@ -53,5 +67,9 @@ int main(int argc, char **argv)
                 acc += i;
             }
         return (acc + n);
-    }
+    }*/
+ 
+    printf("%i", is_prime(atoi(argv[1])));
+    return(0);
+    
 }

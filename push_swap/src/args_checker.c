@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   args_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacaro3 <anacaro3@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: carolina.silva <carolina.silva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:56:35 by anacaro3          #+#    #+#             */
-/*   Updated: 2023/09/10 13:31:31 by anacaro3         ###   ########.fr       */
+/*   Updated: 2023/09/10 23:40:39 by carolina.si      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	checker_wrapper(int argc, char **argv)
 	dups = dups_checker(argc, argv);
 	non_int = non_int_checker(argc, argv);
 	max_min = max_min_int_checker(argc, argv);
-	if (dups == 1 && non_int == 1 && max_min == 1)
+	if (dups == 1 || non_int == 1 || max_min == 1)
 		return (1);
 	else
 		return (0);
