@@ -18,9 +18,9 @@ int main(int argc, char **argv)
         if (i % 15 == 0)
             write(1, "fizzbuzz\n", 8); // 9 ou 10 do \0?
         else if (i % 3 == 0)
-            write(1, "fizz\n", 5);
+            write(1, "fizz\n", 4);
         else if (i % 5 == 0)
-            write(1, "buzz\n", 5);
+            write(1, "buzz\n", 4);
         else
             ft_putnbr(i);
         i++;
