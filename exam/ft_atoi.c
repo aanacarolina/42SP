@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdio.h> 
 
 void ft_putnbr(int n)
 {
@@ -33,7 +34,7 @@ int ft_atoi(const char *str)
 
 int main(int argc, char **argv)
 {
-    ft_putnbr(ft_atoi(argv[1]));
+    printf("%i", ft_atoi(argv[1]));
     write(1, "\n", 1);
     return (0);
 }
