@@ -49,6 +49,9 @@ void ft_inter(char *str1, char *str2)
 
 int main(int argc, char **argv)
 {
+    
+    argv[1]= "padinton";
+    argv[2]= "paqefwtdjetyiytjneytjoeyjnejeyj";
     if (argc != 3)
         write(1, "\n", 1);
     else
