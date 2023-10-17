@@ -15,7 +15,7 @@ int	is_dup(char *str, char c, int position)
 			return (-1);
 	}
 	return (position);
-}
+} 
 
 void	ft_inter(char *str1, char *str2)
 {
