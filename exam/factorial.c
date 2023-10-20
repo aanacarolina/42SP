@@ -2,8 +2,7 @@
 
 int	factorial(int n)
 {
-    int i;
-	int	result;
+    int	result = 1;
 	while (n > 0)
 	{
 		result = result * n--;
@@ -14,7 +13,9 @@ int	factorial(int n)
 int main(void)
 {
 
-    printf("%i", factorial(5));
+   printf("5= %i\n", factorial(5));
+   printf("10= %i\n", factorial(10));
+   printf("3= %i\n", factorial(3));
     return(0);
 }
 
